@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="paper">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Thursday, 16 April 2026 &mdash; InsightForge</title>
+    
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2317140F'/%3E%3Cpath d='M6 22V10M12 22V6M18 22v-8M24 22V13' stroke='%238A2B1F' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/style.css">
+    <script>
+        // Set theme before first paint to avoid a flash of the wrong palette.
+        (function () {
+            try {
+                var t = localStorage.getItem('if-theme');
+                if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'terminal' : 'paper';
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <g id="ico" fill="none" stroke="currentColor" stroke-width="1.5"
+               stroke-linecap="round" stroke-linejoin="round"></g>
+        </defs>
+        <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/><path d="M19 6h-3.5M19 6v3.5"/>
+        </symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.7 3.8 5.7 3.8 9S14.5 18.3 12 21c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/>
+        </symbol>
+        <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3.5 2.5 20h19L12 3.5z"/><path d="M12 10v4.5"/><circle cx="12" cy="17.2" r=".6" fill="currentColor"/>
+        </symbol>
+        <symbol id="i-bank" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9.5 12 4l9 5.5"/><path d="M5 10v8M9.7 10v8M14.3 10v8M19 10v8"/><path d="M3 20.5h18"/>
+        </symbol>
+        <symbol id="i-chip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="7" y="7" width="10" height="10" rx="1.2"/><rect x="10.4" y="10.4" width="3.2" height="3.2"/>
+            <path d="M10 7V4M14 7V4M10 20v-3M14 20v-3M7 10H4M7 14H4M20 10h-3M20 14h-3"/>
+        </symbol>
+        <symbol id="i-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.5 3v6.2L4.6 18a2 2 0 0 0 1.7 3h11.4a2 2 0 0 0 1.7-3l-4.9-8.8V3"/>
+            <path d="M8.5 3h7"/><path d="M7.2 14.5h9.6"/>
+        </symbol>
+        <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13.5 2.5 4.5 13.8h6.2L10 21.5l9.3-11.4h-6.4l.6-7.6z"/>
+        </symbol>
+        <symbol id="i-coin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="8.5"/><path d="M12 6.8v10.4"/><path d="M14.8 9.4c-.6-.8-1.7-1.2-2.9-1.2-1.7 0-2.9.8-2.9 2s1 1.7 2.9 2.1c2 .4 3.1.9 3.1 2.2s-1.3 2-3.1 2c-1.3 0-2.4-.5-3-1.3"/>
+        </symbol>
+        <symbol id="i-factory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2.5 20.5V11l6 3.5V11l6 3.5V7l7 4v9.5z"/><path d="M5.5 11V4.5h3V11"/>
+        </symbol>
+        <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1.8 12S5.5 5.5 12 5.5 22.2 12 22.2 12 18.5 18.5 12 18.5 1.8 12 1.8 12z"/><circle cx="12" cy="12" r="3"/>
+        </symbol>
+        <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 17.5a6.5 6.5 0 1 1 6 0v2a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 19.5z"/><path d="M9.5 17.5h5"/>
+        </symbol>
+        <symbol id="i-pyramid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3 22 20H2L12 3z"/><path d="M12 3v17"/><path d="m7 11.5 5 3 5-3"/>
+        </symbol>
+        <symbol id="i-scales" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3.5v17"/><path d="M5 20.5h14"/><path d="M4 7.5h16"/>
+            <path d="M4 7.5 1.5 13.5h5L4 7.5z"/><path d="M20 7.5l-2.5 6h5l-2.5-6z"/>
+        </symbol>
+        <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5.2-5.2 2 2-5.2 5.2-2z"/>
+        </symbol>
+        <symbol id="i-merge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4v4.5c0 2 1.6 3.5 3.5 3.5h9"/><path d="M4 20v-4.5c0-2 1.6-3.5 3.5-3.5h9"/>
+            <path d="m13.5 8.5 3 3.5-3 3.5"/>
+        </symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20.5S3 15 3 9.4A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 9 2.4c0 5.6-9 11.1-9 11.1z"/>
+        </symbol>
+        <symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a9 9 0 0 0 0 18c1.4 0 2-.9 2-1.8 0-1.5-1.3-1.8-1.3-3 0-.9.8-1.7 1.8-1.7H16a5 5 0 0 0 5-5C21 5.6 17 3 12 3z"/>
+            <circle cx="8" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="7" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="9.5" r="1" fill="currentColor" stroke="none"/>
+        </symbol>
+        <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 5.5H4.5V7A3.5 3.5 0 0 0 7 10.3M17 5.5h2.5V7A3.5 3.5 0 0 1 17 10.3"/>
+            <path d="M12 14v3.5M9 20.5h6l-.7-3h-4.6z"/>
+        </symbol>
+    </svg>
+
+    <header class="masthead">
+        <div class="masthead__bar">
+            <a class="wordmark" href="../../index.html">
+                Insight<span>Forge</span>
+            </a>
+            <nav class="masthead__nav">
+                <a href="../../index.html">Latest</a>
+                <a href="../../archive/index.html">Archive</a>
+                <button type="button" id="theme-toggle" class="theme-toggle"
+                        aria-label="Toggle colour theme">
+                    <span class="theme-toggle__paper">Paper</span>
+                    <span class="theme-toggle__terminal">Terminal</span>
+                </button>
+            </nav>
+        </div>
+        
+<div class="dateline">
+    <h1 class="dateline__title">Thursday, 16 April 2026</h1>
+    <div class="dateline__meta">
+        <span>07:21</span>
+        <span>31 min read</span>
+        <span>68 stories</span><span>60 sources</span>
+    </div>
+    
+    
+    <div class="skew" role="img"
+         aria-label="Directional skew: 15 bullish, 31 bearish, 20 mixed, 2 neutral">
+        <div class="skew__bar">
+            
+                
+                <span class="skew__seg" data-direction="bullish"
+                      style="flex: 15"></span>
+                
+            
+                
+                <span class="skew__seg" data-direction="mixed"
+                      style="flex: 20"></span>
+                
+            
+                
+                <span class="skew__seg" data-direction="bearish"
+                      style="flex: 31"></span>
+                
+            
+                
+                <span class="skew__seg" data-direction="neutral"
+                      style="flex: 2"></span>
+                
+            
+        </div>
+        <div class="skew__legend">
+            
+                
+                <span class="skew__key" data-direction="bullish">
+                    <i>▲</i>15 bullish
+                </span>
+                
+            
+                
+                <span class="skew__key" data-direction="bearish">
+                    <i>▼</i>31 bearish
+                </span>
+                
+            
+                
+                <span class="skew__key" data-direction="mixed">
+                    <i>◆</i>20 mixed
+                </span>
+                
+            
+                
+                <span class="skew__key" data-direction="neutral">
+                    <i>■</i>2 neutral
+                </span>
+                
+            
+        </div>
+    </div>
+
+    
+    <div class="tape-wrap">
+        <span class="tape__label">The tape</span>
+        <div class="tape" id="tape" aria-hidden="true"></div>
+        <span class="tape__preview" id="tape-preview"></span>
+    </div>
+    
+</div>
+
+    </header>
+
+    <main>
+        
+<div class="reader">
+    <aside class="rail" aria-label="Brief navigation">
+        <div class="rail__inner">
+            <div class="filter">
+                <input type="search" id="filter-input" class="filter__input"
+                       placeholder="Filter stories…" autocomplete="off"
+                       aria-label="Filter stories by text">
+                <div class="filter__dirs" role="group" aria-label="Filter by direction">
+                    
+                    <button type="button" class="chip" data-filter-dir="bullish"
+                            aria-pressed="false"><i>▲</i>bullish</button>
+                    
+                    <button type="button" class="chip" data-filter-dir="bearish"
+                            aria-pressed="false"><i>▼</i>bearish</button>
+                    
+                    <button type="button" class="chip" data-filter-dir="mixed"
+                            aria-pressed="false"><i>◆</i>mixed</button>
+                    
+                </div>
+                <p class="filter__status" id="filter-status" role="status" aria-live="polite"></p>
+            </div>
+
+            
+            <nav class="toc">
+                <span class="toc__label">Sections</span>
+                <ol>
+                    
+                    <li>
+                        <a href="#what-s-driving-us-capital-markets-now-and-next" data-toc="what-s-driving-us-capital-markets-now-and-next">
+                            <span class="toc__name">What&#39;s Driving US Capital Markets Now and Next?</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-driving-non-us-capital-markets" data-toc="what-s-driving-non-us-capital-markets">
+                            <span class="toc__name">What&#39;s Driving Non-US Capital Markets?</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-risks-could-disrupt-capital-markets" data-toc="what-risks-could-disrupt-capital-markets">
+                            <span class="toc__name">What Risks Could Disrupt Capital Markets?</span>
+                            <span class="toc__count">4</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-are-policymakers-signaling" data-toc="what-are-policymakers-signaling">
+                            <span class="toc__name">What Are Policymakers Signaling?</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-next-in-ai-tech" data-toc="what-s-next-in-ai-tech">
+                            <span class="toc__name">What&#39;s Next in AI &amp; Tech?</span>
+                            <span class="toc__count">4</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-advancing-science-health-society" data-toc="what-s-advancing-science-health-society">
+                            <span class="toc__name">What&#39;s Advancing Science, Health &amp; Society?</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-driving-energy-metals-and-commodities" data-toc="what-s-driving-energy-metals-and-commodities">
+                            <span class="toc__name">What&#39;s Driving Energy, Metals and Commodities?</span>
+                            <span class="toc__count">4</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-evolving-in-digital-finance-and-crypto" data-toc="what-s-evolving-in-digital-finance-and-crypto">
+                            <span class="toc__name">What&#39;s Evolving in Digital Finance and Crypto?</span>
+                            <span class="toc__count">1</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-impacting-non-tech-sectors" data-toc="what-s-impacting-non-tech-sectors">
+                            <span class="toc__name">What&#39;s Impacting Non-Tech Sectors?</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-critical-but-overlooked" data-toc="what-s-critical-but-overlooked">
+                            <span class="toc__name">What&#39;s Critical but Overlooked?</span>
+                            <span class="toc__count">1</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-driving-egypt-s-economy-policy-and-geopolitics" data-toc="what-s-driving-egypt-s-economy-policy-and-geopolitics">
+                            <span class="toc__name">What&#39;s Driving Egypt&#39;s Economy, Policy, and Geopolitics?</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#markets-macro" data-toc="markets-macro">
+                            <span class="toc__name">Markets &amp; Macro</span>
+                            <span class="toc__count">4</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#central-banks-monetary-policy" data-toc="central-banks-monetary-policy">
+                            <span class="toc__name">Central Banks &amp; Monetary Policy</span>
+                            <span class="toc__count">1</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#global-politics-geopolitics" data-toc="global-politics-geopolitics">
+                            <span class="toc__name">Global Politics &amp; Geopolitics</span>
+                            <span class="toc__count">4</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#us-policy-regulation" data-toc="us-policy-regulation">
+                            <span class="toc__name">US Policy &amp; Regulation</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#emerging-markets" data-toc="emerging-markets">
+                            <span class="toc__name">Emerging Markets</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#ai-digital-infrastructure" data-toc="ai-digital-infrastructure">
+                            <span class="toc__name">AI &amp; Digital Infrastructure</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#energy-commodities-metals" data-toc="energy-commodities-metals">
+                            <span class="toc__name">Energy, Commodities &amp; Metals</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#corporate-m-a-deals" data-toc="corporate-m-a-deals">
+                            <span class="toc__name">Corporate, M&amp;A &amp; Deals</span>
+                            <span class="toc__count">4</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#social-legal-governance" data-toc="social-legal-governance">
+                            <span class="toc__name">Social, Legal &amp; Governance</span>
+                            <span class="toc__count">4</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#humanitarian-crises-natural-disasters" data-toc="humanitarian-crises-natural-disasters">
+                            <span class="toc__name">Humanitarian Crises &amp; Natural Disasters</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#art-design-culture-travel" data-toc="art-design-culture-travel">
+                            <span class="toc__name">Art, Design, Culture &amp; Travel</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#entertainment-sports" data-toc="entertainment-sports">
+                            <span class="toc__name">Entertainment &amp; Sports</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                </ol>
+            </nav>
+            
+        </div>
+    </aside>
+
+    <article class="brief">
+        <section class="overview" id="overview" aria-label="Editor's overview">
+<div class="ov-panel" data-panel="dominant-theme"><span class="ov-panel__label">Dominant Theme</span><p class="ov-panel__text">Geopolitical de-escalation hopes compete with lingering Iran war inflation and fiscal pressures; Tech surges on AI, but Fed independence hangs by a thread.</p></div>
+<div class="ov-panel" data-panel="key-risks"><span class="ov-panel__label">Key Risks</span><p class="ov-panel__text">Prolonged ME conflict pushing oil &gt;$120 and inflation &gt;4%; US-China trade war escalation; systemic AI security flaws; EU economic fragmentation.</p></div>
+<div class="ov-panel" data-panel="strategic-shifts"><span class="ov-panel__label">Strategic Shifts</span><p class="ov-panel__text">AI infrastructure dominance consolidating; US-UK alliance fracturing; EM debt sustainability worsening; nuclear energy re-evaluation gaining traction.</p></div>
+<div class="ov-panel" data-panel="opportunities"><span class="ov-panel__label">Opportunities</span><p class="ov-panel__text">Long AI and US defense; short European luxury and EM sovereign debt; tactical long on US equities on peace hopes; selective M&amp;A plays in spirits/utilities.</p></div>
+</section>
+<div class="part-divider" id="part-i"><span class="part-divider__num">I</span><h2 class="part-divider__title">Executive Briefing</h2><span class="part-divider__meta">High-conviction signal &middot; 31 stories</span></div>
+<section class="section" id="what-s-driving-us-capital-markets-now-and-next">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chart"></use></svg>What&#x27;s Driving US Capital Markets Now and Next?<span class="section__count">3</span></h2>
+<article class="story" id="story-1" data-direction="bearish" data-category="What&#x27;s Driving US Capital Markets Now and Next?"><h3 class="story__title"><span class="story__num">01</span>Trump Threatens to Fire Fed Chair Powell if He Stays On Board After May 15</h3>
+<p class="story__context">President Trump, dissatisfied with Jerome Powell&#x27;s refusal to lower interest rates and a DOJ probe into Fed HQ renovation costs, threatened to fire Powell if he doesn&#x27;t leave after his term expires May 15, including from his Board seat until 2028. This probe also delays Kevin Warsh&#x27;s confirmation, as Sen. Thom Tillis blocks it.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Escalates challenges to Fed independence, likely increasing volatility in US Treasury yields, rate cut expectations, and broader capital market positioning, bearish for policy certainty.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/c9qddrdd8w2o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.npr.org/2026/04/15/nx-s1-5786478/trump-federa-reserve-jerome-powell" target="_blank" rel="noopener noreferrer">NPR News</a></li>
+<li><a href="https://www.cnbc.com/2026/04/15/trump-threatens-to-fire-powell-if-the-fed-chair-doesnt-leave-office-on-his-own.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><a href="https://www.marketwatch.com/bulletins/redirect/go?g=45996863-d819-4663-9b3d-b4177fbe3fa9&amp;mod=mw_rss_bulletins" target="_blank" rel="noopener noreferrer">MarketWatch Bulletins</a></li>
+<li><a href="https://www.wsj.com/opinion/donald-trump-jerome-powell-federal-reserve-kevin-warsh-68bfe671" target="_blank" rel="noopener noreferrer">WSJ (Opinion)</a></li>
+<li><a href="https://www.wsj.com/politics/policy/trumps-fed-chair-pick-is-caught-in-an-unprecedented-standoff-5aa915a8" target="_blank" rel="noopener noreferrer">WSJ (Politics)</a></li>
+<li class="is-extra" hidden><a href="https://www.wsj.com/economy/central-banking/trump-renews-threats-to-fire-fed-chair-powell-768deeb7" target="_blank" rel="noopener noreferrer">WSJ (Economy)</a></li>
+<li class="is-extra" hidden><a href="https://www.ft.com/content/07476cf0-7dbf-43a1-b29c-1c0c75783518" target="_blank" rel="noopener noreferrer">Financial Times (World)</a></li>
+<li class="is-extra" hidden><a href="https://www.investing.com/news/economy-news/trump-on-feds-powell-if-he-doesnt-leave-ill-have-to-fire-him-4615073" target="_blank" rel="noopener noreferrer">Investing.com Economy</a></li>
+<li class="is-extra" hidden><a href="https://invezz.com/news/2026/04/15/trump-renews-threats-against-jerome-powell-weighs-removal-from-fed-board/" target="_blank" rel="noopener noreferrer">Invezz</a></li>
+<li class="is-extra" hidden><a href="https://www.scmp.com/news/world/united-states-canada/article/3350211/trump-threatens-fire-fed-chair-powell-if-he-doesnt-step-down-time?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+<li><button type="button" class="src-more" data-count="5">+5 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-2" data-direction="bullish" data-category="What&#x27;s Driving US Capital Markets Now and Next?"><h3 class="story__title"><span class="story__num">02</span>Bank of America and Morgan Stanley Beat Q1 Estimates on Trading Revenue Surge</h3>
+<p class="story__context">Heightened market volatility boosted trading. BofA reported Q1 EPS of $1.11 (vs $1.01 est) and revenue of $30.43B (vs $29.93B est), with equities trading up 30%. Morgan Stanley posted EPS of $3.43 (vs $3 est) and revenue of $20.58B (vs $19.72B est), with record equities trading revenue up 25%.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Reinforces strength in US investment banks&#x27; trading desks, supporting financial sector stocks amid ongoing market volatility and higher rate outlook, bullish for BAC, MS.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2026/04/15/bank-of-america-bac-earnings-q1-2026.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><a href="https://invezz.com/news/2026/04/15/bank-of-america-q1-earnings-reveal-4-big-buy-signals/" target="_blank" rel="noopener noreferrer">Invezz</a></li>
+</ul>
+</article>
+<article class="story" id="story-3" data-direction="bearish" data-category="What&#x27;s Driving US Capital Markets Now and Next?"><h3 class="story__title"><span class="story__num">03</span>Jury Finds Live Nation and Ticketmaster Ran Illegal Monopoly for Concerts</h3>
+<p class="story__context">A federal jury in Manhattan found Live Nation and Ticketmaster liable for illegally monopolizing ticketing at major concert venues and large amphitheaters, requiring artists to use its promotion services, and overcharging fans. The company controls 86% of the concert market and had $25.2 billion in 2025 revenue.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Opens potential for structural remedies including a breakup or divestitures, pressuring Live Nation&#x27;s margins and creating opportunities for competitors in live entertainment and ticketing sector.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/clyddyp19yyo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.independent.co.uk/news/world/americas/live-nation-ticketmaster-anticompetitive-monoply-b2958487.html" target="_blank" rel="noopener noreferrer">The Independent (World)</a></li>
+<li><a href="https://www.marketwatch.com/story/live-nation-stock-falls-as-jury-finds-ticketing-giant-acted-as-an-illegal-monopoly-1f21ac77?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">MarketWatch Top Stories</a></li>
+<li><a href="https://www.wsj.com/finance/stocks/jury-decides-against-live-nation-in-antitrust-trial-bf7651e4?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+<li><a href="https://www.wsj.com/us-news/law/live-nation-illegally-monopolized-concerts-and-ticketing-jury-finds-389afedd?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+<li><a href="https://www.nytimes.com/2026/04/15/arts/music/live-nation-antitrust-trial-verdict-monopoly.html" target="_blank" rel="noopener noreferrer">NYT Arts</a></li>
+<li class="is-extra" hidden><a href="https://www.ft.com/content/3c47e563-6c90-45bf-b870-73cbfc471360" target="_blank" rel="noopener noreferrer">Financial Times (Markets)</a></li>
+<li class="is-extra" hidden><a href="https://arstechnica.com/tech-policy/2026/04/jury-finds-live-nation-ticketmaster-is-illegal-monopoly-that-overcharged-fans/" target="_blank" rel="noopener noreferrer">Ars Technica</a></li>
+<li class="is-extra" hidden><a href="https://www.theverge.com/policy/912689/live-nation-ticketmaster-antitrust-monopoly-trial-verdict" target="_blank" rel="noopener noreferrer">The Verge (Policy Section)</a></li>
+<li class="is-extra" hidden><a href="https://techcrunch.com/2026/04/15/wait-could-they-still-actually-break-up-live-nation/" target="_blank" rel="noopener noreferrer">TechCrunch</a></li>
+<li class="is-extra" hidden><a href="https://www.investing.com/news/stock-market-news/ny-jury-finds-live-nation-illegally-monopolized-live-event-markets-4616383" target="_blank" rel="noopener noreferrer">Investing.com Stocks</a></li>
+<li class="is-extra" hidden><a href="https://www.scmp.com/news/world/united-states-canada/article/3350231/ticketmaster-owner-live-nation-ran-illegal-monopoly-us-jury-finds?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+<li class="is-extra" hidden><a href="https://www.lemonde.fr/international/article/2026/04/15/live-nation-maison-mere-du-geant-de-l-evenementiel-ticketmaster-jugee-coupable-de-monopole-illegal-aux-etats-unis_6680347_3210.html" target="_blank" rel="noopener noreferrer">Le Monde (French)</a></li>
+<li><button type="button" class="src-more" data-count="7">+7 more</button></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-driving-non-us-capital-markets">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-globe"></use></svg>What&#x27;s Driving Non-US Capital Markets?<span class="section__count">3</span></h2>
+<article class="story" id="story-4" data-direction="mixed" data-category="What&#x27;s Driving Non-US Capital Markets?"><h3 class="story__title"><span class="story__num">04</span>China&#x27;s Q1 GDP Accelerates to 5%, Beats Forecasts Despite Iran War and Property Slump</h3>
+<p class="story__context">China&#x27;s Q1 GDP grew 5.0% year-on-year, exceeding 4.8% expectations, despite an 11.2% property investment slump and Iran war pressures. March industrial output rose 5.7%, exports 2.5%, and retail sales 1.7%, boosting Shanghai Composite to 4,637 and Hang Seng to 26,185, but exports face stagflation risk.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Fuels bullish momentum in Chinese export sectors and Asian equities. Prolonged Iran war risks higher energy prices and deflationary pressures in low-income emerging markets, bearish for those economies.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.independent.co.uk/news/iran-hong-kong-china-international-monetary-fund-donald-trump-b2958643.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+<li><a href="https://www.cnbc.com/2026/04/16/china-gdp-growth-first-quarter-exports-property-retail-sales-iran-war.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><a href="https://www.wsj.com/economy/chinas-growth-accelerated-in-first-quarter-a237034c" target="_blank" rel="noopener noreferrer">WSJ (World)</a></li>
+<li><a href="https://www.nytimes.com/2026/04/15/business/china-economy-growth.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li><a href="https://www.ft.com/content/f2b53afc-be95-4788-bb03-9227d4bc7379" target="_blank" rel="noopener noreferrer">Financial Times (World)</a></li>
+<li><a href="https://invezz.com/news/2026/04/16/china-gdp-beats-at-5-but-11-2-property-slump-raises-alarms/" target="_blank" rel="noopener noreferrer">Invezz</a></li>
+<li class="is-extra" hidden><a href="https://www.scmp.com/economy/economic-indicators/article/3350237/china-records-5-gdp-growth-first-quarter-track-annual-target?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+<li class="is-extra" hidden><a href="https://www.zeit.de/wirtschaft/2026-04/asien-china-wirtschaft-wachstum-erstes-quartal" target="_blank" rel="noopener noreferrer">Die Zeit</a></li>
+<li class="is-extra" hidden><a href="https://www.handelsblatt.com/politik/international/bip-chinas-wirtschaft-waechst-staerker-als-erwartet-trotz-iran-krieg/100216809.html" target="_blank" rel="noopener noreferrer">Handelsblatt</a></li>
+<li><button type="button" class="src-more" data-count="3">+3 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-5" data-direction="bearish" data-category="What&#x27;s Driving Non-US Capital Markets?"><h3 class="story__title"><span class="story__num">05</span>UBS Chairman Warns Key Business Decisions Unavoidable Under Stricter Swiss Capital Proposals</h3>
+<p class="story__context">UBS Chairman Colm Kelleher warned that proposed Swiss capital requirements would make UBS an international outlier and necessitate &#x27;unavoidable key business decisions.&#x27; These stricter rules, spurred by the 2023 Credit Suisse collapse, were deemed to weaken UBS without meaningfully improving financial stability, making Swiss regulation more demanding than rivals like JP Morgan.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens pressure on UBS equity and Swiss banking competitiveness, signaling potential for strategic retreats impacting European financial sector stability and investor confidence in Swiss banks.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/finance/banking/five-things-we-learned-from-bank-earnings-3f07ba9b?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+<li><a href="https://www.ft.com/content/67d444ab-bfcf-49a1-ae46-ff6e78bc8c64" target="_blank" rel="noopener noreferrer">Financial Times (Markets)</a></li>
+<li><a href="https://www.ft.com/content/1f2d514d-4418-4b77-a3f5-2181080b670c" target="_blank" rel="noopener noreferrer">FT (Companies)</a></li>
+<li><a href="https://invezz.com/news/2026/04/15/ubs-chairman-signals-unavoidable-decisions-over-capital-rules/" target="_blank" rel="noopener noreferrer">Invezz</a></li>
+</ul>
+</article>
+<article class="story" id="story-6" data-direction="mixed" data-category="What&#x27;s Driving Non-US Capital Markets?"><h3 class="story__title"><span class="story__num">06</span>Eurozone Industrial Production Rises 0.4% Unexpectedly After January Fall</h3>
+<p class="story__context">The Eurozone&#x27;s industrial production unexpectedly rose 0.4% monthly in February, after a January decline. This rebound in manufacturing activity provides a positive surprise, as reported by Eurostat. Despite this, Germany&#x27;s industrial order intake remains historically low and the country&#x27;s manufacturing sector struggles.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Eases near-term recession concerns for Eurozone manufacturing, creating tailwinds for regional industrials sector equities and supporting EUR strength versus USD, but German data remains a drag.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/economy/trade/eurozone-industrial-production-rose-unexpectedly-411c3b7f" target="_blank" rel="noopener noreferrer">WSJ (World)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-risks-could-disrupt-capital-markets">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-alert"></use></svg>What Risks Could Disrupt Capital Markets?<span class="section__count">4</span></h2>
+<article class="story" id="story-7" data-direction="mixed" data-category="What Risks Could Disrupt Capital Markets?"><h3 class="story__title"><span class="story__num">07</span>US Fully Enforces Naval Blockade of Iranian Ports as Diplomacy Advances Amid Economic Collapse</h3>
+<p class="story__context">US-Israeli strikes on Iran and subsequent Iranian retaliation led President Trump to declare a naval blockade of Iranian ports. Over 10,000 US troops and a dozen warships are enforcing the blockade, turning back 6-10 vessels. Iran, highly dependent on sea trade for 90% of its economy, faces $58B in war damages. Diplomacy advances with Trump hailing progress on a framework deal; Iran proposes safe passage.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>US blockade and Iran&#x27;s economic distress escalate Strait of Hormuz risks (20% global oil/LNG), bullish crude/energy prices and alternative suppliers, but diplomacy could stabilize.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/videos/cz67760pq0xo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.theguardian.com/world/live/2026/apr/15/iran-war-live-news-us-naval-blockade-strait-of-hormuz-pakistan-peace-talks-middle-east-crisis-latest" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.washingtonpost.com/national-security/2026/04/14/us-blockade-hormuz/" target="_blank" rel="noopener noreferrer">Washington Post World</a></li>
+<li><a href="https://www.france24.com/en/video/20260415-us-blockade-of-iranian-ports-fully-implemented" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li><a href="https://www.marketwatch.com/bulletins/redirect/go?g=397aee21-dec8-4c01-9fcb-42818686af55&amp;mod=mw_rss_bulletins" target="_blank" rel="noopener noreferrer">MarketWatch Bulletins</a></li>
+<li><a href="https://www.wsj.com/world/middle-east/irans-shadow-fleet-meets-its-match-in-u-s-blockade-8533f23b?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+<li class="is-extra" hidden><a href="https://www.wsj.com/world/middle-east/irans-war-shattered-economy-means-it-has-an-urgent-reason-to-negotiate-43937f36" target="_blank" rel="noopener noreferrer">WSJ (World)</a></li>
+<li class="is-extra" hidden><a href="https://www.nytimes.com/2026/04/15/world/asia/china-iran-weapons-sales.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+<li class="is-extra" hidden><a href="https://www.nytimes.com/2026/04/15/us/politics/trump-iran-war.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li class="is-extra" hidden><a href="https://www.ft.com/content/f3c8decc-0c59-49fa-9854-ddd9103279f4" target="_blank" rel="noopener noreferrer">Financial Times (World)</a></li>
+<li class="is-extra" hidden><a href="https://www.scmp.com/news/china/military/article/3350198/can-irans-small-fast-attack-boats-challenge-us-navy-strait-hormuz?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+<li class="is-extra" hidden><a href="https://www.egyptindependent.com/why-are-some-ships-going-through-the-strait-of-hormuz-during-a-blockade/" target="_blank" rel="noopener noreferrer">Egypt Independent</a></li>
+<li class="is-extra" hidden><a href="https://egyptian-gazette.com/world/iran-offers-proposal-allowing-ships-to-exit-oman-side-of-hormuz-free-of-attack/" target="_blank" rel="noopener noreferrer">Egyptian Gazette</a></li>
+<li class="is-extra" hidden><a href="https://www.al-monitor.com/originals/2026/04/kremlin-says-us-has-rejected-its-proposal-russia-take-iranian-uranium-stocks" target="_blank" rel="noopener noreferrer">Al-Monitor (Egypt)</a></li>
+<li class="is-extra" hidden><a href="https://www.cnbc.com/2026/04/15/a-few-tankers-and-ships-are-going-through-the-strait-of-hormuz-heres-the-latest-traffic.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li class="is-extra" hidden><a href="https://www.investing.com/news/commodities-news/exclusiveiran-offers-proposal-allowing-ships-to-exit-oman-side-of-hormuz-free-of-attack-source-says-4616200" target="_blank" rel="noopener noreferrer">Investing.com Commodities</a></li>
+<li class="is-extra" hidden><a href="https://www.politico.com/news/2026/04/15/trump-iran-war-peace-negotiations-00872682" target="_blank" rel="noopener noreferrer">Donald Trump (Politico)</a></li>
+<li class="is-extra" hidden><a href="https://thehill.com/policy/international/5833458-us-israel-iran-fragile-ceasefire/" target="_blank" rel="noopener noreferrer">The Hill</a></li>
+<li class="is-extra" hidden><a href="https://www.axios.com/2026/04/15/lebanon-ceasefire-israel-trump" target="_blank" rel="noopener noreferrer">Axios</a></li>
+<li class="is-extra" hidden><a href="https://www.npr.org/2026/04/15/nx-s1-5786034/iran-middle-east-updates" target="_blank" rel="noopener noreferrer">NPR News</a></li>
+<li class="is-extra" hidden><a href="https://www.independent.co.uk/news/world/europe/iran-lebanon-israel-scott-bessent-strait-of-hormuz-b2958669.html" target="_blank" rel="noopener noreferrer">The Independent (World)</a></li>
+<li><button type="button" class="src-more" data-count="15">+15 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-8" data-direction="bearish" data-category="What Risks Could Disrupt Capital Markets?"><h3 class="story__title"><span class="story__num">08</span>Iran War Ignites US Economic Uncertainty: Beige Book Cites Hiring/Spending Brake, CPI 3.3%, GDP Slashed to 2%</h3>
+<p class="story__context">The ongoing Iran war is a major uncertainty curbing US business hiring and spending, according to the Federal Reserve&#x27;s Beige Book. Consumer financial strain and price sensitivity are rising, with gas at $4.10/gallon. March CPI jumped 0.9% to 3.3% annually. Goldman Sachs cut 2026 GDP to 2% with 4.6% unemployment by year-end.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Escalates inflation pressures and oil prices, delaying Fed rate cuts. Heightens risks to growth, consumer spending, housing, equities, and cyclical sectors while fueling energy volatility.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.marketwatch.com/story/iran-war-is-a-major-source-of-uncertainty-for-u-s-businesses-feds-beige-book-says-52d45d7b?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">MarketWatch Top Stories</a></li>
+<li><a href="https://www.marketwatch.com/bulletins/redirect/go?g=e969af2b-c8a0-4f9d-92b0-4ed50145820a&amp;mod=mw_rss_bulletins" target="_blank" rel="noopener noreferrer">MarketWatch Bulletins</a></li>
+<li><a href="https://www.wsj.com/business/airlines/airline-flight-cost-jet-fuel-impact-6ade2e32?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+<li><a href="https://www.wsj.com/economy/central-banking/the-cost-of-war-how-economists-predict-the-economy-will-fare-0524150f" target="_blank" rel="noopener noreferrer">WSJ (Economy)</a></li>
+<li><a href="https://www.nytimes.com/2026/04/15/business/economy/companies-profits-prices-iran-war.html" target="_blank" rel="noopener noreferrer">NYT Economy</a></li>
+<li><a href="https://www.investing.com/news/economy-news/iran-war-puts-us-companies-into-waitandsee-mode-fed-report-says-4616223" target="_blank" rel="noopener noreferrer">Investing.com Economy</a></li>
+<li class="is-extra" hidden><a href="https://www.cnbc.com/2026/04/15/here-are-all-the-ways-the-iran-war-has-affected-the-us-economy-so-far.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><button type="button" class="src-more" data-count="1">+1 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-9" data-direction="bearish" data-category="What Risks Could Disrupt Capital Markets?"><h3 class="story__title"><span class="story__num">09</span>IMF Warns Global Debt to Hit GDP in 2029 One Year Early Amid Mideast War Energy Shock</h3>
+<p class="story__context">A prolonged Middle East conflict, including Iran tensions, drives surging energy prices and fiscal pressures. The IMF projects global government debt to match annual output in 2029, a year earlier than expected, led by the U.S. and China. It anticipates $20-50 billion in new loan requests from at least 12 countries, downgrading Africa&#x27;s growth outlook.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens fiscal sustainability risks for emerging markets and developing economies, pressuring sovereign debt spreads, bond yields, and public finances while amplifying energy commodity volatility.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/economy/global/imf-sees-global-government-debt-matching-annual-output-in-2029-a-year-earlier-than-expected-2c0823cc" target="_blank" rel="noopener noreferrer">WSJ (Economy)</a></li>
+<li><a href="https://www.investing.com/news/commodities-news/imf-cautions-countries-against-broad-fuel-subsidies-to-deal-with-wardriven-energy-shock-4615566" target="_blank" rel="noopener noreferrer">Investing.com Commodities</a></li>
+<li><a href="https://invezz.com/news/2026/04/15/imf-expects-surge-in-loan-requests-as-war-drives-energy-shock/" target="_blank" rel="noopener noreferrer">Invezz</a></li>
+<li><a href="https://african.business/2026/04/trade-investment/imf-says-africa-faces-growth-downgrade-amid-middle-east-war" target="_blank" rel="noopener noreferrer">African Business</a></li>
+<li><a href="https://www.nytimes.com/2026/04/15/business/iran-war-fiscal-debt-impact.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+</ul>
+</article>
+<article class="story" id="story-10" data-direction="bearish" data-category="What Risks Could Disrupt Capital Markets?"><h3 class="story__title"><span class="story__num">10</span>IAEA Warns North Korea Making &#x27;Very Serious&#x27; Progress in Nuclear Weapons Production</h3>
+<p class="story__context">IAEA chief Rafael Grossi confirmed intensified activity at North Korea&#x27;s Yongbyon nuclear complex during a visit to Seoul. North Korea has made &#x27;very serious&#x27; advances, including rapid rises in activity at its 5MW reactor, reprocessing unit, light water reactor, and a new undeclared uranium enrichment facility nearing operational readiness; it&#x27;s estimated to possess 50 warheads.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Escalates East Asian geopolitical tensions, raising defense spending pressures on US allies South Korea and Japan, while complicating denuclearization diplomacy and increasing regional instability.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/world/2026/apr/15/north-korea-nuclear-weapons-capability-un-watchdog-rafael-grossi" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.scmp.com/opinion/asia-opinion/article/3349984/why-north-korea-rekindling-china-relations?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-are-policymakers-signaling">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-bank"></use></svg>What Are Policymakers Signaling?<span class="section__count">3</span></h2>
+<article class="story" id="story-11" data-direction="bearish" data-category="What Are Policymakers Signaling?"><h3 class="story__title"><span class="story__num">11</span>Trump Urges UK to &#x27;Drill Baby Drill&#x27; in North Sea and Join Iran War; Starmer Refuses</h3>
+<p class="story__context">Amid an oil supply shock from the Iran war, President Trump urged the UK to &#x27;DRILL, BABY, DRILL&#x27; in the North Sea, and threatened to scrap a trade deal unless the UK joined the war. UK PM Keir Starmer refused, citing national interest. The IMF cut the UK&#x27;s growth forecast to 0.8% from 1.3%.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Escalates US-UK tensions and risks disruption to the bilateral trade deal. Intensifies pressure on European energy markets amid severe oil supply shock, bearish for UK economic outlook.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/cwyjjjz8n8ko?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.cnbc.com/2026/04/15/trump-uk-north-sea-oil-drilling.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><a href="https://www.scmp.com/news/world/europe/article/3350216/uk-pm-starmer-says-not-going-yield-trumps-mideast-war-threats?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+</ul>
+</article>
+<article class="story" id="story-12" data-direction="bearish" data-category="What Are Policymakers Signaling?"><h3 class="story__title"><span class="story__num">12</span>US Senate Republicans Block Fourth Democratic Bid to Limit Trump&#x27;s Iran War Powers</h3>
+<p class="story__context">Senate Republicans voted 52-47 to reject a Democratic resolution requiring congressional authorization for continued military action in Iran, marking the fourth such block this year. This comes as the War Powers Act&#x27;s 60-day deadline nears end of April, with a possible 30-day extension, amid Republican majority support for Trump&#x27;s foreign policy.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Affirms Trump&#x27;s operational flexibility in the Iran conflict, likely sustaining elevated US defense spending and amplifying oil market volatility from Middle East escalation risks.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.zeit.de/politik/ausland/2026-03/iran-krieg-usa-israel-liveblog" target="_blank" rel="noopener noreferrer">Die Zeit</a></li>
+<li><a href="https://www.nytimes.com/2026/04/15/us/politics/trumps-iran-war-powers-vote-senate.html" target="_blank" rel="noopener noreferrer">NYT Middle East</a></li>
+<li><a href="https://www.investing.com/news/economy-news/white-house-offers-no-hint-of-iran-war-cost-as-it-seeks-military-funding-surge-4616343" target="_blank" rel="noopener noreferrer">Investing.com Economy</a></li>
+<li><a href="https://thehill.com/newsletters/defense-national-security/5833467-senate-rejects-iran-war-resolution/" target="_blank" rel="noopener noreferrer">The Hill</a></li>
+<li><a href="https://www.al-monitor.com/originals/2026/04/us-senate-republicans-block-bid-rein-trump-iran-war-powers-voting-continues" target="_blank" rel="noopener noreferrer">Al-Monitor (Egypt)</a></li>
+</ul>
+</article>
+<article class="story" id="story-13" data-direction="mixed" data-category="What Are Policymakers Signaling?"><h3 class="story__title"><span class="story__num">13</span>Trump Administration Pushes Nations to Sign &#x27;Trade Over Aid&#x27; Declaration at UN</h3>
+<p class="story__context">Secretary of State Marco Rubio sent a cable ordering US diplomats worldwide to seek foreign backing for a &#x27;trade over aid&#x27; declaration, rejecting humanitarian assistance. This initiative, to be introduced at the UN by end of April, reflects the Trump administration&#x27;s view that global aid creates dependency and corruption, favoring US business interests.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Favors US commercial interests over traditional aid, potentially boosting exports in emerging markets but exacerbating the &#x27;great aid recession&#x27; and straining relations with aid-reliant nations.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.washingtonpost.com/national-security/2026/04/15/trump-un-trade-over-aid/" target="_blank" rel="noopener noreferrer">Washington Post World</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-next-in-ai-tech">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chip"></use></svg>What&#x27;s Next in AI &amp; Tech?<span class="section__count">4</span></h2>
+<article class="story" id="story-14" data-direction="mixed" data-category="What&#x27;s Next in AI &amp; Tech?"><h3 class="story__title"><span class="story__num">14</span>Anthropic Resolves Claude Outage, Explores Custom Chips, Rejects $800B+ VC Offers as Accel Raises $5B AI Fund</h3>
+<p class="story__context">Anthropic fixed elevated error rates across its Claude chatbot and APIs after an outage, with Downdetector reports showing recovery. Valued at $380B, Anthropic is shrugging off $800B+ offers while investing $50B in data centers and $30B in Microsoft cloud. Accel raised $5B for late-stage AI bets.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Intensifies capex competition in AI infrastructure, bullish for data center operators and custom silicon developers. This also pressures Nvidia-dominated supply chains, presenting investment shifts.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2026/04/15/anthropic-outage-elevated-errors-claude-chatbot-code-api.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><a href="https://techcrunch.com/2026/04/15/accel-raises-5b-to-back-late-stage-bets/" target="_blank" rel="noopener noreferrer">TechCrunch</a></li>
+</ul>
+</article>
+<article class="story" id="story-15" data-direction="bullish" data-category="What&#x27;s Next in AI &amp; Tech?"><h3 class="story__title"><span class="story__num">15</span>Tesla AI5 Chip Hits Milestone as ASML Lifts Guidance on AI Demand Surge</h3>
+<p class="story__context">Tesla shares surged nearly 8% to $391.95 after Elon Musk announced the AI5 chip reached a key engineering milestone nearing production. ASML lifted guidance citing strong AI demand, with UBS upgrading Tesla to hold. Nvidia extended its 11-day rally to $199.53, Microsoft rose 4% to $408.27, and TSMC Q1 revenue jumped 35% to NT$1.134T.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Reinforces bullish momentum in AI semiconductors and cloud infrastructure, likely widening the leadership gap for Nvidia, TSMC, and ASML over legacy chipmakers, boosting these tech stocks.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2026/04/15/tesla-tsla-stock-analyst-upgrade-software-updates.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><a href="https://www.marketwatch.com/story/is-tesla-a-chip-stock-now-investors-are-cheering-a-semiconductor-milestone-56341cf8?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">MarketWatch Top Stories</a></li>
+<li><a href="https://www.wsj.com/business/earnings/chip-machine-supplier-asml-lifts-guidance-on-strong-ai-demand-29edc810?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+<li><a href="https://www.investing.com/news/analyst-ratings/rbc-capital-raises-asml-stock-price-target-on-strong-euv-demand-93CH-4616344" target="_blank" rel="noopener noreferrer">Investing.com Analyst Ratings</a></li>
+<li><a href="https://invezz.com/news/2026/04/15/heres-why-the-coreweave-stock-price-rally-is-set-to-accelerate/" target="_blank" rel="noopener noreferrer">Invezz</a></li>
+</ul>
+</article>
+<article class="story" id="story-16" data-direction="mixed" data-category="What&#x27;s Next in AI &amp; Tech?"><h3 class="story__title"><span class="story__num">16</span>Mobility&#x27;s New Big Three Emerge: Waymo, Tesla and Uber Lead U.S. AV Race</h3>
+<p class="story__context">Waymo, Tesla, and Uber are consolidating leadership in autonomous driving. Waymo leads robotaxis with 500,000 weekly trips and $16B in fresh capital. Uber invests $100M in AV charging. Tesla leverages data from 3.2M US vehicles and 1.1M FSD subscribers, creating scaling advantages in infrastructure and operations for all three.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Leadership consolidation pressure traditional automakers, intensifying competition in ride-hailing and autonomous vehicle sectors. Bullish for Waymo, Tesla, Uber; bearish for lagging competitors.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2026/04/15/big-three-tesla-waymo-uber-av" target="_blank" rel="noopener noreferrer">Axios</a></li>
+</ul>
+</article>
+<article class="story" id="story-17" data-direction="bearish" data-category="What&#x27;s Next in AI &amp; Tech?"><h3 class="story__title"><span class="story__num">17</span>20-Year-Old Anti-AI Extremist Firebombs Altman Home, Attacks OpenAI HQ in Escalating US Backlash</h3>
+<p class="story__context">Daniel Moreno-Gama, 20, allegedly firebombed Sam Altman&#x27;s San Francisco home, then attacked OpenAI headquarters, threatening to burn the facility and kill those inside. Arrested with incendiaries and an anti-AI manifesto calling for killing AI CEOs, he faces attempted murder charges, held without bail.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Escalates physical security and operational risks for AI executives, labs, and public listings. Intensifies scrutiny on anti-AI activism and potentially weighs on tech sector valuations, bearish for sentiment.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2026/04/15/public-opinion-ai-data-centers-anthropic-openai-ipo.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><a href="https://www.wsj.com/us-news/altman-attack-suspect-called-for-luigi-ing-tech-ceos-in-online-messages-2f1702da?mod=rss_Technology" target="_blank" rel="noopener noreferrer">WSJ (Technology)</a></li>
+<li><a href="https://fortune.com/2026/04/15/pause-ai-and-stop-ai-meet-the-anti-ai-groups-facing-questions-after-the-attack-on-sam-altman/" target="_blank" rel="noopener noreferrer">Fortune</a></li>
+<li><a href="https://www.egyptindependent.com/suspect-in-attack-at-sam-altmans-home-held-without-bail/" target="_blank" rel="noopener noreferrer">Egypt Independent</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-advancing-science-health-society">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-flask"></use></svg>What&#x27;s Advancing Science, Health &amp; Society?<span class="section__count">3</span></h2>
+<article class="story" id="story-18" data-direction="bearish" data-category="What&#x27;s Advancing Science, Health &amp; Society?"><h3 class="story__title"><span class="story__num">18</span>Cochrane Review Deems Anti-Amyloid Alzheimer&#x27;s Drugs Clinically Ineffective with Brain Risks</h3>
+<p class="story__context">A Cochrane review of 17 trials on anti-amyloid Alzheimer&#x27;s drugs found trivial effects on cognition, dementia severity, and daily function after 18 months, far below noticeable levels. Drugs like lecanemab and donanemab increased risks of brain swelling and bleeding, challenging their clinical viability despite charity criticisms regarding trial combinations.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Challenges viability of anti-amyloid therapies for Alzheimer&#x27;s, likely redirecting biotech R&amp;D and investment toward alternative targets. Pressures pharma developers like Eisai and Eli Lilly, bearish.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.independent.co.uk/news/health/alzheimers-drugs-review-lecanemab-donanemab-b2958258.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+<li><a href="https://www.faz.net/aktuell/wissen/medizin-ernaehrung/ueberblicksstudie-kaum-nutzen-dafuer-einige-risiken-bei-neuen-alzheimer-medikamenten-accg-200735941.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (FAZ)</a></li>
+<li><a href="https://www.nytimes.com/2026/04/15/health/alzheimers-drugs-benefit-anti-amyloid.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li><a href="https://arstechnica.com/science/2026/04/whats-the-deal-with-alzheimers-disease-and-amyloid/" target="_blank" rel="noopener noreferrer">Ars Technica</a></li>
+</ul>
+</article>
+<article class="story" id="story-19" data-direction="mixed" data-category="What&#x27;s Advancing Science, Health &amp; Society?"><h3 class="story__title"><span class="story__num">19</span>UK NHS Issues 5.5M Social Prescribing Referrals Exceeding Targets Amid Loneliness Epidemic</h3>
+<p class="story__context">The UK&#x27;s NHS issued over 5.5 million social prescribing referrals in England since 2019, far exceeding the 900,000 target. These referrals—for activities like choirs, art studios, and debt counseling—are part of a £6 billion primary care expansion to combat loneliness and improve health outcomes amid overstretched health systems and an aging population.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Promising evidence, including halved depression risk from creative activities, signals potential relief for aging populations and health worker shortages, bullish for social health programs.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2026/04/16/health-care-social-prescribing-connection" target="_blank" rel="noopener noreferrer">Axios</a></li>
+</ul>
+</article>
+<article class="story" id="story-20" data-direction="mixed" data-category="What&#x27;s Advancing Science, Health &amp; Society?"><h3 class="story__title"><span class="story__num">20</span>Sen. McCormick Warns AI Revolution Risks Tripling Energy Demand, Pushes Liquid Cooling Bill</h3>
+<p class="story__context">Sen. David McCormick (R-Pa.), former Bridgewater CEO, warns that AI could triple energy demand in 15 years, risking higher costs. He introduced a bill with Sen. Coons to promote liquid cooling for data centers, citing $70 billion AI-energy investments for Pennsylvania, aiming to keep utility bills down and maintain US AI leadership.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Supports US AI leadership versus China while signalling a policy push for energy-efficient data center infrastructure. Bullish for related tech and Pennsylvania investments, but bearish for energy prices.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2026/04/15/mccormick-ai-revolution-risks-energy" target="_blank" rel="noopener noreferrer">Axios</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-driving-energy-metals-and-commodities">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-bolt"></use></svg>What&#x27;s Driving Energy, Metals and Commodities?<span class="section__count">4</span></h2>
+<article class="story" id="story-21" data-direction="mixed" data-category="What&#x27;s Driving Energy, Metals and Commodities?"><h3 class="story__title"><span class="story__num">21</span>Oil Prices Volatile on US-Iran Peace Talks &amp; Sanctions as US Crude Stocks Drop on Record Exports Amid ME Disruptions</h3>
+<p class="story__context">Oil prices dipped on hopes of US-Iran talks but firmed on Strait of Hormuz shipping constraints. Treasury Secretary Bessent stated no renewal of waivers for Iranian/Russian oil. US commercial crude stockpiles fell 913,000 barrels (vs. expected build) as exports hit records. Energy infrastructure is damaged by up to $58B.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Heightens global and US oil supply tightness/volatility from sanctions and war risks, bullish for crude producers/US shale while pressuring energy costs, petrol prices, and inflation.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/finance/commodities-futures/oil-falls-on-prospects-of-further-u-s-iran-negotiations-a96b4471?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+<li><a href="https://www.ft.com/content/622a60db-6e0f-40bb-835c-8542bd83d72a" target="_blank" rel="noopener noreferrer">Financial Times (World)</a></li>
+<li><a href="https://www.ft.com/content/d6459373-c681-4787-9c52-48ccda530da7" target="_blank" rel="noopener noreferrer">Financial Times (Markets)</a></li>
+<li><a href="https://www.ft.com/content/05cc62fe-9eb4-4333-abb0-9783bdad7613" target="_blank" rel="noopener noreferrer">FT (Companies)</a></li>
+<li><a href="https://www.investing.com/news/commodities-news/oil-prices-steady-as-hormuz-shipping-constraints-counter-usiran-peace-hopes-4616309" target="_blank" rel="noopener noreferrer">Investing.com Commodities</a></li>
+<li><a href="https://www.investing.com/news/stock-market-news/us-probes-suspicious-oil-trades-made-before-trump-iran-pivots-source-says-4616258" target="_blank" rel="noopener noreferrer">Investing.com Stocks</a></li>
+<li class="is-extra" hidden><a href="https://www.investing.com/news/analyst-ratings/citi-upgrades-oil-firms-as-permian-recovery-gains-momentum-4616238" target="_blank" rel="noopener noreferrer">Investing.com Analyst Ratings</a></li>
+<li class="is-extra" hidden><a href="https://invezz.com/news/2026/04/15/bessent-says-no-plans-to-extend-waivers-allowing-iranian-russian-oil-purchases/" target="_blank" rel="noopener noreferrer">Invezz</a></li>
+<li class="is-extra" hidden><a href="https://www.wsj.com/business/energy-oil/u-s-crude-oil-stockpiles-decline-as-exports-rise-884a9e34?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+<li><button type="button" class="src-more" data-count="3">+3 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-22" data-direction="mixed" data-category="What&#x27;s Driving Energy, Metals and Commodities?"><h3 class="story__title"><span class="story__num">22</span>CFTC Probes Suspicious Oil Futures Trades Ahead of Trump&#x27;s Iran Strike Pause</h3>
+<p class="story__context">The CFTC is scrutinizing unusual oil futures trades on CME Group and ICE venues just minutes before Trump&#x27;s surprise Truth Social announcement on March 23 halting planned US strikes on Iranian energy infrastructure. S&amp;P futures jumped over 2.5%, and WTI crude tumbled nearly 6% after the announcement, indicating potential insider trading.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Heightens risks to derivatives market integrity from potential insider trading on geopolitical events, likely prompting expanded CFTC oversight of exchanges and prediction markets, bearish for market trust.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2026/04/15/regulators-reportedly-zeroing-in-on-suspicious-trades-ahead-of-trump-post.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+</ul>
+</article>
+<article class="story" id="story-23" data-direction="bullish" data-category="What&#x27;s Driving Energy, Metals and Commodities?"><h3 class="story__title"><span class="story__num">23</span>Malaysia Deploys Police to Border Petrol Stations Amid Iran War Energy Crunch</h3>
+<p class="story__context">Malaysia deployed police to 36 hotspots and 55 high-risk petrol stations across border states to curb subsidized fuel leakages. This follows the Iran war&#x27;s impact on global energy, which drove sustained high fuel prices in the Philippines and increased demand for regional LNG and alternative supply chains.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Elevated energy costs 압 Malaysia&#x27;s import bills and consumer spending, while increasing demand for regional LNG and alternative supply chains from Australia. Bullish for LNG suppliers.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.scmp.com/week-asia/economics/article/3350253/malaysia-pumps-police-action-border-petrol-stations-curb-subsidised-fuel-leaks?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+<li><a href="https://www.al-monitor.com/originals/2026/04/australia-malaysia-pledge-strengthen-energy-supply-chain-resilience-wake-iran-war" target="_blank" rel="noopener noreferrer">Al-Monitor (Egypt)</a></li>
+</ul>
+</article>
+<article class="story" id="story-24" data-direction="bearish" data-category="What&#x27;s Driving Energy, Metals and Commodities?"><h3 class="story__title"><span class="story__num">24</span>Fire Damages Viva Energy&#x27;s Geelong Refinery, Threatening Petrol Supplies Amid Global Oil Crisis</h3>
+<p class="story__context">A 13-hour fire at Viva Energy&#x27;s Geelong refinery, affecting one of Australia&#x27;s two refineries, threatens petrol supplies. The refinery, which processes 120,000 barrels daily and supplies 50% of Victoria&#x27;s fuel, secured 100 million litres of diesel from Brunei and South Korea. Petrol price spikes up to 20c per litre are warned for Victoria.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Likely exerts upward pressure on Australian fuel prices and inflation, disrupting transport and agriculture sectors while highlighting vulnerabilities in domestic refining capacity, bearish for consumers.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/australia-news/live/2026/apr/16/anthony-albanese-brunei-visit-fuel-crisis-labor-richard-marles-coalition-immigration-plan-angus-taylor-employment-figures-ntwnfb" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.independent.co.uk/news/world/australasia/geelong-oil-refinery-fire-australia-petrol-supply-b2958662.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+<li><a href="https://www.wsj.com/business/energy-oil/fire-damages-part-of-viva-energys-geelong-refinery-36c4ea11?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+<li><a href="https://www.scmp.com/news/asia/australasia/article/3350236/fire-australian-refinery-fuels-petrol-shortage-fears-amid-global-oil-crisis?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-evolving-in-digital-finance-and-crypto">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-coin"></use></svg>What&#x27;s Evolving in Digital Finance and Crypto?<span class="section__count">1</span></h2>
+<article class="story" id="story-25" data-direction="mixed" data-category="What&#x27;s Evolving in Digital Finance and Crypto?"><h3 class="story__title"><span class="story__num">25</span>Bitwise Launches Spot Avalanche ETF on NYSE Amid Bitcoin Price Stall</h3>
+<p class="story__context">Bitwise, a crypto asset manager with $11 billion AUM, launched its spot Avalanche ETF (BAVA) with a 0.34% fee on the NYSE, offering exposure to AVAX and staking rewards. Meanwhile, Bitcoin stalled below $76,000 after a rally on Iran peace talks, and Solana fell on weak demand, signalling shifting crypto sentiment.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Boosts institutional liquidity and staking yields for the AVAX ecosystem, bullish for AVAX. Underscores demand weakness in broader crypto assets like BTC and SOL, bearish.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.investing.com/news/cryptocurrency-news/bitcoin-price-today-holds-gains-above-74k-amid-usiran-peace-talk-hopes-4614370" target="_blank" rel="noopener noreferrer">Investing.com Crypto</a></li>
+<li><a href="https://invezz.com/news/2026/04/15/avax-eyes-pivotal-10-mark-as-bitwise-spot-avalanche-etf-debuts-on-nyse/" target="_blank" rel="noopener noreferrer">Invezz</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-impacting-non-tech-sectors">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chip"></use></svg>What&#x27;s Impacting Non-Tech Sectors?<span class="section__count">3</span></h2>
+<article class="story" id="story-26" data-direction="bullish" data-category="What&#x27;s Impacting Non-Tech Sectors?"><h3 class="story__title"><span class="story__num">26</span>Pentagon Approaches GM, Ford, GE to Boost Weapons Production Amid Iran, Ukraine Wars</h3>
+<p class="story__context">The Pentagon has spoken with General Motors, Ford, GE Aerospace, and Oshkosh about shifting factory capacity to wartime footing. This follows Defense Secretary Hegseth&#x27;s call to boost arms production after the Iran and Ukraine wars depleted US defense stocks, including 850 Tomahawk missiles from inventory of 3,000-4,000.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Bullish for US defense contractors and industrial manufacturers like GM and Ford, supporting a projected $1.5 trillion 2027 defense budget push and driving sector growth.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.independent.co.uk/news/world/americas/us-politics/pentagon-gm-ford-ge-weapons-iran-war-b2958650.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+<li><a href="https://www.wsj.com/politics/national-security/pentagon-approaches-automakers-manufacturers-to-boost-weapons-production-19538557?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+<li><a href="https://www.wsj.com/politics/national-security/private-equity-billionaire-shakes-up-pentagon-7264fec0" target="_blank" rel="noopener noreferrer">WSJ (Politics)</a></li>
+<li><a href="https://www.ft.com/content/8fa13289-be72-46c9-bdfc-2cbcf9a44346" target="_blank" rel="noopener noreferrer">FT (Companies)</a></li>
+</ul>
+</article>
+<article class="story" id="story-27" data-direction="bearish" data-category="What&#x27;s Impacting Non-Tech Sectors?"><h3 class="story__title"><span class="story__num">27</span>FTC, Eight States Secure Settlement with WPP, Dentsu, Publicis Over Ad Boycott Probe</h3>
+<p class="story__context">The FTC and eight states reached a settlement with WPP, Publicis, and Dentsu, banning them from agreements limiting ad buys on publishers based on news, political, or social content. This follows a probe into alleged collusion via groups like GARM to shift spending away from platforms with misinformation or conservative content.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Likely disrupts coordinated brand safety efforts, potentially increasing ad revenue for targeted digital platforms like X. Raises compliance costs for major ad agencies, bearish for their margins.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/business/media/ftc-ad-companies-agree-to-settlement-terms-in-boycott-probe-f1962690?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+<li><a href="https://www.nytimes.com/2026/04/15/technology/ftc-ad-companies-settlement.html" target="_blank" rel="noopener noreferrer">NYT Technology</a></li>
+<li><a href="https://www.ft.com/content/049a56d2-145b-4d24-9569-43edde25013c" target="_blank" rel="noopener noreferrer">Financial Times (Markets)</a></li>
+<li><a href="https://www.theverge.com/policy/912680/ftc-ad-agency-settlement-trust-safety" target="_blank" rel="noopener noreferrer">The Verge (Policy Section)</a></li>
+</ul>
+</article>
+<article class="story" id="story-28" data-direction="mixed" data-category="What&#x27;s Impacting Non-Tech Sectors?"><h3 class="story__title"><span class="story__num">28</span>Hermès Shares Plunge 14% and Kering Drop 10% on Weak Q1 Earnings Amid Middle East Conflict</h3>
+<p class="story__context">Hermès shares plunged 14% and Kering dropped 10% after disappointing Q1 earnings, dragging down luxury peers like Burberry and LVMH by 2-3%. Worries about weak sales and the Middle East conflict are hammering Europe&#x27;s luxury brands, impacting high-end spending and tourism.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Likely creates significant headwinds for European luxury sector stocks amid heightened geopolitical risks. Bearish for global luxury and discretionary spending, bullish for value stocks.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/business/earnings/hermes-sales-growth-slows-amid-uncertain-recovery-path-for-luxury-sector-7e7505a1?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+<li><a href="https://www.wsj.com/finance/stocks/luxury-stocks-are-suddenly-on-flash-sale-c6c962c4?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+<li><a href="https://www.ft.com/content/d2834609-51e1-4972-bbb4-95db2e01b6af" target="_blank" rel="noopener noreferrer">FT (Companies)</a></li>
+<li><a href="https://invezz.com/news/2026/04/15/kering-and-hermes-fall-on-weak-earnings-how-iran-war-is-impacting-luxury-sector/" target="_blank" rel="noopener noreferrer">Invezz</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-critical-but-overlooked">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-eye"></use></svg>What&#x27;s Critical but Overlooked?<span class="section__count">1</span></h2>
+<article class="story" id="story-29" data-direction="bearish" data-category="What&#x27;s Critical but Overlooked?"><h3 class="story__title"><span class="story__num">29</span>New Studies Reveal AMOC Weakening with 51% Decline Projected by 2100, Raising European Climate Risks</h3>
+<p class="story__context">University of Miami researchers published in Science Advances an analysis of 20-year deep-water sensor data showing a clear weakening trend in AMOC water transport. A French study projects a 51% decline by 2100, potentially adding 47-83 ppm CO2 to the atmosphere. This follows new data of freshwater influx.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens tail risks for European energy and agriculture sectors from regional cooling while accelerating Antarctic warming, increasing climate risk premiums for Eurozone insurers, bearish.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.faz.net/aktuell/wissen/erde-klima/klimablog-kipppunkt-neue-indizien-fuer-einen-golfstrom-kollaps-17480648.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (FAZ)</a></li>
+<li><a href="https://www.lemonde.fr/planete/article/2026/04/16/pluie-et-orage-meteo-france-place-la-guadeloupe-en-vigilance-orange_6680421_3244.html" target="_blank" rel="noopener noreferrer">Le Monde (French)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-driving-egypt-s-economy-policy-and-geopolitics">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-pyramid"></use></svg>What&#x27;s Driving Egypt&#x27;s Economy, Policy, and Geopolitics?<span class="section__count">2</span></h2>
+<article class="story" id="story-30" data-direction="neutral" data-category="What&#x27;s Driving Egypt&#x27;s Economy, Policy, and Geopolitics?"><h3 class="story__title"><span class="story__num">30</span>Egypt-Saudi Partnership Launches EGP 2bn Entertainment Platform Amid Regional Investments</h3>
+<p class="story__context">PMaestro and Saudi Arabia’s Safari Group launched a EGP 2bn investment platform for Chuck E. Cheese franchises in Egypt. Edafa Venture acquired recycling startup Cyclex, and IBF &amp; COMPANY invested in Techno Metal, driving FDI and job creation. This comes amid improving investment climate and national sustainable development goals.</p>
+<p class="story__implication"><span class="dir" data-direction="neutral" title="neutral" aria-label="neutral">■</span><span>These deals signal accelerating Gulf and regional capital inflows into Egypt&#x27;s non-oil sectors, likely enhancing FDI, entrepreneurship, and GDP contributions from entertainment, circular economy, and manufacturing.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.dailynewsegypt.com/2026/04/16/egypt-saudi-partnership-lunches-egp-2bn-entertainment-investment-platform-in-egypt/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=egypt-saudi-partnership-lunches-egp-2bn-entertainment-investment-platform-in-egypt" target="_blank" rel="noopener noreferrer">Daily News Egypt</a></li>
+</ul>
+</article>
+<article class="story" id="story-31" data-direction="bullish" data-category="What&#x27;s Driving Egypt&#x27;s Economy, Policy, and Geopolitics?"><h3 class="story__title"><span class="story__num">31</span>FIFA&#x27;s Infantino Confirms Iran &#x27;Coming for Sure&#x27; to 2026 World Cup in US Amid War Tensions</h3>
+<p class="story__context">FIFA President Gianni Infantino affirmed Iran&#x27;s qualified team will play in the 2026 World Cup in the US, despite a fragile truce, Trump&#x27;s safety concerns, and Iran&#x27;s minister declaring non-participation. Iran plays New Zealand in LA and Belgium in Seattle, then Egypt in Seattle, as players prioritize participation over politics.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Reduces uncertainty for the 48-team tournament&#x27;s full participation and security. Bolsters commercial outlook for the event, projected to generate over $11 billion in revenue, bullish for FIFA.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2026/04/15/fifa-president-iran-team-coming-for-sure-to-2026-world-cup-in-us.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><a href="https://www.nytimes.com/2026/04/15/world/middleeast/iran-world-cup-fifa-us.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+<li><a href="https://www.al-monitor.com/originals/2026/04/iran-participating-world-cup-fifa-president-confirms" target="_blank" rel="noopener noreferrer">Al-Monitor (Egypt)</a></li>
+</ul>
+</article>
+</section>
+<div class="part-divider" id="part-ii"><span class="part-divider__num">II</span><h2 class="part-divider__title">Thematic Digest</h2><span class="part-divider__meta">Wider context &middot; 37 stories</span></div>
+<section class="section" id="markets-macro">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chart"></use></svg>Markets &amp; Macro<span class="section__count">4</span></h2>
+<article class="story" id="story-32" data-direction="mixed" data-category="Markets &amp; Macro"><h3 class="story__title"><span class="story__num">32</span>S&amp;P 500, Nasdaq, Nikkei Hit Records as Trump Signals Swift End to Iran War, Peace Talks Advance</h3>
+<p class="story__context">Fears of prolonged US-Iran conflict eased after President Trump&#x27;s statement that the war is &#x27;very close to over.&#x27; The S&amp;P 500 closed at a record 7,022.95 (+0.8%), Nasdaq gained 1.59% to 24,016.02, and Japan&#x27;s Nikkei 225 surged 2.19% to a record high, driving a broader Asian rally.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Bullish for global equities, US tech, and Asian risk assets with reduced geopolitical risk premium. Potential oil price stabilization on peace hopes, though energy damages persist.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.marketwatch.com/bulletins/redirect/go?g=55341911-8fad-4681-b0e3-171bd0dba9a3&amp;mod=mw_rss_bulletins" target="_blank" rel="noopener noreferrer">MarketWatch Bulletins</a></li>
+<li><a href="https://www.wsj.com/world/asia/asian-stocks-advance-on-u-s-iran-deal-hopes-21045362?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+<li><a href="https://www.nytimes.com/2026/04/15/business/stocks-record-iran-war.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li><a href="https://www.ft.com/content/7d30723d-f2b1-4d02-a9f0-76ccedb0f7ad" target="_blank" rel="noopener noreferrer">Financial Times (Markets)</a></li>
+<li><a href="https://seekingalpha.com/article/4891081-s-p-500-to-7000-nasdaq-100-points-to-ath-are-markets-getting-ahead-of-themselves?source=feed_all_articles" target="_blank" rel="noopener noreferrer">Seeking Alpha</a></li>
+<li><a href="https://www.investing.com/news/stock-market-news/wall-st-futures-steady-after-sp-500-nears-record-high-on-usiran-diplomacy-hopes-4614153" target="_blank" rel="noopener noreferrer">Investing.com Stocks</a></li>
+<li class="is-extra" hidden><a href="https://www.investing.com/news/economy-news/sp-500-hits-first-intraday-record-high-since-usiran-war-4616161" target="_blank" rel="noopener noreferrer">Investing.com Economy</a></li>
+<li class="is-extra" hidden><a href="https://www.cnbc.com/2026/04/16/asia-markets-today-nikkei225-hang-seng-sensex-kospi-iran-us-deal-trump.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><button type="button" class="src-more" data-count="2">+2 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-33" data-direction="bearish" data-category="Markets &amp; Macro"><h3 class="story__title"><span class="story__num">33</span>FT Op-Eds: Deterrence Costs Burden All, Defense Spending Fails to Fix Europe&#x27;s Growth</h3>
+<p class="story__context">Financial Times op-eds argue that defense expenditure&#x27;s costs will be broadly borne, and spending will not solve Europe’s growth problems. One piece highlights structural economic inefficiencies in European defense spending, while another emphasizes healthy labor markets lacking job growth, suggesting deeper issues beyond military outlays.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Elevates fiscal pressures on government budgets in defense-reliant Europe and G7 economies alongside structural headwinds for Eurozone equities and fiscal policy, bearing on sovereign debt.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.ft.com/content/bfea33f7-a736-4a4c-94b2-5a5eb56b7163" target="_blank" rel="noopener noreferrer">Financial Times (World)</a></li>
+<li><a href="https://www.ft.com/content/0ec8b79b-098b-4566-a8a9-f54e66fdca56" target="_blank" rel="noopener noreferrer">Financial Times (Markets)</a></li>
+</ul>
+</article>
+<article class="story" id="story-34" data-direction="bearish" data-category="Markets &amp; Macro"><h3 class="story__title"><span class="story__num">34</span>US Homebuilder Sentiment Falls to 34 Amid Rising Costs and Uncertainty</h3>
+<p class="story__context">The NAHB/Wells Fargo Housing Market Index fell to 34 in April, pressured by rising materials prices, elevated interest rates, and economic uncertainty. Producer prices rose 0.5% in March. US mortgage application volume increased 1.8% as 30-year fixed rates declined to 6.42% from 6.51%, while UK lenders cut fixed rates.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Mixed US housing and inflation data heightens volatility for homebuilder stocks, REITs, and interest-rate sensitive sectors. Bearish for housing confidence, but some mortgage relief.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/economy/housing/u-s-home-builder-sentiment-slips-amid-economic-uncertainty-3b8ac629" target="_blank" rel="noopener noreferrer">WSJ (Economy)</a></li>
+<li><a href="https://www.ft.com/content/eaf5d1ab-3776-448f-8146-50ddfc02832a" target="_blank" rel="noopener noreferrer">Financial Times (World)</a></li>
+<li><a href="https://seekingalpha.com/article/4891076-producer-price-index-wholesale-inflation-up-0-5-percent-in-march?source=feed_all_articles" target="_blank" rel="noopener noreferrer">Seeking Alpha</a></li>
+<li><a href="https://invezz.com/news/2026/04/15/us-home-loan-demand-rises-1-8-as-mortgage-rates-ease/" target="_blank" rel="noopener noreferrer">Invezz</a></li>
+</ul>
+</article>
+<article class="story" id="story-35" data-direction="bearish" data-category="Markets &amp; Macro"><h3 class="story__title"><span class="story__num">35</span>Wall Street Probes Private Credit Risks as Goldman Warns on Illiquidity Disclosure</h3>
+<p class="story__context">Wall Street is scrutinizing &#x27;cockroaches&#x27; in the private credit market, with Goldman Sachs President John Waldron warning about illiquidity and lack of clarity in these funds. Tax-focused hedge funds from AQR and Quantinno have soared, raising regulatory concerns amid increasing investor appetite for higher-yield, opaque products.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Increased scrutiny and regulatory attention could weigh on private credit fundraising and alternative asset allocations. Shifts investor appetite towards more transparent, liquid products, bearish for private credit.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/finance/private-credit-tracker-8abcf8ca?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+<li><a href="https://www.ft.com/content/fad9d0ca-0b7a-4c22-8cfe-fb26fea9219b" target="_blank" rel="noopener noreferrer">Financial Times (World)</a></li>
+<li><a href="https://www.ft.com/content/3e91f018-d9c1-4ef4-a416-f80c97d930d8" target="_blank" rel="noopener noreferrer">Financial Times (Markets)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="central-banks-monetary-policy">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-bank"></use></svg>Central Banks &amp; Monetary Policy<span class="section__count">1</span></h2>
+<article class="story" id="story-36" data-direction="mixed" data-category="Central Banks &amp; Monetary Policy"><h3 class="story__title"><span class="story__num">36</span>JGBs Trade Mixed Amid US Treasury Declines and BOJ Rate Hold Prospects</h3>
+<p class="story__context">JGBs traded mixed due to overnight US Treasury declines and expectations for the BOJ to hold rates at its April 27-28 meeting. The yen recovered against the dollar after verbal warnings from Japanese Finance Minister Satsuki Katayama, and Japan and the US agreed to closer currency contact with Bessent’s May visit.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Steadies yen and caps JGB yield upside versus US Treasurys, benefiting Asian fixed income and yen carry trades. Bearish for yen volatility, bullish for stability.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/finance/investing/jgbs-mixed-may-be-weighed-by-declines-in-u-s-treasurys-ff31e3f7?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+<li><a href="https://www.investing.com/news/forex-news/japan-us-agree-to-closer-contact-on-currency-bessent-to-visit-tokyo-in-may-93CH-4616095" target="_blank" rel="noopener noreferrer">Investing.com Forex</a></li>
+<li><a href="https://www.investing.com/news/economy-news/imf-says-bank-of-japan-can-see-through-inflationary-shock-from-iran-war-4616324" target="_blank" rel="noopener noreferrer">Investing.com Economy</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="global-politics-geopolitics">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-globe"></use></svg>Global Politics &amp; Geopolitics<span class="section__count">4</span></h2>
+<article class="story" id="story-37" data-direction="bullish" data-category="Global Politics &amp; Geopolitics"><h3 class="story__title"><span class="story__num">37</span>Peter Magyar&#x27;s Landslide Defeats Orban, Demands President&#x27;s Immediate Resignation for Reforms</h3>
+<p class="story__context">Peter Magyar&#x27;s Tisza party won a two-thirds parliamentary majority in Hungary, ending Viktor Orban&#x27;s 16-year rule. Magyar, 45, demanded an immediate handover of power and President Sulyok&#x27;s resignation, threatening constitutional changes to remove Orban appointees. Orban conceded defeat, following a nearly 2.5 million vote deficit.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Aggressive reforms to restore rule of law, judiciary independence, and media freedoms position Hungary to unlock €10bn frozen EU funds by August, bullish for Hungarian bonds.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/cx2ddd0xyl5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.handelsblatt.com/politik/international/ungarn-magyar-will-staatliche-nachrichtensendungen-stoppen/100217185.html" target="_blank" rel="noopener noreferrer">Handelsblatt</a></li>
+<li><a href="https://www.nytimes.com/2026/04/14/world/europe/viktor-orban-peter-magyar-election.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+<li><a href="https://www.independent.co.uk/news/world/europe/hungary-magyar-president-leave-now-b2958348.html" target="_blank" rel="noopener noreferrer">The Independent (World)</a></li>
+<li><a href="http://www.taz.de/Wahlgewinner-Magyar/!6171178/" target="_blank" rel="noopener noreferrer">Die Tageszeitung (taz)</a></li>
+<li><a href="https://www.faz.net/aktuell/politik/ausland/ungarn-magyar-in-den-festungen-der-alten-macht-200734791.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (FAZ)</a></li>
+</ul>
+</article>
+<article class="story" id="story-38" data-direction="mixed" data-category="Global Politics &amp; Geopolitics"><h3 class="story__title"><span class="story__num">38</span>NATO Allies Pledge $60B+ Ukraine Aid in 2026 Amid Iran Distraction, EU Funding Turf War</h3>
+<p class="story__context">NATO&#x27;s Mark Rutte urged $60bn in Ukraine aid for 2026, with the UK providing £752M + 120,000 drones and Germany pledging €11.5bn this year. Hungary&#x27;s new leader Péter Magyar signals an end to Orbán&#x27;s veto on a €90bn EU loan amid an EU-NATO turf war over EU funds for US weapons. Focus on Ukraine support is challenged by the Iran war.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Bolsters transatlantic defense stocks (e.g., Rheinmetall, BAE Systems, US contractors), unlocking EU loans to cut fragmentation risks and support eurozone carry trades. Bullish for defense.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/world/live/2026/apr/15/peter-magyar-hungary-president-media-viktor-orban-european-union-europe-latest" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.independent.co.uk/news/world/europe/uk-ukraine-drones-aid-russia-b2958133.html" target="_blank" rel="noopener noreferrer">The Independent (World)</a></li>
+<li><a href="https://www.faz.net/aktuell/politik/ausland/ukraine-kontakgruppe-in-berlin-neue-drohnen-fuer-die-ukraine-200734765.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (FAZ)</a></li>
+<li><a href="https://www.ft.com/content/18231e4c-c60b-486c-a8f9-7822cff4e935" target="_blank" rel="noopener noreferrer">Financial Times (World)</a></li>
+<li><a href="https://www.nytimes.com/2026/04/15/world/europe/europe-ukraine-aid-iran.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+</ul>
+</article>
+<article class="story" id="story-39" data-direction="bearish" data-category="Global Politics &amp; Geopolitics"><h3 class="story__title"><span class="story__num">39</span>Trump Ends Alliance with Italy&#x27;s Meloni Over Pope Leo XIV Criticism, Iran Policy</h3>
+<p class="story__context">President Trump criticized Pope Leo XIV&#x27;s peace appeals, prompting Italian PM Meloni to defend the Pope, calling Trump&#x27;s attacks &#x27;unacceptable.&#x27; Trump then declared Meloni unacceptable, ending their alliance. Disputes over Iran and Italy&#x27;s suspension of its 2006 defense cooperation agreement with Israel further broadened US clashes with Europe.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>This rift erodes the US-Italy alliance and transatlantic right-wing solidarity, heightening risks to NATO cohesion, volatility in European sovereign bonds and defense equities, and energy security.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/world/europe/trump-turns-against-italys-giorgia-meloni-broadening-clash-with-europe-ba37f1d4" target="_blank" rel="noopener noreferrer">WSJ (World)</a></li>
+<li><a href="https://www.nytimes.com/2026/04/15/world/europe/trump-meloni-italy-iran-pope.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li><a href="https://www.nytimes.com/2026/04/14/world/middleeast/italy-israel-defense-pact.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+<li><a href="http://www.taz.de/Verhaeltnis-zwischen-USA-und-Italien/!6171177/" target="_blank" rel="noopener noreferrer">Die Tageszeitung (taz)</a></li>
+<li><a href="https://www.handelsblatt.com/politik/iran-krieg-meloni-geht-auf-distanz-zu-trump-aus-gutem-grund/100217072.html" target="_blank" rel="noopener noreferrer">Handelsblatt</a></li>
+<li><a href="https://www.faz.net/aktuell/politik/ausland/meloni-zeigt-trump-wer-papst-im-haus-ist-200734783.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (FAZ)</a></li>
+</ul>
+</article>
+<article class="story" id="story-40" data-direction="bullish" data-category="Global Politics &amp; Geopolitics"><h3 class="story__title"><span class="story__num">40</span>UK-Ukraine Duo Wins US Killer-Drone Competition with 99.3 Score, Bypassing Silicon Valley</h3>
+<p class="story__context">Skycutter, a small British company, and Ukrainian partner SkyFall won the US killer-drone competition (99.3 score), beating Neros. SkyFall produces 123,000 jam-resistant Shrike 10-F FPV drones monthly without Chinese parts. Skycutter secured contracts for over 2,500 drones, accelerating Western production scale-up for expendable drones.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Boosts non-US innovation in defense drones, accelerating Western production scale-up and challenging Silicon Valley dominance in Pentagon supply chains for battlefield tech, bullish for UK defense.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2026/04/15/skycutter-ukraine-drone-dominance-pentagon" target="_blank" rel="noopener noreferrer">Axios</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="us-policy-regulation">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-scales"></use></svg>US Policy &amp; Regulation<span class="section__count">3</span></h2>
+<article class="story" id="story-41" data-direction="bearish" data-category="US Policy &amp; Regulation"><h3 class="story__title"><span class="story__num">41</span>House Democrats Introduce 6 Impeachment Articles Against Defense Sec. Hegseth Over Iran Strikes</h3>
+<p class="story__context">House Democrats, including Rep. Yassamin Ansari, introduced six impeachment articles against Defense Secretary Pete Hegseth. Accusations include unauthorized strikes on Iran, causing civilian casualties (e.g., a girls&#x27; school bombing that killed 175), &#x27;Signalgate&#x27; negligence exposing classified info, and obstructing Congress. This follows previous pushes against Trump officials.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Escalates partisan tensions over US military actions, risking distractions from Iran operations and potential headwinds for defense sector sentiment amid heightened oversight scrutiny.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2026/04/15/iran-war-pete-hegseth-congress-impeachment-articles-democrats-reflecting-search-interest-order" target="_blank" rel="noopener noreferrer">Axios</a></li>
+<li><a href="https://www.theguardian.com/us-news/2026/apr/15/democrats-pete-hegseth-impeachment" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.independent.co.uk/news/world/americas/us-politics/democrats-pete-hegseth-impeachment-b2958187.html" target="_blank" rel="noopener noreferrer">The Independent (World)</a></li>
+</ul>
+</article>
+<article class="story" id="story-42" data-direction="bearish" data-category="US Policy &amp; Regulation"><h3 class="story__title"><span class="story__num">42</span>AT&amp;T&#x27;s FirstNet Emergency Network Fails in Crises; Lawmakers Demand Greater Oversight</h3>
+<p class="story__context">The multibillion-dollar FirstNet emergency-communications network, operated by AT&amp;T, has reportedly failed during emergencies. Lawmakers are demanding changes, and federal authorities are pushing for increased oversight to address reliability issues in public-private telecom infrastructure deals.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens regulatory risks for AT&amp;T and public-private telecom infrastructure deals. Potentially increases compliance costs across the US telecom sector, bearish for ATT.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/politics/policy/the-nations-emergency-cell-network-failed-in-emergencies-lawmakers-want-change-93a5cde5?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+<li><a href="https://www.wsj.com/politics/policy/the-nations-emergency-cell-network-failed-in-emergencies-lawmakers-want-change-93a5cde5" target="_blank" rel="noopener noreferrer">WSJ (Politics)</a></li>
+</ul>
+</article>
+<article class="story" id="story-43" data-direction="bearish" data-category="US Policy &amp; Regulation"><h3 class="story__title"><span class="story__num">43</span>House GOP Delays FISA Extension as Trump Urges Unity Amid Warrant Amendment Talks</h3>
+<p class="story__context">House Republicans delayed action on a key FISA extension, with the White House considering a warrant-related amendment. Trump made a last-minute Truth Social plea for GOP unity, as Senator Wyden urged Democrats to back privacy amendments, including guardrails on AI in surveillance, reflecting growing GOP infighting and privacy concerns.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Delays and amendments risk a lapse in key surveillance authorities, creating uncertainty for national security operations and defense-related sectors, bearish for intelligence agencies.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.politico.com/news/2026/04/15/house-gop-delays-action-on-fisa-extension-00874777" target="_blank" rel="noopener noreferrer">Donald Trump (Politico)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="emerging-markets">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-compass"></use></svg>Emerging Markets<span class="section__count">3</span></h2>
+<article class="story" id="story-44" data-direction="bullish" data-category="Emerging Markets"><h3 class="story__title"><span class="story__num">44</span>India&#x27;s Small Towns Power World&#x27;s Fastest-Growing E-Commerce Market Led by Amazon and Flipkart</h3>
+<p class="story__context">India&#x27;s e-commerce market grew 23% CAGR from 2020-2025, projected to reach $250 billion by 2030, driven by small towns now accounting for over 60% of online shoppers. Flipkart holds 48% share, Amazon 30-35%, with Amazon pledging $35 billion investment, as consumers in Tier 2/3 cities demand premium brands via quick commerce.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Accelerates consumer spending and logistics investments in emerging markets, bullish for e-commerce platforms (Flipkart, Amazon) and premium consumer goods sectors, especially in India&#x27;s smaller cities.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2026/04/15/inside-india-newsletter-small-towns-amazon-walmart-ecommerce.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+</ul>
+</article>
+<article class="story" id="story-45" data-direction="bearish" data-category="Emerging Markets"><h3 class="story__title"><span class="story__num">45</span>South Africa Appoints Apartheid-Era Negotiator Roelf Meyer as US Ambassador to Repair Strained Ties</h3>
+<p class="story__context">South Africa appointed 78-year-old Roelf Meyer, a former apartheid government chief negotiator, as its new ambassador to the US. This move aims to repair deeply strained US-South Africa relations after the previous ambassador was expelled in March 2025 for criticizing the Trump administration, leaving the Washington post vacant.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Appointing an experienced negotiator signals potential de-escalation in US-South Africa tensions, which could stabilize bilateral trade, investment flows, and emerging market positioning in Africa.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/world/2026/apr/15/south-africa-names-ambassador-us-roelf-meyer" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.nytimes.com/2026/04/15/world/africa/south-africa-us-ambassador-roelf-meyer.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+<li><a href="https://www.faz.net/aktuell/politik/ausland/us-botschafter-verhandler-nach-der-apartheid-soll-suedafrika-mit-trump-helfe-200733628.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (German - Politics)</a></li>
+</ul>
+</article>
+<article class="story" id="story-46" data-direction="bearish" data-category="Emerging Markets"><h3 class="story__title"><span class="story__num">46</span>Mexico Crime War Faces Grim Reckoning Over 133,000 Missing; Pressure on Sheinbaum</h3>
+<p class="story__context">Mexican President Claudia Sheinbaum&#x27;s administration faces a grim reckoning in its war on crime, with over 133,000 people missing. This staggering statistic places immense pressure on her to resolve a profound national tragedy, as the state struggles to contain escalating violence and disappearances nationwide.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Elevates political risk premiums for Mexican sovereign debt and equities. Potentially disrupts nearshoring investments and emerging market carry trades into Latin America, bearish for MXN.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.nytimes.com/2026/04/15/world/americas/claudia-sheinbaum-mexico-crime-missing-people.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="ai-digital-infrastructure">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chip"></use></svg>AI &amp; Digital Infrastructure<span class="section__count">3</span></h2>
+<article class="story" id="story-47" data-direction="bullish" data-category="AI &amp; Digital Infrastructure"><h3 class="story__title"><span class="story__num">47</span>OpenAI Drops Stargate Norway Deal as Microsoft Takes Over Compute Capacity</h3>
+<p class="story__context">OpenAI abandoned plans to rent half of the 230MW Stargate Norway data center&#x27;s capacity from Nscale, with Microsoft stepping in to take the compute. Microsoft will expand its agreement to include over 30,000 Nvidia Rubin GPUs, and OpenAI will now rent from Microsoft under its existing $250 billion Azure contract, rather than from Nscale directly.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Reinforces Microsoft&#x27;s dominance in AI infrastructure provisioning across Europe, raising barriers for independent data center operators. Streamlines OpenAI&#x27;s massive compute commitments, bullish for MSFT.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2026/04/15/openai-stargate-norway-project-microsoft.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+</ul>
+</article>
+<article class="story" id="story-48" data-direction="bullish" data-category="AI &amp; Digital Infrastructure"><h3 class="story__title"><span class="story__num">48</span>Chip Giants AMD, Qualcomm, and Arm Invest $60M in UK Driverless Startup Wayve</h3>
+<p class="story__context">British autonomous driving startup Wayve raised $60 million from semiconductor firms Qualcomm, AMD, and Arm, following its $1.2 billion February funding round. Wayve&#x27;s technology enables autonomous driving without high-definition maps or extensive training, making it compatible with various automakers and chips, intensifying global competition.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Bolsters Wayve&#x27;s commercialization of mapless AV tech across automakers, intensifying competition in autonomous driving. Supports demand for diverse auto chips from Nvidia, Qualcomm, AMD, and Arm.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2026/04/15/wayve-fund-raise-amd-qualcomm-arm.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+</ul>
+</article>
+<article class="story" id="story-49" data-direction="bullish" data-category="AI &amp; Digital Infrastructure"><h3 class="story__title"><span class="story__num">49</span>Google Launches Native Search App for Windows and Gemini App for Mac</h3>
+<p class="story__context">Google released the official &#x27;Google app for desktop&#x27; for Windows 10/11, enabling quick web, local file, and screen-context searches via Alt + Space and Lens. It also launched a native Gemini app for macOS 15+, accessible via Option + Space, supporting screen sharing, local files, and image generation. These apps provide desktop-native access to search and AI tools.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Advances native AI integration on desktops, boosting productivity and adoption of Google&#x27;s services. Intensifies competition in AI assistants against OpenAI and Anthropic, bullish for GOOGL.</span></p>
+<ul class="story__sources">
+<li><a href="https://arstechnica.com/gadgets/2026/04/google-launches-search-app-for-windows-gemini-app-for-mac/" target="_blank" rel="noopener noreferrer">Ars Technica</a></li>
+<li><a href="https://techcrunch.com/2026/04/15/google-rolls-out-a-native-gemini-app-for-mac/" target="_blank" rel="noopener noreferrer">TechCrunch</a></li>
+<li><a href="https://www.investing.com/news/stock-market-news/gemini-app-launches-on-mac-with-screensharing-features-93CH-4616307" target="_blank" rel="noopener noreferrer">Investing.com Stocks</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="energy-commodities-metals">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-bolt"></use></svg>Energy, Commodities &amp; Metals<span class="section__count">3</span></h2>
+<article class="story" id="story-50" data-direction="mixed" data-category="Energy, Commodities &amp; Metals"><h3 class="story__title"><span class="story__num">50</span>Oil Slips on De-Escalation Hopes but Poised for Weekly Gains Amid US-Iran Peace Talk Hopes</h3>
+<p class="story__context">Gold prices slipped from a one-month high due to a technical correction but remained on track for weekly gains. Hopes for US-Iran peace talks initially supported oil prices which later dipped. Silver inched up, facing its sixth straight year of deficit, while oil demand continues upward globally.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Reduces near-term geopolitical risk premium in crude oil futures and gold. Bearish for energy sector equities, supportive for inflation-sensitive sectors, with silver still bullish due to deficit.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/finance/commodities-futures/gold-rises-amid-hopes-for-more-u-s-iran-talks-cf413f2c?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+<li><a href="https://www.ft.com/content/311bd0e0-3a18-443e-a0ae-6534db9dfa8e" target="_blank" rel="noopener noreferrer">Financial Times (Markets)</a></li>
+<li><a href="https://www.investing.com/news/commodities-news/gold-prices-retreat-from-1mth-high-with-usiran-peace-talks-in-focus-4614368" target="_blank" rel="noopener noreferrer">Investing.com Commodities</a></li>
+</ul>
+</article>
+<article class="story" id="story-51" data-direction="neutral" data-category="Energy, Commodities &amp; Metals"><h3 class="story__title"><span class="story__num">51</span>New England’s Nuclear Turn Lags Behind Slow Political Acknowledgment</h3>
+<p class="story__context">A Wall Street Journal op-ed highlights New England&#x27;s pivot towards nuclear energy as a practical energy solution. It notes local governors and politicians are slow to acknowledge its viability, despite its merits in addressing energy needs and promoting reliability for the region.</p>
+<p class="story__implication"><span class="dir" data-direction="neutral" title="neutral" aria-label="neutral">■</span><span>Bolsters prospects for US nuclear energy operators, uranium producers, and regional utilities by signaling potential policy shifts toward reliable baseload power and energy security.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/opinion/new-englands-nuclear-turn-b314d986" target="_blank" rel="noopener noreferrer">WSJ (Opinion)</a></li>
+<li><a href="https://www.wsj.com/opinion/new-englands-nuclear-turn-b314d986?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+</ul>
+</article>
+<article class="story" id="story-52" data-direction="bearish" data-category="Energy, Commodities &amp; Metals"><h3 class="story__title"><span class="story__num">52</span>Deutschlandticket Cuts 9 Billion Car Kilometers and 2.5M Tons CO2 in 2024</h3>
+<p class="story__context">In 2024, 14.6 million Deutschlandticket subscribers drove 9 billion fewer kilometers by car, saving €3 billion for commuters (with €2.7 billion from mode switching) and reducing transport CO2 emissions by 2.5 million tons (3% of private car totals) amid rising fuel prices.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Shifts transport demand from oil to public infrastructure, easing pressure on energy commodities. Fiscal tensions from fuel tax cut strain German green budgets and EU emissions targets.</span></p>
+<ul class="story__sources">
+<li><a href="http://www.taz.de/Streit-um-Deutschlandticket/!6171208/" target="_blank" rel="noopener noreferrer">Die Tageszeitung (taz)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="corporate-m-a-deals">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-merge"></use></svg>Corporate, M&amp;A &amp; Deals<span class="section__count">4</span></h2>
+<article class="story" id="story-53" data-direction="mixed" data-category="Corporate, M&amp;A &amp; Deals"><h3 class="story__title"><span class="story__num">53</span>Sazerac Offers $15 Billion to Buy Jack Daniel&#x27;s Maker Brown-Forman</h3>
+<p class="story__context">Sazerac, maker of Buffalo Trace, offered $15 billion, or $32 per share, to acquire its Louisville rival Brown-Forman, producer of Jack Daniel’s. This is according to WSJ reports citing sources familiar with the matter, indicating significant M&amp;A activity in the distilled spirits sector.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Accelerates M&amp;A momentum in the distilled spirits sector, boosting deal flow for consumer staples and pressuring valuations of independent beverage alcohol producers, bullish for consolidation.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/business/deals/sazerac-offered-to-buy-brown-forman-for-around-15-billion-95eddbe6?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+<li><a href="https://www.investing.com/news/stock-market-news/sazerac-offers-to-buy-jack-daniels-maker-brownforman-for-about-15-billion-wsj-reports-4616290" target="_blank" rel="noopener noreferrer">Investing.com Stocks</a></li>
+</ul>
+</article>
+<article class="story" id="story-54" data-direction="mixed" data-category="Corporate, M&amp;A &amp; Deals"><h3 class="story__title"><span class="story__num">54</span>United CEO Pitches American Airlines Merger Directly to Trump</h3>
+<p class="story__context">United Airlines CEO Scott Kirby pitched a merger with American Airlines to President Trump at Mar-a-Lago last month. This deal would create an airline with over 34% US market share, surpassing Delta&#x27;s 17.8%, and comes amid a 53% surge in US M&amp;A activity this year.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Accelerates airline sector consolidation and broader US M&amp;A boom. Bullish for dealmaking but heightens risks of reduced competition and higher fares in aviation, bearish for consumers.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2026/04/15/trump-doj-merger-lobbying" target="_blank" rel="noopener noreferrer">Axios</a></li>
+</ul>
+</article>
+<article class="story" id="story-55" data-direction="mixed" data-category="Corporate, M&amp;A &amp; Deals"><h3 class="story__title"><span class="story__num">55</span>Daikin Shares Surge 14% as Elliott Reveals 3% Stake and Pushes Reforms</h3>
+<p class="story__context">Daikin Industries shares surged almost 14% after activist investor Elliott Management disclosed a 3% stake, stating the company&#x27;s leading businesses are undervalued. Elliott plans to work with Daikin to improve performance, narrow its valuation gap, expand margins, and enhance shareholder returns, driving stock gains.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>This activist push signals potential catalysts for Daikin&#x27;s re-rating and portfolio optimization, creating upside for Japanese industrials while risking divestitures in non-core assets.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2026/04/16/daikin-shares-jump-elliott-activist-investment-valuation-gap-nikkei225.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+</ul>
+</article>
+<article class="story" id="story-56" data-direction="bullish" data-category="Corporate, M&amp;A &amp; Deals"><h3 class="story__title"><span class="story__num">56</span>Aegon Sells U.K. Unit to Standard Life for $2.7 Billion</h3>
+<p class="story__context">Transamerica owner Aegon agreed to sell its UK unit to Standard Life for $2.7 billion, further advancing its strategic pivot toward the US market. This move streamlines Aegon&#x27;s operations and focuses its efforts on high-growth opportunities elsewhere, reducing its European exposure.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Supports consolidation opportunities in US insurance while reducing Aegon&#x27;s European exposure, potentially bullish for US financial sector M&amp;A and for Standard Life&#x27;s market share.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/business/deals/transamerica-owner-aegon-to-sell-u-k-unit-to-standard-life-for-2-7-billion-0cfcabcc?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="social-legal-governance">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-scales"></use></svg>Social, Legal &amp; Governance<span class="section__count">4</span></h2>
+<article class="story" id="story-57" data-direction="bearish" data-category="Social, Legal &amp; Governance"><h3 class="story__title"><span class="story__num">57</span>UK MPs Reject Under-16 Social Media Ban Amendment for Second Time</h3>
+<p class="story__context">The House of Commons rejected a Lords amendment proposing a default under-16 social media ban for the second time, 256 to 150. Government consultation closes May 26 with over 45,000 responses. PM Keir Starmer has summoned execs from TikTok, X, Meta, Snapchat, Google, and YouTube to demand swifter child safety action.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens regulatory risks and potential compliance costs for UK and European operations of Meta, Alphabet/Google, ByteDance, and Snap amid ongoing governmental push for restrictions on online harms.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/uk-news/2026/apr/15/mps-vote-against-social-media-ban-for-under-16s-a-second-time" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.independent.co.uk/news/uk/politics/starmer-x-tiktok-meta-child-safety-b2958344.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+<li><a href="https://www.nytimes.com/2026/04/15/world/europe/starmer-social-media-child-safety-meta-google.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+</ul>
+</article>
+<article class="story" id="story-58" data-direction="bearish" data-category="Social, Legal &amp; Governance"><h3 class="story__title"><span class="story__num">58</span>Anthropic&#x27;s Mythos AI Poses Vulnerability Risks to Crypto Exchanges, Not Bitcoin</h3>
+<p class="story__context">Anthropic&#x27;s Mythos AI can detect software vulnerabilities, threatening crypto exchanges like Coinbase and Binance by targeting their handling of user funds and personal data. Bitcoin&#x27;s blockchain remains secure due to cryptography. Exchanges are now investing in AI defenses amid reputational risks from AI-generated scams.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Elevates cybersecurity pressures on digital finance platforms and crypto equities, likely prompting accelerated AI security investments. Potential short-term negative sentiment for exchange stocks, bearish.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2026/04/15/anthropics-mythos-isnt-threatening-bitcoin-the-real-ai-risk-is-at-crypto-exchanges-.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+</ul>
+</article>
+<article class="story" id="story-59" data-direction="bearish" data-category="Social, Legal &amp; Governance"><h3 class="story__title"><span class="story__num">59</span>Swalwell and Gonzales Resign from Congress Over Sexual Misconduct; Governor Bid Fails</h3>
+<p class="story__context">Rep. Eric Swalwell (D-Calif.) resigned from Congress and withdrew his gubernatorial bid over sexual-misconduct allegations. Separately, Rep. Tony Gonzales (R-Texas) resigned after admitting an inappropriate relationship with a staffer who died by suicide. The incidents expose congressional ethics vulnerabilities amid party tensions.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Exposes congressional ethics vulnerabilities, House fragility under slim Republican majority, and Democratic Party cohesion strains. Erodes voter trust ahead of California gubernatorial race.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/opinion/eric-swalwell-revolutionary-b62da827" target="_blank" rel="noopener noreferrer">WSJ (Opinion)</a></li>
+<li><a href="https://www.wsj.com/politics/elections/swalwells-stunning-downfall-creates-a-reckoning-for-democrats-ef9c9e9d" target="_blank" rel="noopener noreferrer">WSJ (Politics)</a></li>
+<li><a href="https://www.independent.co.uk/news/world/americas/us-politics/swalwell-gonzales-resignation-congress-sexual-misconduct-b2958515.html" target="_blank" rel="noopener noreferrer">The Independent (World)</a></li>
+</ul>
+</article>
+<article class="story" id="story-60" data-direction="bearish" data-category="Social, Legal &amp; Governance"><h3 class="story__title"><span class="story__num">60</span>Texas AG Ken Paxton Targets Lululemon Yoga Pants Over Forever Chemicals Consumer Risks</h3>
+<p class="story__context">Texas Attorney General Ken Paxton claims Lululemon yoga pants pose consumer risks due to &#x27;forever chemicals,&#x27; as detailed in a Wall Street Journal opinion piece. This highlights potential safety issues and enforcement implications for consumer apparel firms, particularly those using per- and polyfluoroalkyl substances (PFAS).</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Signals rising legal, regulatory, and reputational headwinds for Lululemon&#x27;s athleisure segment. Exposes consumer apparel firms to heightened state attorneys general scrutiny and litigation over chemical contaminants.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/opinion/ken-paxton-lululemon-forever-chemicals-texas-82902e88" target="_blank" rel="noopener noreferrer">WSJ (Opinion)</a></li>
+<li><a href="https://www.wsj.com/opinion/ken-paxton-lululemon-forever-chemicals-texas-82902e88?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="humanitarian-crises-natural-disasters">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-heart"></use></svg>Humanitarian Crises &amp; Natural Disasters<span class="section__count">3</span></h2>
+<article class="story" id="story-61" data-direction="bearish" data-category="Humanitarian Crises &amp; Natural Disasters"><h3 class="story__title"><span class="story__num">61</span>Donors Pledge Over €1.3bn for Sudan at Berlin Conference on Civil War&#x27;s Third Anniversary</h3>
+<p class="story__context">International donors at a Berlin conference pledged over €1.3 billion ($1.3bn) in humanitarian aid for Sudan, exceeding the $1bn target, on the civil war&#x27;s third anniversary. The UN chief called the crisis a &#x27;nightmare&#x27; for 34 million people, but neither warring party attended, and Sudan&#x27;s army denounced the event.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens funding pressures on humanitarian aid flows and refugee burdens for neighbors like Egypt and Chad. Risks wider Horn of Africa instability with potential impacts on regional migration and commodities.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/videos/czd77jgnnlno?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.theguardian.com/global-development/2026/apr/15/more-than-1bn-pledged-for-sudan-as-humanitarian-crisis-deepens" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.france24.com/en/africa/20260415-sudan-forgotten-war-three-years-humanitarian-catastrophe-no-end-in-sight" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li><a href="http://www.taz.de/Sudankonferenz-in-Berlin/!6171414/" target="_blank" rel="noopener noreferrer">Die Tageszeitung (taz)</a></li>
+<li><a href="https://www.faz.net/aktuell/politik/ausland/dritte-sudan-konferenz-gegen-das-sterben-in-sudan-200734767.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (FAZ)</a></li>
+<li><a href="https://www.nytimes.com/2026/04/15/world/africa/sudan-war-hunger-crisis.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+<li class="is-extra" hidden><a href="https://www.scmp.com/news/world/africa/article/3350197/sudan-enters-4th-year-war-abandoned-crisis-grows?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+<li><button type="button" class="src-more" data-count="1">+1 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-62" data-direction="mixed" data-category="Humanitarian Crises &amp; Natural Disasters"><h3 class="story__title"><span class="story__num">62</span>Russia Launches Overnight Drone and Missile Strikes on Ukraine, Killing at Least 12 Civilians</h3>
+<p class="story__context">Russia launched overnight drone and missile attacks on Ukraine, killing six in Odesa, four (including a 12-year-old) in Kyiv, and two in Dnipro, while wounding dozens in cities like Kharkiv. Moscow has fired hundreds of drones almost nightly since the four-year war began and recently expanded daytime strikes.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Sustained civilian-targeted strikes heighten Ukraine&#x27;s humanitarian crisis, pressuring European energy markets via prolonged Black Sea risks and boosting NATO defense spending commitments, bearish for EU stability.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/world/2026/apr/16/russia-drone-missile-strikes-ukraine-kyiv-dnipro" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.france24.com/en/europe/20260416-russia-strikes-ukraine-kyiv-drones-missiles-kill-three-child" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li><a href="https://www.lemonde.fr/international/live/2026/04/16/en-direct-guerre-au-moyen-orient-de-nouvelles-discussions-sont-prevues-jeudi-entre-israel-et-le-liban-annonce-donald-trump_6679867_3210.html" target="_blank" rel="noopener noreferrer">Le Monde (French)</a></li>
+</ul>
+</article>
+<article class="story" id="story-63" data-direction="bearish" data-category="Humanitarian Crises &amp; Natural Disasters"><h3 class="story__title"><span class="story__num">63</span>Israeli Triple-Tap Strike Kills Three Paramedics in Lebanon</h3>
+<p class="story__context">An Israeli triple-tap strike in Lebanon killed three paramedics and wounded three others. An initial strike prompted emergency responders, who were then hit by a second attack, followed by a third on two ambulances. Officials described the attacks on the Islamic Health Association and Risala Scout Association as deliberate, escalating cross-border tensions.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens risks of escalation along the Israel-Lebanon border, with potential upward pressure on oil prices and safe-haven demand for gold amid regional instability concerns.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/cgqkkxd09e2o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="art-design-culture-travel">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-palette"></use></svg>Art, Design, Culture &amp; Travel<span class="section__count">2</span></h2>
+<article class="story" id="story-64" data-direction="bullish" data-category="Art, Design, Culture &amp; Travel"><h3 class="story__title"><span class="story__num">64</span>93-Year-Old Joan Semmel Debuts Unabashed Nude Paintings in &#x27;Continuities&#x27; Show</h3>
+<p class="story__context">93-year-old painter Joan Semmel, known for painting her own nude body for over 50 years, debuts vibrant new works in her &#x27;Continuities&#x27; exhibition. These works, including &#x27;Here I Am (2025),&#x27; depict her aging nude body, challenging patriarchal standards, alongside a Jewish Museum retrospective.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Heightens interest in feminist contemporary painting and process-driven art, supporting galleries like Alexander Gray Associates amid social media trends emphasizing handmade authenticity over AI-generated imagery.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/artanddesign/2026/apr/15/joan-semmel-nudes-interview-continuities" target="_blank" rel="noopener noreferrer">The Guardian Culture</a></li>
+<li><a href="https://news.artnet.com/art-world/painting-performance-era-art-reveals-2763962" target="_blank" rel="noopener noreferrer">Artnet News</a></li>
+<li><a href="https://www.theartnewspaper.com/2026/04/15/a-brush-with-hurvin-anderson-podcast" target="_blank" rel="noopener noreferrer">The Art Newspaper</a></li>
+</ul>
+</article>
+<article class="story" id="story-65" data-direction="bearish" data-category="Art, Design, Culture &amp; Travel"><h3 class="story__title"><span class="story__num">65</span>Art Dubai Postpones and Downsizes 2026 Edition Amid Regional War</h3>
+<p class="story__context">Art Dubai postponed its 20th-anniversary fair to May 15-17 due to the US-Israel war in Iran. The fair, at Madinat Jumeirah, will proceed with a new risk-sharing fee model, but around 75 galleries dropped out due to timing and logistics. Maintaining 60% regional participation, it highlights cultural resilience.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Exposes vulnerabilities in UAE cultural event sector to Middle East geopolitical risks, creating headwinds for regional hospitality, logistics, and gallery sales amid fragile ceasefire.</span></p>
+<ul class="story__sources">
+<li><a href="https://news.artnet.com/market/anna-condo-george-condo-christies-auction-2765549" target="_blank" rel="noopener noreferrer">Artnet News</a></li>
+<li><a href="https://www.artnewspaper.com/2026/04/15/art-dubai-announces-updated-gallery-list-for-embattled-postponed-edition" target="_blank" rel="noopener noreferrer">The Art Newspaper</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="entertainment-sports">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chip"></use></svg>Entertainment &amp; Sports<span class="section__count">3</span></h2>
+<article class="story" id="story-66" data-direction="bullish" data-category="Entertainment &amp; Sports"><h3 class="story__title"><span class="story__num">66</span>Arsenal and Bayern Munich Advance to Champions League Semi-Finals</h3>
+<p class="story__context">Arsenal drew 0-0 with Sporting Lisbon to secure a 1-0 aggregate win, reaching their second consecutive Champions League semi-final. Bayern Munich won 4-3 (6-4 agg) against Real Madrid in a thriller, with Harry Kane&#x27;s 50th goal, advancing to the semi-finals after a high-scoring encounter with several injuries and a red card.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Boosts revenue for Bayern (already €83.4M in UCL prizes, potential €150M+ total), elevating Bundesliga clubs&#x27; financial positioning in European competitions. Bullish for European football.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.independent.co.uk/sport/football/mikel-arteta-sporting-champions-league-noni-madueke-atletico-madrid-b2958591.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+<li><a href="https://www.france24.com/en/sport/20260415-bayern-munich-edge-real-madrid-champions-league-semi-finals" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li><a href="https://www.zeit.de/news/2026-04/16/naechster-geldregen-bayern-winken-150-millionen-euro" target="_blank" rel="noopener noreferrer">Die Zeit</a></li>
+<li><a href="http://www.taz.de/Rueckspiel-gegen-Real-gegen-Bayern/!6170868/" target="_blank" rel="noopener noreferrer">Die Tageszeitung (taz)</a></li>
+<li><a href="https://www.faz.net/aktuell/sport/fussball/champions-league/fc-bayern-muenchen-nach-4-3-gegen-real-madrid-in-champions-league-halbfinale-200652574.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (FAZ)</a></li>
+<li><a href="https://www.lemonde.fr/sport/article/2026/04/16/le-real-madrid-elimine-avec-les-honneurs-par-le-bayern-munich-en-ligue-des-champions-se-dirige-vers-une-saison-blanche_6680385_3242.html" target="_blank" rel="noopener noreferrer">Le Monde (French)</a></li>
+<li class="is-extra" hidden><a href="https://egyptian-gazette.com/sports/bayern-late-show-sinks-real-madrid-in-epic-quarter-fina/" target="_blank" rel="noopener noreferrer">Egyptian Gazette</a></li>
+<li class="is-extra" hidden><a href="https://www.bbc.com/sport/football/articles/cz0e27043kpo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC Sport</a></li>
+<li class="is-extra" hidden><a href="https://www.espn.com/soccer/story/_/id/48497483/real-madrid-eduardo-camavinga-red-card-bayern-munich-champions-league" target="_blank" rel="noopener noreferrer">ESPN Top News</a></li>
+<li class="is-extra" hidden><a href="https://www.theguardian.com/football/2026/apr/15/arsenal-sporting-lisbon-champions-league-quarter-final-second-leg-match-report" target="_blank" rel="noopener noreferrer">The Guardian Sports</a></li>
+<li><button type="button" class="src-more" data-count="4">+4 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-67" data-direction="bullish" data-category="Entertainment &amp; Sports"><h3 class="story__title"><span class="story__num">67</span>WNBA 2026 Draft Sees Fudd Go No. 1, Record Six UCLA Players Selected; Aces Re-Sign Wilson to $5M Supermax</h3>
+<p class="story__context">Azzi Fudd was picked No. 1 by Dallas in the 2026 WNBA Draft. Six UCLA players were drafted, a record. Rookie salary jumped to $500,000 from $78,831 last year, driven by a new collective bargaining agreement that significantly increased rookie and veteran pay. The Aces also re-signed A&#x27;ja Wilson.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Likely drives growth in sports media rights, sponsorship revenues, and merchandise sales for women&#x27;s basketball-related equities, bullish for WNBA&#x27;s financial outlook and related businesses.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.espn.com/wnba/story/_/id/48489727/wnba-draft-2026-reaction-best-picks-sleepers-steals-takeaways" target="_blank" rel="noopener noreferrer">ESPN Top News</a></li>
+<li><a href="https://www.theguardian.com/sport/2026/apr/15/las-vegas-aces-re-sign-four-time-wnba-mvp-aja-wilson-to-supermax-contract" target="_blank" rel="noopener noreferrer">The Guardian Sports</a></li>
+</ul>
+</article>
+<article class="story" id="story-68" data-direction="bearish" data-category="Entertainment &amp; Sports"><h3 class="story__title"><span class="story__num">68</span>Saudi PIF Weighs Cutting LIV Golf Funding After $5B Losses Amid Mideast War</h3>
+<p class="story__context">Saudi Arabia’s PIF is considering cutting funding for LIV Golf after accumulating over $5 billion in losses, amid low oil prices and regional conflicts. LIV Golf CEO Scott O&#x27;Neil reassured staff the 2026 season continues as planned through 2032, despite revenue doubling, record attendances, and player exits.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Injects uncertainty into golf&#x27;s duopoly, risking LIV&#x27;s viability and PGA merger talks. Underscores geopolitical perils for sovereign sports investments, bearish for LIV.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/sports/golf/liv-golf-saudi-funding-e7c19130" target="_blank" rel="noopener noreferrer">WSJ (Sports)</a></li>
+<li><a href="https://www.nytimes.com/2026/04/15/world/middleeast/saudi-soverign-fund-liv-golf.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li><a href="https://www.ft.com/content/76dfb7ee-ebf4-4030-8c8f-1c0c23ef5b67" target="_blank" rel="noopener noreferrer">Financial Times (World)</a></li>
+<li><a href="https://www.al-monitor.com/originals/2026/04/liv-golf-reassures-players-over-saudi-withdrawal-rumors" target="_blank" rel="noopener noreferrer">Al-Monitor (Egypt)</a></li>
+<li><a href="https://www.bbc.com/sport/golf/articles/cx2dd2jr0mgo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC Sport</a></li>
+<li><a href="https://www.espn.com/golf/story/_/id/48498138/liv-ceo-shoots-speculation-says-26-season-unaltered" target="_blank" rel="noopener noreferrer">ESPN Top News</a></li>
+<li class="is-extra" hidden><a href="https://www.theguardian.com/sport/2026/apr/15/liv-golf-meeting-in-new-york-fuels-speculation-over-rebel-tours-future" target="_blank" rel="noopener noreferrer">The Guardian Sports</a></li>
+<li><button type="button" class="src-more" data-count="1">+1 more</button></li>
+</ul>
+</article>
+</section>
+        <p class="empty" id="empty-state" hidden>No stories match that filter.</p>
+    </article>
+</div>
+
+    </main>
+
+    <footer class="footer">
+        <span>InsightForge &mdash; daily macro intelligence</span>
+        <span class="footer__keys">
+            <kbd>j</kbd><kbd>k</kbd> stories &middot; <kbd>/</kbd> filter &middot; <kbd>t</kbd> theme
+        </span>
+    </footer>
+
+    <script src="../../static/brief.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="paper">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Sunday, 7 December 2025 &mdash; InsightForge</title>
+    
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2317140F'/%3E%3Cpath d='M6 22V10M12 22V6M18 22v-8M24 22V13' stroke='%238A2B1F' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/style.css">
+    <script>
+        // Set theme before first paint to avoid a flash of the wrong palette.
+        (function () {
+            try {
+                var t = localStorage.getItem('if-theme');
+                if (!t) t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'terminal' : 'paper';
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {}
+        })();
+    </script>
+</head>
+<body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <g id="ico" fill="none" stroke="currentColor" stroke-width="1.5"
+               stroke-linecap="round" stroke-linejoin="round"></g>
+        </defs>
+        <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/><path d="M19 6h-3.5M19 6v3.5"/>
+        </symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.7 3.8 5.7 3.8 9S14.5 18.3 12 21c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/>
+        </symbol>
+        <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3.5 2.5 20h19L12 3.5z"/><path d="M12 10v4.5"/><circle cx="12" cy="17.2" r=".6" fill="currentColor"/>
+        </symbol>
+        <symbol id="i-bank" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9.5 12 4l9 5.5"/><path d="M5 10v8M9.7 10v8M14.3 10v8M19 10v8"/><path d="M3 20.5h18"/>
+        </symbol>
+        <symbol id="i-chip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="7" y="7" width="10" height="10" rx="1.2"/><rect x="10.4" y="10.4" width="3.2" height="3.2"/>
+            <path d="M10 7V4M14 7V4M10 20v-3M14 20v-3M7 10H4M7 14H4M20 10h-3M20 14h-3"/>
+        </symbol>
+        <symbol id="i-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.5 3v6.2L4.6 18a2 2 0 0 0 1.7 3h11.4a2 2 0 0 0 1.7-3l-4.9-8.8V3"/>
+            <path d="M8.5 3h7"/><path d="M7.2 14.5h9.6"/>
+        </symbol>
+        <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13.5 2.5 4.5 13.8h6.2L10 21.5l9.3-11.4h-6.4l.6-7.6z"/>
+        </symbol>
+        <symbol id="i-coin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="8.5"/><path d="M12 6.8v10.4"/><path d="M14.8 9.4c-.6-.8-1.7-1.2-2.9-1.2-1.7 0-2.9.8-2.9 2s1 1.7 2.9 2.1c2 .4 3.1.9 3.1 2.2s-1.3 2-3.1 2c-1.3 0-2.4-.5-3-1.3"/>
+        </symbol>
+        <symbol id="i-factory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2.5 20.5V11l6 3.5V11l6 3.5V7l7 4v9.5z"/><path d="M5.5 11V4.5h3V11"/>
+        </symbol>
+        <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1.8 12S5.5 5.5 12 5.5 22.2 12 22.2 12 18.5 18.5 12 18.5 1.8 12 1.8 12z"/><circle cx="12" cy="12" r="3"/>
+        </symbol>
+        <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 17.5a6.5 6.5 0 1 1 6 0v2a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 19.5z"/><path d="M9.5 17.5h5"/>
+        </symbol>
+        <symbol id="i-pyramid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3 22 20H2L12 3z"/><path d="M12 3v17"/><path d="m7 11.5 5 3 5-3"/>
+        </symbol>
+        <symbol id="i-scales" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3.5v17"/><path d="M5 20.5h14"/><path d="M4 7.5h16"/>
+            <path d="M4 7.5 1.5 13.5h5L4 7.5z"/><path d="M20 7.5l-2.5 6h5l-2.5-6z"/>
+        </symbol>
+        <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5.2-5.2 2 2-5.2 5.2-2z"/>
+        </symbol>
+        <symbol id="i-merge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4v4.5c0 2 1.6 3.5 3.5 3.5h9"/><path d="M4 20v-4.5c0-2 1.6-3.5 3.5-3.5h9"/>
+            <path d="m13.5 8.5 3 3.5-3 3.5"/>
+        </symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20.5S3 15 3 9.4A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 9 2.4c0 5.6-9 11.1-9 11.1z"/>
+        </symbol>
+        <symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a9 9 0 0 0 0 18c1.4 0 2-.9 2-1.8 0-1.5-1.3-1.8-1.3-3 0-.9.8-1.7 1.8-1.7H16a5 5 0 0 0 5-5C21 5.6 17 3 12 3z"/>
+            <circle cx="8" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="7" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="9.5" r="1" fill="currentColor" stroke="none"/>
+        </symbol>
+        <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 5.5H4.5V7A3.5 3.5 0 0 0 7 10.3M17 5.5h2.5V7A3.5 3.5 0 0 1 17 10.3"/>
+            <path d="M12 14v3.5M9 20.5h6l-.7-3h-4.6z"/>
+        </symbol>
+    </svg>
+
+    <header class="masthead">
+        <div class="masthead__bar">
+            <a class="wordmark" href="../../index.html">
+                Insight<span>Forge</span>
+            </a>
+            <nav class="masthead__nav">
+                <a href="../../index.html">Latest</a>
+                <a href="../../archive/index.html">Archive</a>
+                <button type="button" id="theme-toggle" class="theme-toggle"
+                        aria-label="Toggle colour theme">
+                    <span class="theme-toggle__paper">Paper</span>
+                    <span class="theme-toggle__terminal">Terminal</span>
+                </button>
+            </nav>
+        </div>
+        
+<div class="dateline">
+    <h1 class="dateline__title">Sunday, 7 December 2025</h1>
+    <div class="dateline__meta">
+        <span>10:15</span>
+        <span>16 min read</span>
+        <span>38 stories</span><span>36 sources</span>
+    </div>
+    
+    
+    <div class="skew" role="img"
+         aria-label="Directional skew: 7 bullish, 13 bearish, 18 mixed, 0 neutral">
+        <div class="skew__bar">
+            
+                
+                <span class="skew__seg" data-direction="bullish"
+                      style="flex: 7"></span>
+                
+            
+                
+                <span class="skew__seg" data-direction="mixed"
+                      style="flex: 18"></span>
+                
+            
+                
+                <span class="skew__seg" data-direction="bearish"
+                      style="flex: 13"></span>
+                
+            
+                
+            
+        </div>
+        <div class="skew__legend">
+            
+                
+                <span class="skew__key" data-direction="bullish">
+                    <i>▲</i>7 bullish
+                </span>
+                
+            
+                
+                <span class="skew__key" data-direction="bearish">
+                    <i>▼</i>13 bearish
+                </span>
+                
+            
+                
+                <span class="skew__key" data-direction="mixed">
+                    <i>◆</i>18 mixed
+                </span>
+                
+            
+                
+            
+        </div>
+    </div>
+
+    
+    <div class="tape-wrap">
+        <span class="tape__label">The tape</span>
+        <div class="tape" id="tape" aria-hidden="true"></div>
+        <span class="tape__preview" id="tape-preview"></span>
+    </div>
+    
+</div>
+
+    </header>
+
+    <main>
+        
+<div class="reader">
+    <aside class="rail" aria-label="Brief navigation">
+        <div class="rail__inner">
+            <div class="filter">
+                <input type="search" id="filter-input" class="filter__input"
+                       placeholder="Filter stories…" autocomplete="off"
+                       aria-label="Filter stories by text">
+                <div class="filter__dirs" role="group" aria-label="Filter by direction">
+                    
+                    <button type="button" class="chip" data-filter-dir="bullish"
+                            aria-pressed="false"><i>▲</i>bullish</button>
+                    
+                    <button type="button" class="chip" data-filter-dir="bearish"
+                            aria-pressed="false"><i>▼</i>bearish</button>
+                    
+                    <button type="button" class="chip" data-filter-dir="mixed"
+                            aria-pressed="false"><i>◆</i>mixed</button>
+                    
+                </div>
+                <p class="filter__status" id="filter-status" role="status" aria-live="polite"></p>
+            </div>
+
+            
+            <nav class="toc">
+                <span class="toc__label">Sections</span>
+                <ol>
+                    
+                    <li>
+                        <a href="#what-s-driving-non-us-capital-markets" data-toc="what-s-driving-non-us-capital-markets">
+                            <span class="toc__name">What&#39;s Driving Non-US Capital Markets?</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-risks-could-disrupt-capital-markets" data-toc="what-risks-could-disrupt-capital-markets">
+                            <span class="toc__name">What Risks Could Disrupt Capital Markets?</span>
+                            <span class="toc__count">4</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-are-policymakers-signaling" data-toc="what-are-policymakers-signaling">
+                            <span class="toc__name">What Are Policymakers Signaling?</span>
+                            <span class="toc__count">4</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-next-in-ai-tech" data-toc="what-s-next-in-ai-tech">
+                            <span class="toc__name">What&#39;s Next in AI &amp; Tech?</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-advancing-science-health-society" data-toc="what-s-advancing-science-health-society">
+                            <span class="toc__name">What&#39;s Advancing Science, Health &amp; Society?</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-driving-energy-metals-and-commodities" data-toc="what-s-driving-energy-metals-and-commodities">
+                            <span class="toc__name">What&#39;s Driving Energy, Metals and Commodities?</span>
+                            <span class="toc__count">1</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-evolving-in-digital-finance-and-crypto" data-toc="what-s-evolving-in-digital-finance-and-crypto">
+                            <span class="toc__name">What&#39;s Evolving in Digital Finance and Crypto?</span>
+                            <span class="toc__count">1</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-impacting-non-tech-sectors" data-toc="what-s-impacting-non-tech-sectors">
+                            <span class="toc__name">What&#39;s Impacting Non-Tech Sectors?</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-critical-but-overlooked" data-toc="what-s-critical-but-overlooked">
+                            <span class="toc__name">What&#39;s Critical but Overlooked?</span>
+                            <span class="toc__count">1</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-driving-egypt-s-economy-policy-and-geopolitics" data-toc="what-s-driving-egypt-s-economy-policy-and-geopolitics">
+                            <span class="toc__name">What&#39;s Driving Egypt&#39;s Economy, Policy, and Geopolitics?</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#global-politics-geopolitics" data-toc="global-politics-geopolitics">
+                            <span class="toc__name">Global Politics &amp; Geopolitics</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#us-policy-regulation" data-toc="us-policy-regulation">
+                            <span class="toc__name">US Policy &amp; Regulation</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#emerging-markets" data-toc="emerging-markets">
+                            <span class="toc__name">Emerging Markets</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#corporate-m-a-deals" data-toc="corporate-m-a-deals">
+                            <span class="toc__name">Corporate, M&amp;A &amp; Deals</span>
+                            <span class="toc__count">1</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#humanitarian-crises-natural-disasters" data-toc="humanitarian-crises-natural-disasters">
+                            <span class="toc__name">Humanitarian Crises &amp; Natural Disasters</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#art-design-culture-travel" data-toc="art-design-culture-travel">
+                            <span class="toc__name">Art, Design, Culture &amp; Travel</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#entertainment-sports" data-toc="entertainment-sports">
+                            <span class="toc__name">Entertainment &amp; Sports</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                </ol>
+            </nav>
+            
+        </div>
+    </aside>
+
+    <article class="brief">
+        <section class="overview" id="overview" aria-label="Editor's overview">
+<div class="ov-panel" data-panel="dominant-theme"><span class="ov-panel__label">Dominant Theme</span><p class="ov-panel__text">Geopolitical risk premium spikes on renewed Ukraine escalation and Taiwan Strait tensions, while AI drives a systemic shift toward energy independence and tech regulation defiance.</p></div>
+<div class="ov-panel" data-panel="key-risks"><span class="ov-panel__label">Key Risks</span><p class="ov-panel__text">Escalation to nuclear incident from Ukraine strikes (Chernobyl, Zaporizhzhia); China/Japan conflict risk via Fire-Control Radar near Okinawa; USD strength if Trump&#x27;s EU critique breaks transatlantic trade; Bitcoin $84K downside from dolphin selling.</p></div>
+<div class="ov-panel" data-panel="strategic-shifts"><span class="ov-panel__label">Strategic Shifts</span><p class="ov-panel__text">End of US security guarantees for Europe forcing re-armament; AI&#x27;s energy demand driving core infrastructure plays (nuclear/cooling); Streaming consolidation acceleration; US trade war policies creating domestic manufacturing tailwinds.</p></div>
+<div class="ov-panel" data-panel="opportunities"><span class="ov-panel__label">Opportunities</span><p class="ov-panel__text">Long European defense stocks (Rheinmetall, JASSM suppliers); Long nuclear energy/AI cooling tech; Short EM FX on geopolitical contagion; Selective long on European private equity flows; Long USD against European peripheries.</p></div>
+</section>
+<div class="part-divider" id="part-i"><span class="part-divider__num">I</span><h2 class="part-divider__title">Executive Briefing</h2><span class="part-divider__meta">High-conviction signal &middot; 22 stories</span></div>
+<section class="section" id="what-s-driving-non-us-capital-markets">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-globe"></use></svg>What&#x27;s Driving Non-US Capital Markets?<span class="section__count">2</span></h2>
+<article class="story" id="story-1" data-direction="bearish" data-category="What&#x27;s Driving Non-US Capital Markets?"><h3 class="story__title"><span class="story__num">01</span>Beijing Warns Foreign Media in Hong Kong Amid Low Legislative Election Turnout</h3>
+<p class="story__context">Following a deadly fire, Beijing&#x27;s security office summoned foreign journalists in Hong Kong—NYT, FT, WSJ, AP—warning against crossing &#x27;legal red lines&#x27; ahead of the highly managed &#x27;patriots-only&#x27; legislative election. Midday turnout was 12.99% as the government attempts to suppress criticism following the tragedy that exposed public safety lapses.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Bearish financial hub stability as media freedom erodes; heightens risk premium for equities linked to Hong Kong governance; implies ongoing capital outflow risk from Asia.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/news/2025/dec/06/dont-say-we-didnt-warn-you-beijing-summons-journalists-in-hong-kong-after-fire" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.wsj.com/world/china/hong-kong-national-security-authorities-summon-foreign-media-over-fire-coverage-e8d4052b" target="_blank" rel="noopener noreferrer">WSJ (World)</a></li>
+</ul>
+</article>
+<article class="story" id="story-2" data-direction="bullish" data-category="What&#x27;s Driving Non-US Capital Markets?"><h3 class="story__title"><span class="story__num">02</span>Europe Captures Record Share of Global Private Capital Flows</h3>
+<p class="story__context">Global private capital allocations have pivoted, resulting in Europe capturing its largest-ever share of private investment money. This trend indicates a strong concentration of private funds, including private equity and venture capital, flowing into European markets amid changing global investment strategies and return profiles.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Bullish European private equity, non-listed growth companies, and related services sectors; signals potential valuation stability and M&amp;A tailwinds across the Continent.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.ft.com/content/03877379-8a4a-4dd6-b681-8aadb67578ae" target="_blank" rel="noopener noreferrer">FT (Companies)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-risks-could-disrupt-capital-markets">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-alert"></use></svg>What Risks Could Disrupt Capital Markets?<span class="section__count">4</span></h2>
+<article class="story" id="story-3" data-direction="mixed" data-category="What Risks Could Disrupt Capital Markets?"><h3 class="story__title"><span class="story__num">03</span>Russia Escalates Ukraine Nuclear Risk with Strikes on Chernobyl Shield and Zaporizhzhia Power</h3>
+<p class="story__context">Russia&#x27;s drone strikes hit Ukrainian nuclear infrastructure, causing the Chernobyl radiation shield to stop working and needing major repair, according to the UN/IAEA. Separately, the Zaporizhzhia nuclear plant temporarily lost power overnight during massive Russian drone/missile attacks across eight regions, heightening radiological contagion risk.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Elevates catastrophic risk premium for Eastern European assets; bullish uranium prices and nuclear safety equipment; stresses European energy security infrastructure investments.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.reddit.com/r/worldnews/comments/1pfihc5/bombed_chornobyl_shelter_no_longer_blocks/" target="_blank" rel="noopener noreferrer">Reddit World News</a></li>
+<li><a href="https://www.investing.com/news/commodities-news/ukraines-zaporizhzhia-nuclear-plant-temporarily-lost-power-overnight-iaea-says-4394667" target="_blank" rel="noopener noreferrer">Investing.com Commodities</a></li>
+</ul>
+</article>
+<article class="story" id="story-4" data-direction="mixed" data-category="What Risks Could Disrupt Capital Markets?"><h3 class="story__title"><span class="story__num">04</span>China Locks Fire-Control Radar on Japanese Fighters Near Okinawa, Escalating Tensions</h3>
+<p class="story__context">A Chinese J-15 fighter locked fire-control radar on Japanese F-15 jets near Okinawan airspace on Saturday for over 30 minutes in two intermittent bursts. Japan protested the &#x27;dangerous act&#x27; exceeding safe operations. This follows Prime Minister Takaichi&#x27;s statement that Japan&#x27;s military might intervene if China acts against Taiwan.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Significant bullish signal for Japanese defense stocks and broader regional defense spending; bearish for JPY as crisis flight-to-safety currency due to geographic risk; heightens Asian supply chain risk.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/world/china/chinese-jets-locked-radar-on-japanese-fighters-16576128" target="_blank" rel="noopener noreferrer">WSJ (World)</a></li>
+<li><a href="https://www.scmp.com/news/china/military/article/3335493/tokyo-accuses-chinese-fighters-locking-japanese-jets-northeast-taiwan?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+</ul>
+</article>
+<article class="story" id="story-5" data-direction="bearish" data-category="What Risks Could Disrupt Capital Markets?"><h3 class="story__title"><span class="story__num">05</span>German President Demands Ban on Far-Right AfD Party Amid Rising Extremism</h3>
+<p class="story__context">German President Steinmeier called for banning the AfD—polling at 25%—in a Kristallnacht speech, citing fears of right-wing extremism. The AfD, which domestic intelligence considers an extremist organization for anti-immigrant views, faces increasing pressure for constitutional action following reports of mass deportation plans.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Bearish German political stability and Eurozone cohesion; potential widening of peripheral sovereign spreads (OAT/Bund) on political uncertainty in Europe&#x27;s core economy.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.washingtonpost.com/world/2025/12/06/germany-alternative-far-right-party-ban/" target="_blank" rel="noopener noreferrer">Washington Post World</a></li>
+</ul>
+</article>
+<article class="story" id="story-6" data-direction="mixed" data-category="What Risks Could Disrupt Capital Markets?"><h3 class="story__title"><span class="story__num">06</span>Russia Hammers Ukraine Energy Grid as Zelensky Pivots to European Leaders on Peace</h3>
+<p class="story__context">Russia hit eight Ukrainian regions with 653 drones and 51 missiles overnight despite constructive US-mediated peace talks in Miami concerning security frameworks and Donbas territorial issues. Zelensky is now turning to meet UK, German, and French leaders to discuss securing the US-drafted peace plan framework.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Sustains volatility in European natural gas futures on infrastructure attacks; continued bullish pressure on NATO defense spending; dip-buy opportunity for select Ukrainian reconstruction bonds if peace emerges.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/cz680jx511no?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.theguardian.com/world/2025/dec/06/russia-overnight-attacks-across-ukraine-miami-peace-talks-continue" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-are-policymakers-signaling">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-bank"></use></svg>What Are Policymakers Signaling?<span class="section__count">4</span></h2>
+<article class="story" id="story-7" data-direction="mixed" data-category="What Are Policymakers Signaling?"><h3 class="story__title"><span class="story__num">07</span>Trump National Security Strategy Slams Europe; Italy Buys $301M in US Missiles</h3>
+<p class="story__context">Trump&#x27;s National Security Strategy criticized Europe as over-regulated and lacking self-confidence, while citing &#x27;civilisational erasure.&#x27; Italy&#x27;s Defense Minister reported Trump clarified the EU &#x27;serves little or nothing&#x27; in US competition. Simultaneously, the Pentagon approved Italy&#x27;s $301 million purchase of 100 JASSM missiles.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Bullish US defense contractors (Lockheed Martin); pressures European nations, especially Italy, to accelerate military procurement and pursue strategic autonomy from the US.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.france24.com/en/europe/20251206-kallas-calls-washington-eu-s-biggest-ally-after-us-security-strategy-slams-europe" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li><a href="https://www.corriere.it/politica/25_dicembre_06/crosetto-trump-ha-esplicitato-che-la-ue-non-gli-serve-5544d66d-bcc8-4501-b926-40b438666xlk.shtml" target="_blank" rel="noopener noreferrer">Corriere della Sera (Italian)</a></li>
+</ul>
+</article>
+<article class="story" id="story-8" data-direction="bearish" data-category="What Are Policymakers Signaling?"><h3 class="story__title"><span class="story__num">08</span>Trump Strategy Criticizes EU, Calls US Europe’s Biggest Ally Despite Criticism</h3>
+<p class="story__context">Trump’s new National Security Strategy denounces the EU as anti-democratic and facing &#x27;civilisational erasure.&#x27; EU foreign policy chief Kaja Kallas countered at the Doha Forum, calling the US Europe&#x27;s biggest ally and urging greater European self-confidence relative to Russia and the explicit US criticisms.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Bearish transatlantic trade stability and long-term NATO cohesion; long USD vs EUR/GBP as policy divergence widens; suggests further structural weakening of US-EU ties.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.france24.com/en/europe/20251206-kallas-calls-washington-eu-s-biggest-ally-after-us-security-strategy-slams-europe" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li><a href="https://www.nytimes.com/2025/12/06/world/europe/trump-europe-strategy-document.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+</ul>
+</article>
+<article class="story" id="story-9" data-direction="mixed" data-category="What Are Policymakers Signaling?"><h3 class="story__title"><span class="story__num">09</span>Bundestag Passes Conscription Law to Expand Bundeswehr to 260K Troops by 2035</h3>
+<p class="story__context">Germany&#x27;s Bundestag approved the new Wehrdienstgesetz (Military Service Law), effective January 1, 2026, aiming to expand the Bundeswehr to over 260,000 active soldiers by 2035. This significant defense undertaking reflects Germany&#x27;s Zeitenwende policy shift and the need for greater security autonomy.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Bullish German defense sector (Rheinmetall) and European military supply chains; long-term headwind for German fiscal spending; reinforces NATO&#x27;s eastern flank capabilities.</span></p>
+<ul class="story__sources">
+<li><a href="http://www.taz.de/Bundeswehr-sucht-Rekrutinnen/!6127392/" target="_blank" rel="noopener noreferrer">Die Tageszeitung (taz)</a></li>
+</ul>
+</article>
+<article class="story" id="story-10" data-direction="bearish" data-category="What Are Policymakers Signaling?"><h3 class="story__title"><span class="story__num">10</span>Elon Musk Advocates EU Abolition After €120M Fine on X for DSA Violation</h3>
+<p class="story__context">The European Commission fined X €120 million for breaches of the Digital Services Act regarding transparency and misleading verification badges. Elon Musk reacted by pinning a post declaring &#x27;the EU should be abolished,&#x27; accusing officials of censorship and calling for sovereignty to return to individual states.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Amplifies regulatory tension for US Big Tech operating in Europe; potential disruption to European data flows and services like Starlink; increases geopolitical risk for tech M&amp;A.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.lemonde.fr/international/article/2025/12/06/elon-musk-appelle-a-abolir-l-union-europeenne-apres-l-amende-de-120-millions-d-euros-infligee-au-reseau-x_6656295_3210.html" target="_blank" rel="noopener noreferrer">Le Monde (French)</a></li>
+<li><a href="https://www.faz.net/aktuell/wirtschaft/musk-die-eu-sollte-abgeschafft-werden-accg-200332391.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (FAZ)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-next-in-ai-tech">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chip"></use></svg>What&#x27;s Next in AI &amp; Tech?<span class="section__count">2</span></h2>
+<article class="story" id="story-11" data-direction="mixed" data-category="What&#x27;s Next in AI &amp; Tech?"><h3 class="story__title"><span class="story__num">11</span>China’s AI Boom Drives Solopreneur Rise and Robotics Export Surge</h3>
+<p class="story__context">AI innovation in China is generating dual effects: ByteDance scaled back its AI assistant on Nubia M153 after key apps like Alipay restricted its functions. Conversely, China’s Pudu Robotics launched the advanced D5 robot dog at Tokyo&#x27;s IREX, having sold 100,000 robots globally, fueled by AI entrepreneur support in major cities.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Bullish Chinese AI/robotics firms focused on export growth; bearish for domestic app ecosystem integration; accelerates global industrial robot deployment and labor market restructuring.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.scmp.com/business/china-business/article/3335404/bytedances-agentic-ai-smartphone-dials-digital-backlash-chinas-top-apps?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+</ul>
+</article>
+<article class="story" id="story-12" data-direction="mixed" data-category="What&#x27;s Next in AI &amp; Tech?"><h3 class="story__title"><span class="story__num">12</span>Australia’s Under-16 Social Media Ban Bypassed by Simple Photo Trick</h3>
+<p class="story__context">Australia implemented a new law requiring social media platforms to block users under 16, with fines up to $49.5 million for breaches. However, the system&#x27;s facial verification check was bypassed in under five minutes by a 13-year-old using a photo of her mother, exposing flaws in age-assurance technology.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Bearish social media regulation enforcement globally; bullish demand for advanced digital identity verification and age-assurance technology providers amid regulatory pressure.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/crk7xgzj8y8o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.wsj.com/tech/personal-tech/instagram-teen-accounts-loophole-b5c69bfd?mod=rss_Technology" target="_blank" rel="noopener noreferrer">WSJ (Technology)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-advancing-science-health-society">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-flask"></use></svg>What&#x27;s Advancing Science, Health &amp; Society?<span class="section__count">2</span></h2>
+<article class="story" id="story-13" data-direction="mixed" data-category="What&#x27;s Advancing Science, Health &amp; Society?"><h3 class="story__title"><span class="story__num">13</span>Vaccines Show Broader Health Benefits; Tattoo Ink Disrupts Immunity in Mice</h3>
+<p class="story__context">New evidence suggests vaccines provide non-specific health benefits beyond the targeted disease, strengthening the sector against populist critique. Conversely, studies show tattoo ink accumulating in lymph nodes, causing chronic inflammation, macrophage death, and reduced Covid-19 vaccine efficacy in mouse models.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Bullish long-term pharmaceutical sector outlook on broader vaccine acceptance; bearish for unregulated aspects of cosmetic and consumer health markets (tattoos, microplastics).</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/health/wellness/the-unexpected-ways-vaccines-could-boost-your-health-00eb3158" target="_blank" rel="noopener noreferrer">WSJ (Health)</a></li>
+</ul>
+</article>
+<article class="story" id="story-14" data-direction="bullish" data-category="What&#x27;s Advancing Science, Health &amp; Society?"><h3 class="story__title"><span class="story__num">14</span>Aging Punk Executive Helps Organize Music Rights for Reissues</h3>
+<p class="story__context">Matt Pincus, co-founder of Oak View Group and a former troubled youth, is now facilitating aging punk rockers&#x27; efforts to organize their music rights. His work includes ensuring proper documentation for catalog rights and coordinating reissues of major albums from the punk genre.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Minimally bullish for music rights management and catalog value, specifically supporting niche segments of the entertainment sector and intellectual property asset stability.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/arts-culture/music/the-troubled-youth-turned-punk-rock-label-executive-c75a542f" target="_blank" rel="noopener noreferrer">WSJ (Arts &amp; Culture)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-driving-energy-metals-and-commodities">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-bolt"></use></svg>What&#x27;s Driving Energy, Metals and Commodities?<span class="section__count">1</span></h2>
+<article class="story" id="story-15" data-direction="mixed" data-category="What&#x27;s Driving Energy, Metals and Commodities?"><h3 class="story__title"><span class="story__num">15</span>UK Targets 25% Nuclear Power by 2050 Amid AI-Driven Energy Security Push</h3>
+<p class="story__context">The UK officially committed to regulatory reforms within three months to accelerate its nuclear revival, aiming for 25% of grid power by 2050—up from 14% currently. This includes construction of large plants like Sizewell C and deployment of Rolls-Royce SMRs to meet surging overall energy and high AI data center demands.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Bullish long-term for UK energy infrastructure funds and nuclear technology developers; heightens demand side pressure on global uranium supply that is dominated by few entities.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2025/12/06/the-history-of-nuclear-energy-lies-on-british-soil-does-its-future-.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-evolving-in-digital-finance-and-crypto">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-coin"></use></svg>What&#x27;s Evolving in Digital Finance and Crypto?<span class="section__count">1</span></h2>
+<article class="story" id="story-16" data-direction="bearish" data-category="What&#x27;s Evolving in Digital Finance and Crypto?"><h3 class="story__title"><span class="story__num">16</span>Bitcoin Faces $84K Crash as Institutional ETFs Halve Holdings After $126K Peak</h3>
+<p class="story__context">Bitcoin analysts forecast a drop to $84,000 support, 6% below current levels, following BTC&#x27;s $126,000 peak. Institutional holders, including ETFs and treasury firms (dolphin investors), cut their Bitcoin holdings from 965,000 BTC to 694,000 BTC, signaling institutional hesitation and supply pressure.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Bearish near-term BTC price action and related crypto equities (MSTR); signals a cyclical top and distribution phase driven by institutional profit-taking and lower liquidity.</span></p>
+<ul class="story__sources">
+<li><a href="https://bitcoinist.com/brace-for-a-bitcoin-price-crash-how-low-does-the-next-major-support-level-lie/" target="_blank" rel="noopener noreferrer">Bitcoinist</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-impacting-non-tech-sectors">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chip"></use></svg>What&#x27;s Impacting Non-Tech Sectors?<span class="section__count">3</span></h2>
+<article class="story" id="story-17" data-direction="bearish" data-category="What&#x27;s Impacting Non-Tech Sectors?"><h3 class="story__title"><span class="story__num">17</span>India Caps Airfares After IndiGo Cancels 385 Flights Due to Pilot Staffing Crisis</h3>
+<p class="story__context">India&#x27;s aviation ministry capped domestic airfares after IndiGo cancelled 385 flights on the fifth day, stranding hundreds and spiking fares (Delhi-Mumbai up 233%). The crisis stems from IndiGo&#x27;s failure to adapt to stricter pilot rest regulations implemented on November 1 for night flying and weekly rests.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Headwinds for Indian aviation and travel stocks amid regulatory intervention and staff crunch; minor logistics disruption during peak travel season; suggests broader EM labor planning issues.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.scmp.com/news/asia/south-asia/article/3335459/india-caps-airfares-indigo-crisis-hits-5th-day-stranding-hundreds?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+<li><a href="https://www.egyptindependent.com/india-air-travel-chaos-eases-but-indigo-crisis-still-leaves-hundreds-stranded/" target="_blank" rel="noopener noreferrer">Egypt Independent</a></li>
+</ul>
+</article>
+<article class="story" id="story-18" data-direction="mixed" data-category="What&#x27;s Impacting Non-Tech Sectors?"><h3 class="story__title"><span class="story__num">18</span>US Waives $11M Fine for Southwest Airlines Citing $1B in New Operational Investments</h3>
+<p class="story__context">The US Transportation Department waived the remaining $11 million fine on Southwest Airlines due at the end of January, citing the carrier&#x27;s commitment to invest over $1 billion in operational improvements following the 2022 holiday meltdown. The original $140 million penalty included $35M cash and $90M in customer vouchers.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Eases balance sheet pressure on Southwest (LUV); signals government support for major airline investment over punitive fines; marginal positive for US domestic travel sector stability.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/us-news/2025/dec/06/southwest-settlement-fine-waived" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.investing.com/news/stock-market-news/us-waives-11-million-southwest-airlines-fine-imposed-over-2022-holiday-meltdown-4394696" target="_blank" rel="noopener noreferrer">Investing.com Stocks</a></li>
+</ul>
+</article>
+<article class="story" id="story-19" data-direction="mixed" data-category="What&#x27;s Impacting Non-Tech Sectors?"><h3 class="story__title"><span class="story__num">19</span>US Companies Petition for Tariff Exemptions as Trump Aides Push Affordability Message</h3>
+<p class="story__context">A surge of US companies is petitioning for exemptions from the Trump administration&#x27;s tariffs on foreign-made goods, citing damaged business and higher consumer prices. Presidential aides are urging Trump to shift his public focus toward affordability, even as he pushes for approving import bans on mini Japanese cars.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Heightens short-term headwind for US importers and consumer goods sectors; potential tailwind for US domestic auto manufacturers and related supply chains on import competition relief.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.nytimes.com/2025/12/06/business/economy/tariff-exemptions-trump.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li><a href="https://www.wsj.com/politics/policy/trump-economy-affordability-lower-prices-308f93ee" target="_blank" rel="noopener noreferrer">WSJ (Politics)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-critical-but-overlooked">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-eye"></use></svg>What&#x27;s Critical but Overlooked?<span class="section__count">1</span></h2>
+<article class="story" id="story-20" data-direction="mixed" data-category="What&#x27;s Critical but Overlooked?"><h3 class="story__title"><span class="story__num">20</span>Tech Elites Launch &#x27;Network Cities&#x27; as Decentralized Governance Movement Gains Momentum</h3>
+<p class="story__context">Seeking escape from US institutional issues, tech leaders have invested hundreds of millions in &#x27;Network States&#x27;—for-profit, autonomous cities like Próspera (Honduras). VCs like Thiel and Andreessen back the movement which claims 120 evolving start-up societies, pushing decentralized governance and crypto economies.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Bullish defense tech and crypto-native economic systems; bearish for traditional governance models; poses geopolitical and jurisdictional risks for real estate and infrastructure builders in EM.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.ft.com/content/b127ee7a-5ac4-4730-a395-c9f9619615c7" target="_blank" rel="noopener noreferrer">Financial Times (Markets)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-driving-egypt-s-economy-policy-and-geopolitics">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-pyramid"></use></svg>What&#x27;s Driving Egypt&#x27;s Economy, Policy, and Geopolitics?<span class="section__count">2</span></h2>
+<article class="story" id="story-21" data-direction="mixed" data-category="What&#x27;s Driving Egypt&#x27;s Economy, Policy, and Geopolitics?"><h3 class="story__title"><span class="story__num">21</span>Egypt and Qatar Call for Full Israeli Withdrawal and Stabilization Force in Gaza</h3>
+<p class="story__context">At the Doha Forum, Qatar&#x27;s PM and Egypt&#x27;s FM Badr Abdelatty urged full Israeli troop withdrawal from Gaza and rapid deployment of an international stabilization force to secure the next phase of the ceasefire. This demand comes amid over 360 Palestinian deaths since the truce began in October, and stalled second-phase implementation.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Heightened risk of ceasefire collapse if withdrawal demands are unmet; bullish Middle East defense spending and oil prices; bearish long-term reconstruction bonds until stability is confirmed.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/world/2025/dec/06/qatar-and-egypt-urge-israeli-withdrawal-to-secure-next-step-in-gaza-peace-deal" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.al-monitor.com/originals/2025/12/mediators-qatar-egypt-call-next-steps-gaza-truce" target="_blank" rel="noopener noreferrer">Al-Monitor (Egypt)</a></li>
+</ul>
+</article>
+<article class="story" id="story-22" data-direction="bullish" data-category="What&#x27;s Driving Egypt&#x27;s Economy, Policy, and Geopolitics?"><h3 class="story__title"><span class="story__num">22</span>IMF Praises Egypt&#x27;s Reforms in Investment and Trade; GDP Growth Forecast at 5%+</h3>
+<p class="story__context">The IMF completed reviews of Egypt’s Extended Fund Facility, noting &#x27;notable progress&#x27; in investment and trade reforms. Planning Minister Rania Al-Mashat reported Q1 GDP growth of 5.3% and forecast over 5% for the fiscal year, with local banking liquidity rising to EGP 13.686 trillion in October 2025.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Supports continued IMF program confidence and further FDI into SCZone/renewables; bullish Egyptian sovereign debt and carry-trade appeal on macroeconomic stability metrics.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.dailynewsegypt.com/2025/12/06/imf-praises-egypts-notable-progress-on-investment-trade-reforms/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=imf-praises-egypts-notable-progress-on-investment-trade-reforms" target="_blank" rel="noopener noreferrer">Daily News Egypt</a></li>
+</ul>
+</article>
+</section>
+<div class="part-divider" id="part-ii"><span class="part-divider__num">II</span><h2 class="part-divider__title">Thematic Digest</h2><span class="part-divider__meta">Wider context &middot; 16 stories</span></div>
+<section class="section" id="global-politics-geopolitics">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-globe"></use></svg>Global Politics &amp; Geopolitics<span class="section__count">3</span></h2>
+<article class="story" id="story-23" data-direction="mixed" data-category="Global Politics &amp; Geopolitics"><h3 class="story__title"><span class="story__num">23</span>Hegseth Defends US Drug Boat Strikes as Democrats Demand Video Evidence</h3>
+<p class="story__context">Defense Secretary Pete Hegseth defended two dozen US military strikes on Venezuelan cartel boats since September, which killed over 80 people. Congressional Democrats are demanding release of all audio/video footage, citing concerns over orders to &#x27;kill everybody&#x27; on unarmed survivors and escalating domestic partisan battles.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Sustains US-Venezuela tension and domestic political risk; bullish for defense contractors specializing in naval and special operations capabilities amid continued funding debate.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/us-news/2025/dec/06/hegseth-boat-strikes" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.wsj.com/politics/national-security/hegseth-defends-pentagon-strike-on-drug-boat-survivors-9ed69fe2" target="_blank" rel="noopener noreferrer">WSJ (Politics)</a></li>
+</ul>
+</article>
+<article class="story" id="story-24" data-direction="bearish" data-category="Global Politics &amp; Geopolitics"><h3 class="story__title"><span class="story__num">24</span>Pakistan and Taliban Exchange Fire on Afghan Border, Breaking Fragile Ceasefire</h3>
+<p class="story__context">A fragile border ceasefire was broken when Pakistan and Taliban forces exchanged fire near the Spin Boldak border crossing for four hours, resulting in casualties on both sides and residents fleeing. Both sides blame the other for initiating the attacks with heavy artillery amid ongoing accusations of cross-border militancy.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Increases risks of rising cross-border militant activity and regional tension in South Asia; headwinds for trade stability and infrastructure projects near the border region.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/cn09zp87pz8o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+</ul>
+</article>
+<article class="story" id="story-25" data-direction="bullish" data-category="Global Politics &amp; Geopolitics"><h3 class="story__title"><span class="story__num">25</span>German Chancellor Merz Reaffirms Unwavering Support for Israel on Inaugural Visit</h3>
+<p class="story__context">German Chancellor Friedrich Merz, on his first visit to Israel since taking office, pledged Berlin&#x27;s &#x27;unchanging core principle&#x27; of support to President Herzog. His visit comes after a partial arms embargo was partially lifted post-ceasefire, with Merz urging Hamas to disarm under the US-backed deal.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Strengthens German-Israeli security and economic ties, including defense procurement; supportive of regional stability efforts and diplomatic coordination in the Middle East.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.zeit.de/politik/ausland/2025-12/friedrich-merz-antrittsbesuch-israel-unterstuetzung" target="_blank" rel="noopener noreferrer">Die Zeit</a></li>
+<li><a href="https://www.lemonde.fr/international/article/2025/12/07/en-visite-en-israel-friedrich-merz-assure-l-etat-hebreu-du-soutien-immuable-de-l-allemagne_6656306_3210.html" target="_blank" rel="noopener noreferrer">Le Monde (French)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="us-policy-regulation">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-scales"></use></svg>US Policy &amp; Regulation<span class="section__count">3</span></h2>
+<article class="story" id="story-26" data-direction="bearish" data-category="US Policy &amp; Regulation"><h3 class="story__title"><span class="story__num">26</span>Trump&#x27;s ICE Raids in Sanctuary Cities Met with Mayoral Resistance and Brutality Claims</h3>
+<p class="story__context">President Trump&#x27;s mass deportation campaign involving ICE raids in sanctuary cities like Minneapolis and New Orleans faces fierce local opposition. Mayors banned city resources for ICE operations, while Democrats demanded scrutiny following reports of an ICE dog mauling an unresisting undocumented man.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Intensifies federal-local legal/political friction; increases labor market risk for sectors reliant on immigrant workers in blue strongholds; dampens real estate sentiment in affected urban areas.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2025/12/06/trump-sanctuary-cities-mayors-ice-immigration" target="_blank" rel="noopener noreferrer">Axios</a></li>
+<li><a href="https://www.theguardian.com/us-news/2025/dec/06/us-senator-ice-attack-dog-horrific-injuries" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+</ul>
+</article>
+<article class="story" id="story-27" data-direction="bearish" data-category="US Policy &amp; Regulation"><h3 class="story__title"><span class="story__num">27</span>Trump Orders Review of US Childhood Vaccine Schedule After Panel Drops Hep B Newborn Recommendation</h3>
+<p class="story__context">After a CDC panel lifted its recommendation for universal newborn Hepatitis B vaccination, President Trump ordered a review of US childhood immunization schedules when compared to peer countries like Denmark. This move follows criticism by Health Secretary RFK Jr. regarding the 72-shot schedule as excessive for healthy infants.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Bearish long-term revenue projections for US pharmaceutical companies manufacturing pediatric vaccines; introduces uncertainty into public health policy and related healthcare sectors.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.washingtonpost.com/world/2025/12/06/trump-rfk-international-vaccine-schedule/" target="_blank" rel="noopener noreferrer">Washington Post World</a></li>
+</ul>
+</article>
+<article class="story" id="story-28" data-direction="mixed" data-category="US Policy &amp; Regulation"><h3 class="story__title"><span class="story__num">28</span>Trump Pardons Entertainment Executive Timothy Leiweke After Golf Meeting with Attorney</h3>
+<p class="story__context">President Trump granted a full pardon to Timothy Leiweke, co-founder of Oak View Group, who was facing up to 10 years for rigging the University of Texas Moody Center arena bid. The pardon followed Trump playing golf with Leiweke&#x27;s attorney, Trey Gowdy, three weeks prior at Mar-a-Lago.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Undermines DOJ regulatory enforcement in the live events and ticketing sector; net positive tailwind for Oak View Group and potentially Live Nation on eased governance and antitrust concerns.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/politics/policy/trump-ticket-prices-pardon-tim-leiweke-4b33a540?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+<li><a href="https://www.independent.co.uk/news/world/americas/us-politics/trump-timothy-leiweke-pardon-golf-b2879459.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="emerging-markets">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-compass"></use></svg>Emerging Markets<span class="section__count">2</span></h2>
+<article class="story" id="story-29" data-direction="mixed" data-category="Emerging Markets"><h3 class="story__title"><span class="story__num">29</span>Saudi Arabia Allows Alcohol Sales for Wealthy Consumers</h3>
+<p class="story__context">Saudi Arabia is gradually liberalizing its social policies, now allowing the sale of alcohol to wealthy individuals within the Kingdom. This reform signals a continuation of ambiguous social changes without explicit public announcements, following a trend of modernization led by Crown Prince Mohammed bin Salman.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Modest bullish signal for Saudi tourism, hospitality, and luxury consumer markets; supports diversification efforts, but political risk on social change remains elevated.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.nytimes.com/2025/12/06/world/middleeast/saudi-arabia-alcohol-riyadh-store.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+</ul>
+</article>
+<article class="story" id="story-30" data-direction="mixed" data-category="Emerging Markets"><h3 class="story__title"><span class="story__num">30</span>Venezuelan Nobel Winner to Attend Oslo Ceremony Despite Fugitive Threats</h3>
+<p class="story__context">Venezuelan opposition leader María Corina Machado, the Nobel Peace Prize winner, stated she will attend the Oslo ceremony, defying officials&#x27; threats to label her a fugitive if she travels. This move escalates the confrontation with President Maduro&#x27;s government, highlighting deep political instability.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Sustains high geopolitical risk premium for Venezuela; bearish Venezuelan oil output expectations; supportive of broader Latin American political instability concerns and potential sanctions enforcement.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.nytimes.com/2025/12/06/world/americas/venezuela-peace-prize-norway.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="corporate-m-a-deals">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-merge"></use></svg>Corporate, M&amp;A &amp; Deals<span class="section__count">1</span></h2>
+<article class="story" id="story-31" data-direction="mixed" data-category="Corporate, M&amp;A &amp; Deals"><h3 class="story__title"><span class="story__num">31</span>Netflix $72B Bid for Warner Bros. Studio and HBO Max Ignites Auction and Antitrust Scrutiny</h3>
+<p class="story__context">Netflix proposed a $72 billion acquisition of Warner Bros. studio and HBO Max assets, aiming to secure expanded control over Hollywood content and boost its streaming share to 56%. The deal, valued at $83 billion (cash-stock), faces antitrust alarms from Senator Warren and a necessary spin-out of WBD&#x27;s cable networks.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Turbocharges media consolidation risk; bearish for competitors and streaming content suppliers; short-term bullish Netflix (NFLX) on strategic rationale but high execution and regulatory risk.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2025/12/05/netflix-warner-bros-deal-regulatory-questions.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><a href="https://www.wsj.com/business/media/netflix-warner-bros-deal-investors-0cb6909f?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="humanitarian-crises-natural-disasters">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-heart"></use></svg>Humanitarian Crises &amp; Natural Disasters<span class="section__count">2</span></h2>
+<article class="story" id="story-32" data-direction="bearish" data-category="Humanitarian Crises &amp; Natural Disasters"><h3 class="story__title"><span class="story__num">32</span>RSF Drone Attack Kills At Least 33 Children at Sudan Kindergarten</h3>
+<p class="story__context">The civil war in Sudan intensified dramatically when a drone strike by the paramilitary Rapid Support Forces (RSF) hit a kindergarten in Kalogi, South Kordofan, killing at least 50 people, including 33 children and a secondary attack on paramedics. The RSF recently took over el-Fasher, escalating the fight in oil-rich Kordofan states.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Increases risks of mass displacement and severe humanitarian collapse, straining aid budgets; maintains bearish outlook on regional stability and infrastructure investment in Sudan.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/cpd61d0jl6no?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.npr.org/2025/12/06/g-s1-101066/sudanese-paramilitary-drone-attack-kills-50" target="_blank" rel="noopener noreferrer">NPR News</a></li>
+</ul>
+</article>
+<article class="story" id="story-33" data-direction="bearish" data-category="Humanitarian Crises &amp; Natural Disasters"><h3 class="story__title"><span class="story__num">33</span>Natural Disaster Declared in NSW as Bushfires Destroy 16+ Homes</h3>
+<p class="story__context">Soaring temperatures and dry conditions across New South Wales fueled scores of uncontained wildfires; 16+ homes were destroyed, primarily in Koolewong and Bulahdelah. Authorities declared a natural disaster in multiple regions along the Central Coast and Upper Hunter to activate recovery funding mechanisms.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Headwinds for Australian insurance sector and regional economies in eastern NSW due to property damage and immediate rebuilding costs; elevated risk premium for local real estate developers.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/australia-news/2025/dec/07/disaster-declared-as-nsw-firefighters-continue-to-battle-20-uncontained-bushfires" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="art-design-culture-travel">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-palette"></use></svg>Art, Design, Culture &amp; Travel<span class="section__count">2</span></h2>
+<article class="story" id="story-34" data-direction="bullish" data-category="Art, Design, Culture &amp; Travel"><h3 class="story__title"><span class="story__num">34</span>Architect Frank Gehry, Designer of Guggenheim Bilbao and Disney Hall, Dies at 96</h3>
+<p class="story__context">Frank Gehry, the Canadian-American deconstructivist architect, passed away at 96. His iconic 1997 Guggenheim Bilbao created the &#x27;Bilbao effect&#x27; of cultural tourism regeneration, drawing 1.3 million visitors in its first year, alongside his 2003 Walt Disney Concert Hall in Los Angeles and 2014 Fondation Louis Vuitton.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Bullish attention on his architectural landmarks, supporting local real estate values and tourism for cities that successfully leveraged his &#x27;star-chitect&#x27; legacy (Bilbao, LA, Paris).</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/artanddesign/2025/dec/06/frank-gehry-architect-bilbao-guggenheim-instant-icons" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.nytimes.com/2025/12/05/arts/design/frank-gehry-dead.html" target="_blank" rel="noopener noreferrer">NYT Arts</a></li>
+</ul>
+</article>
+<article class="story" id="story-35" data-direction="bullish" data-category="Art, Design, Culture &amp; Travel"><h3 class="story__title"><span class="story__num">35</span>La Scala Opera Sells Out Opening Night with Record €3M Box Office</h3>
+<p class="story__context">Teatro alla Scala’s December 7 season premiere of Šostakovič’s &#x27;Una lady Macbeth del distretto di Mcensk&#x27; sold out all 2,000 seats, generating a record €3 million box office revenue with top tickets reaching €3,200. The event drew VIPs and over 80 international journalists, reinforcing Milan&#x27;s cultural status.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Bullish for Milan&#x27;s luxury tourism, high-end hospitality sectors, and cultural financing; demonstrates sustained high consumer demand for exclusive European events.</span></p>
+<ul class="story__sources">
+<li><a href="http://milano.corriere.it/notizie/cronaca/25_dicembre_06/prima-della-scala-incassi-record-incasso-di-3-milioni-biglietti-a-3-200-euro-da-mahmood-a-liliana-segre-i-vip-presenti-b8a01de0-a897-4024-bf9d-912153c99xlk.shtml" target="_blank" rel="noopener noreferrer">Corriere della Sera (Italian)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="entertainment-sports">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chip"></use></svg>Entertainment &amp; Sports<span class="section__count">3</span></h2>
+<article class="story" id="story-36" data-direction="bearish" data-category="Entertainment &amp; Sports"><h3 class="story__title"><span class="story__num">36</span>Aston Villa Victory Over Arsenal Blows Open Premier League Title Race</h3>
+<p class="story__context">Aston Villa secured a 2-1 victory over league leaders Arsenal with a 95th-minute winner from Emiliano Buendía, ending Arsenal’s 11-game unbeaten run since August. Manchester City closed the gap to two points, while Villa solidified their own top-four push with nine wins in their last ten matches.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens competitive intensity in the EPL, sustaining sponsor interest; improves Aston Villa&#x27;s franchise valuation; creates short-term pressure on Arsenal&#x27;s title odds.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.espn.com/soccer/story/_/id/47222074/arsenals-thrilling-late-loss-aston-villa-blows-title-race-wide-open" target="_blank" rel="noopener noreferrer">ESPN Top News</a></li>
+<li><a href="https://www.theguardian.com/football/2025/dec/06/aston-villa-arsenal-premier-league-match-report" target="_blank" rel="noopener noreferrer">The Guardian Sports</a></li>
+</ul>
+</article>
+<article class="story" id="story-37" data-direction="bullish" data-category="Entertainment &amp; Sports"><h3 class="story__title"><span class="story__num">37</span>Dvalishvili Targets Record Fourth Title Defense at UFC 323 Amid Talent Shift</h3>
+<p class="story__context">Bantamweight champion Merab Dvalishvili seeks a record fourth successful title defense against Russian challenger Petr Yan at UFC 323. The card also features Alexandre Pantoja&#x27;s flyweight defense and the retirement of veteran Henry Cejudo, spotlighting emerging prospects like Payton Talbott and Joshua Van.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Highlights generational flux in key UFC weight classes; bullish for combat sports entertainment revenue and the valuation of the promotion; accelerates demand for fresh talent acquisition.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.independent.co.uk/sport/ufc/ufc-323-dvalishvili-yan-live-stream-updates-b2878160.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+<li><a href="https://www.espn.com/mma/story/_id/47226980/merab-dvalishvili-vs-petr-yan-2-live-results-analysis" target="_blank" rel="noopener noreferrer">ESPN Top News</a></li>
+</ul>
+</article>
+<article class="story" id="story-38" data-direction="bearish" data-category="Entertainment &amp; Sports"><h3 class="story__title"><span class="story__num">38</span>England Collapses to 134-6 on Day Three, On Brink of Ashes Defeat Against Australia</h3>
+<p class="story__context">England suffered a dramatic collapse on Day Three of the Second Ashes Test, falling from 90-1 to 134-6, still 43 runs adrift of Australia’s lead. Mitchell Starc starred with the ball, leaving England on the brink of a 2-0 series deficit due to their high-risk aggressive batting style.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Bearish English cricket confidence and momentum; validates Australian dominance; increases psychological pressure on Captain Ben Stokes potentially impacting team endorsement value.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/sport/2025/dec/06/jofra-archer-pillow-shot-symbol-england-ashes-nightmare-cricket" target="_blank" rel="noopener noreferrer">The Guardian Sports</a></li>
+<li><a href="https://www.bbc.com/sport/cricket/articles/cqlk0q5n0r4o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC Sport</a></li>
+</ul>
+</article>
+</section>
+        <p class="empty" id="empty-state" hidden>No stories match that filter.</p>
+    </article>
+</div>
+
+    </main>
+
+    <footer class="footer">
+        <span>InsightForge &mdash; daily macro intelligence</span>
+        <span class="footer__keys">
+            <kbd>j</kbd><kbd>k</kbd> stories &middot; <kbd>/</kbd> filter &middot; <kbd>t</kbd> theme
+        </span>
+    </footer>
+
+    <script src="../../static/brief.js" defer></script>
+</body>
+</html>
