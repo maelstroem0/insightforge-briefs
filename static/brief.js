@@ -154,8 +154,11 @@
         if (e.key === 'j') { e.preventDefault(); move(1); }
         else if (e.key === 'k') { e.preventDefault(); move(-1); }
         else if (e.key === '/') { e.preventDefault(); if (input) input.focus(); }
-        else if (e.key === 't') {
-            setTheme(doc.documentElement.getAttribute('data-theme') === 'paper' ? 'terminal' : 'paper');
-        }
+        // Modified 2026-08-22: the 't' theme toggle is DISABLED, not removed.
+        // style.css defines colour tokens only under [data-theme="paper"] -- there
+        // is no [data-theme="terminal"] block in the working tree, in HEAD, or in
+        // the live published CSS. Setting data-theme="terminal" therefore left
+        // every --bg/--ink/--accent undefined and stripped the page's palette.
+        // Re-enable this line only once a terminal palette actually ships.
     });
 })();

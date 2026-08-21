@@ -565,6 +565,45 @@ main { position: relative; z-index: 2; }
     border-style: dotted;
 }
 
+/* --------------------------------------------------------- earlier-today (§2) */
+.earlier-details {
+    margin: 0 0 2rem;
+    padding: 1rem 1.2rem;
+    background: var(--bg-sunk);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+}
+.earlier-details summary {
+    cursor: pointer;
+    font-family: var(--f-body);
+    font-size: 0.95rem;
+    color: var(--ink-2);
+}
+.earlier-details summary:hover { color: var(--accent); }
+.earlier-list {
+    list-style: none;
+    margin: 1rem 0 0;
+    padding: 0;
+}
+.earlier-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--rule);
+    line-height: 1.5;
+}
+.earlier-list li:last-child { border-bottom: 0; }
+.earlier-list a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 600;
+}
+.earlier-list a:hover { color: var(--accent); }
+.earlier-snippet {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.9rem;
+    color: var(--ink-2);
+}
+
 .src-more {
     font-family: var(--f-mono);
     font-size: 0.66rem;
@@ -705,6 +744,7 @@ main { position: relative; z-index: 2; }
 .edition-link[data-edition="am"] .edition-link__dot { background: #B7791F; }   /* daybreak — amber */
 .edition-link[data-edition="pm"] .edition-link__dot { background: #2B5B84; }   /* evening — blue */
 .edition-link[data-edition="night"] .edition-link__dot { background: #5B3A7A; } /* after close — violet */
+.edition-link[data-edition="weekly"] .edition-link__dot { background: #7A1F1F; } /* the week — oxblood */
 
 .edition-link__time {
     color: var(--ink-2);
@@ -728,6 +768,18 @@ main { position: relative; z-index: 2; }
     text-transform: uppercase;
     color: var(--ink-2);
 }
+
+/* Added 2026-08-22: social + feed links. Sits between the wordmark line and the
+   keyboard hints, so on a narrow screen it wraps to its own row rather than
+   colliding with either. */
+.footer__links { display: flex; gap: 0.5rem; align-items: baseline; }
+.footer__links a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+}
+.footer__links a:hover,
+.footer__links a:focus-visible { border-bottom-color: var(--accent); }
 
 /* ------------------------------------------------------------- animations */
 .reveal {
@@ -893,4 +945,73 @@ main { position: relative; z-index: 2; }
 
 @media (max-width: 40rem) {
     .ep-card__head { flex-direction: column; gap: 0.25rem; }
+}
+
+/* ── THE WEEK (weekly edition) ─────────────────────────────── */
+.weekly { --wk: #7A1F1F; --wk-soft: #7a1f1f22; max-width: var(--measure); margin-inline: auto; }
+
+.weekly-badge { display: flex; align-items: baseline; gap: 0.6rem; margin-top: 0.35rem; }
+.weekly-badge__name { font: 700 var(--step--1)/1 var(--f-mono); letter-spacing: 0.18em;
+  color: #fff; background: var(--wk); padding: 0.28em 0.55em; }
+.weekly-badge__range { font: 500 var(--step--1)/1 var(--f-mono); color: var(--ink-2); }
+
+.weekly-headline { font: 600 var(--step-3)/1.08 var(--f-display); letter-spacing: -0.015em;
+  margin: 1.2rem 0 0.4rem; }
+
+.weekly-lede p { font: 400 var(--step-1)/1.55 var(--f-body); margin: 1.1rem 0 0; }
+.weekly-lede p::first-letter { font: 700 3.2em/0.85 var(--f-display); float: left;
+  padding: 0.06em 0.12em 0 0; color: var(--wk); }
+
+.wk-section-h { font: 700 var(--step-0)/1 var(--f-mono); letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--wk); border-top: 2px solid var(--wk);
+  padding-top: 0.55rem; margin: 2.6rem 0 1.1rem; }
+
+/* threads: verdict kicker, theme, day-rail timeline */
+.thread { margin: 0 0 2.2rem; }
+.thread-verdict { font: 600 var(--step--1)/1.4 var(--f-mono); color: var(--wk);
+  margin: 0 0 0.15rem; }
+.thread-theme { font: 600 var(--step-1)/1.2 var(--f-display); margin: 0 0 0.7rem; }
+.thread-timeline { list-style: none; margin: 0; padding: 0;
+  border-left: 2px solid var(--wk-soft); }
+.thread-timeline li { display: grid; grid-template-columns: 3.2rem 1fr; gap: 0.7rem;
+  padding: 0.32rem 0 0.32rem 0.85rem; position: relative; }
+.thread-timeline li::before { content: ""; position: absolute; left: -0.32rem;
+  top: 0.78em; width: 0.52rem; height: 0.52rem; border-radius: 50%;
+  background: var(--wk); }
+.tl-day { font: 600 var(--step--1)/1.6 var(--f-mono); color: var(--ink-2); }
+.tl-dev { font: 400 var(--step-0)/1.5 var(--f-body); }
+.thread-next { display: grid; grid-template-columns: 3.2rem 1fr; gap: 0.7rem;
+  padding: 0.45rem 0 0.45rem 0.85rem; margin: 0.25rem 0 0; background: var(--wk-soft);
+  border-left: 2px solid var(--wk); font: 500 var(--step-0)/1.45 var(--f-body); }
+
+/* the tape: stat grid + winners/losers */
+.tape-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  gap: 1px; background: var(--ink-2); border: 1px solid var(--ink-2); margin: 0; }
+.tape-cell { background: var(--bg-2); padding: 0.7rem 0.8rem; }
+.tape-cell dt { font: 500 var(--step--1)/1.3 var(--f-mono); color: var(--ink-2); }
+.tape-cell dd { font: 700 var(--step-2)/1.1 var(--f-display); margin: 0.15rem 0 0; }
+.tape-up dd { color: #1F6A3C; } .tape-down dd { color: var(--wk); }
+.tape-wl { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin-top: 1.1rem; }
+.tape-wl h3 { font: 700 var(--step--1)/1 var(--f-mono); letter-spacing: 0.12em;
+  text-transform: uppercase; margin: 0 0 0.4rem; }
+
+/* hits & misses */
+.hm { list-style: none; display: flex; gap: 0.6rem; align-items: baseline;
+  font: 400 var(--step-0)/1.5 var(--f-body); padding: 0.3rem 0; }
+.hm-mark::before { font-family: var(--f-mono); font-weight: 700; }
+.hm-hit .hm-mark::before  { content: "✓"; color: #1F6A3C; }
+.hm-miss .hm-mark::before { content: "✗"; color: var(--wk); }
+.hm-open .hm-mark::before { content: "○"; color: var(--ink-2); }
+
+/* the setup */
+.setup-list { list-style: none; margin: 0; padding: 0; }
+.setup-list li { display: grid; grid-template-columns: 6.5rem 1fr; gap: 0.7rem;
+  padding: 0.5rem 0; border-bottom: 1px solid var(--bg-sunk); }
+.setup-when { font: 600 var(--step--1)/1.6 var(--f-mono); color: var(--wk); }
+.setup-event { font: 600 var(--step-0)/1.45 var(--f-body); }
+.setup-why { grid-column: 2; font: 400 var(--step--1)/1.45 var(--f-body); color: var(--ink-2); }
+
+@media (max-width: 40rem) {
+  .tape-wl { grid-template-columns: 1fr; }
+  .thread-timeline li, .thread-next { grid-template-columns: 2.6rem 1fr; }
 }
