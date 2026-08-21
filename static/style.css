@@ -209,6 +209,57 @@ kbd {
 /* ------------------------------------------------------------- skew meter */
 .skew { margin-top: 1.5rem; }
 
+/* ------------------------------------------------------------- skew line (P5.1) */
+.skewline {
+    margin-top: 0.6rem;
+    font-family: var(--f-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+}
+.skewline__value { color: var(--ink-1); }
+.skewline__details { display: inline-block; margin-left: 1rem; }
+.skewline__details summary {
+    display: inline;
+    cursor: pointer;
+    color: var(--ink-2);
+    text-decoration: underline dotted;
+}
+.skewline__details[open] summary { color: var(--accent); }
+.skewline__breakdown { color: var(--ink-2); }
+
+/* ------------------------------------------------------------- skew history (M5.3) */
+.skewhist { margin: 0.8rem 0 0; }
+.skewhist__caption {
+    font-family: var(--f-mono);
+    font-size: var(--step--2);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    margin-bottom: 0.3rem;
+}
+.skewhist__svg { display: block; width: 100%; height: 72px; }
+.skewhist__zero { stroke: var(--rule-2); stroke-width: 1; }
+.skewhist__line { stroke: var(--accent); stroke-width: 2; }
+
+
+/* ------------------------------------------------------------- editions nav (M2c) */
+.editions-nav {
+    margin-top: 0.6rem;
+    font-family: var(--f-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+}
+.editions-nav__label { color: var(--ink-2); }
+.editions-nav__item { color: var(--ink-1); text-decoration: none; }
+a.editions-nav__item:hover { text-decoration: underline; }
+.editions-nav__item.is-current { color: var(--accent); font-weight: 600; }
+.editions-nav__sep { color: var(--rule-2); margin: 0 0.35em; }
+
+
 .skew__bar {
     display: flex;
     height: 6px;
@@ -750,7 +801,10 @@ main { position: relative; z-index: 2; }
 .archive-list a {
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-template-areas: "day weekday" "day time";
+    /* Modified 2026-08-20 (M0c): 3rd row for the pm/night edition label. Left cell
+       stays empty ("day" only spans the first two rows) so the day numeral doesn't
+       grow to fill three rows on am (no-label) entries. */
+    grid-template-areas: "day weekday" "day time" ". edition";
     column-gap: 0.6rem;
     align-content: center;
     padding: 0.8rem 0.9rem;
@@ -779,6 +833,17 @@ main { position: relative; z-index: 2; }
     font-family: var(--f-mono);
     font-size: 0.64rem;
     color: var(--ink-2);
+}
+/* Added 2026-08-20 (M0c): pm/night edition label under the time. Absent for am
+   entries (edition_label is '' -> the span isn't rendered at all), so this rule
+   never applies to legacy content. */
+.archive-list__edition {
+    grid-area: edition;
+    font-family: var(--f-mono);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--accent);
 }
 
 /* ----------------------------------------------------------------- footer */
@@ -937,12 +1002,20 @@ main { position: relative; z-index: 2; }
     gap: 1rem;
     margin-bottom: 0.6rem;
 }
-.ep-card__date {
+.ep-card__title {
     font-family: var(--f-display);
     font-size: 1.15rem;
     font-weight: 600;
     letter-spacing: -0.02em;
     margin: 0;
+}
+.ep-card__meta {
+    font-family: var(--f-mono);
+    font-size: var(--step--1);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+    white-space: nowrap;
 }
 .ep-card__brief {
     font-family: var(--f-mono);
