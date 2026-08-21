@@ -32,60 +32,6 @@
         onScroll();
     }
 
-    /* --------------------------------------------------------- the tape
-       A minimap of the entire brief: one tick per story, coloured by
-       direction, in reading order. Hover to preview, click to jump.
-       Built from the DOM so the renderer stays clean.                    */
-    var tapeHost = doc.getElementById('tape');
-    if (tapeHost && stories.length) {
-        var frag = doc.createDocumentFragment();
-        stories.forEach(function (story, i) {
-            var dir = story.getAttribute('data-direction') || 'neutral';
-            var titleEl = story.querySelector('.story__title');
-            var title = titleEl ? titleEl.textContent.replace(/^\s*\d+\s*/, '').trim() : '';
-            var tick = doc.createElement('button');
-            tick.type = 'button';
-            tick.className = 'tape__tick';
-            tick.setAttribute('data-direction', dir);
-            tick.setAttribute('data-index', i);
-            tick.setAttribute('aria-label', title);
-            tick.title = title;
-            frag.appendChild(tick);
-        });
-        tapeHost.appendChild(frag);
-
-        var preview = doc.getElementById('tape-preview');
-        tapeHost.addEventListener('click', function (e) {
-            var tick = e.target.closest('.tape__tick');
-            if (!tick) return;
-            var target = stories[+tick.getAttribute('data-index')];
-            if (target) {
-                target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
-                setCursor(+tick.getAttribute('data-index'));
-            }
-        });
-        if (preview) {
-            tapeHost.addEventListener('mouseover', function (e) {
-                var tick = e.target.closest('.tape__tick');
-                if (tick) preview.textContent = tick.title;
-            });
-            tapeHost.addEventListener('mouseleave', function () { preview.textContent = ''; });
-        }
-
-        // Reflect scroll position on the tape: ticks light up as their story passes
-        // through the middle band of the viewport.
-        var ticks = Array.prototype.slice.call(tapeHost.children);
-        if ('IntersectionObserver' in window) {
-            var tapeSpy = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    var i = stories.indexOf(entry.target);
-                    if (i > -1 && ticks[i]) ticks[i].classList.toggle('is-seen', entry.isIntersecting);
-                });
-            }, { rootMargin: '-40% 0px -40% 0px' });
-            stories.forEach(function (s) { tapeSpy.observe(s); });
-        }
-    }
-
     /* ------------------------------------------------ source expanders */
     doc.addEventListener('click', function (e) {
         var btn = e.target.closest('.src-more');
