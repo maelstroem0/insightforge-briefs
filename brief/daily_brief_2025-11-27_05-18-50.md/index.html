@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="paper">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self'; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'">
+    <title>Thursday, 27 November 2025 &mdash; The ApexQuantix Briefing</title>
+    
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2317140F'/%3E%3Cpath d='M6 22V10M12 22V6M18 22v-8M24 22V13' stroke='%238A2B1F' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/style.css">
+    
+    <link rel="alternate" type="application/rss+xml" title="The ApexQuantix Briefing"
+          href="https://maelstroem0.github.io/insightforge-briefs/feed.xml">
+</head>
+<body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <g id="ico" fill="none" stroke="currentColor" stroke-width="1.5"
+               stroke-linecap="round" stroke-linejoin="round"></g>
+        </defs>
+        <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/><path d="M19 6h-3.5M19 6v3.5"/>
+        </symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.7 3.8 5.7 3.8 9S14.5 18.3 12 21c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/>
+        </symbol>
+        <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3.5 2.5 20h19L12 3.5z"/><path d="M12 10v4.5"/><circle cx="12" cy="17.2" r=".6" fill="currentColor"/>
+        </symbol>
+        <symbol id="i-bank" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9.5 12 4l9 5.5"/><path d="M5 10v8M9.7 10v8M14.3 10v8M19 10v8"/><path d="M3 20.5h18"/>
+        </symbol>
+        <symbol id="i-chip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="7" y="7" width="10" height="10" rx="1.2"/><rect x="10.4" y="10.4" width="3.2" height="3.2"/>
+            <path d="M10 7V4M14 7V4M10 20v-3M14 20v-3M7 10H4M7 14H4M20 10h-3M20 14h-3"/>
+        </symbol>
+        <symbol id="i-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.5 3v6.2L4.6 18a2 2 0 0 0 1.7 3h11.4a2 2 0 0 0 1.7-3l-4.9-8.8V3"/>
+            <path d="M8.5 3h7"/><path d="M7.2 14.5h9.6"/>
+        </symbol>
+        <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13.5 2.5 4.5 13.8h6.2L10 21.5l9.3-11.4h-6.4l.6-7.6z"/>
+        </symbol>
+        <symbol id="i-coin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="8.5"/><path d="M12 6.8v10.4"/><path d="M14.8 9.4c-.6-.8-1.7-1.2-2.9-1.2-1.7 0-2.9.8-2.9 2s1 1.7 2.9 2.1c2 .4 3.1.9 3.1 2.2s-1.3 2-3.1 2c-1.3 0-2.4-.5-3-1.3"/>
+        </symbol>
+        <symbol id="i-factory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2.5 20.5V11l6 3.5V11l6 3.5V7l7 4v9.5z"/><path d="M5.5 11V4.5h3V11"/>
+        </symbol>
+        <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1.8 12S5.5 5.5 12 5.5 22.2 12 22.2 12 18.5 18.5 12 18.5 1.8 12 1.8 12z"/><circle cx="12" cy="12" r="3"/>
+        </symbol>
+        <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 17.5a6.5 6.5 0 1 1 6 0v2a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 19.5z"/><path d="M9.5 17.5h5"/>
+        </symbol>
+        <symbol id="i-pyramid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3 22 20H2L12 3z"/><path d="M12 3v17"/><path d="m7 11.5 5 3 5-3"/>
+        </symbol>
+        <symbol id="i-scales" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3.5v17"/><path d="M5 20.5h14"/><path d="M4 7.5h16"/>
+            <path d="M4 7.5 1.5 13.5h5L4 7.5z"/><path d="M20 7.5l-2.5 6h5l-2.5-6z"/>
+        </symbol>
+        <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5.2-5.2 2 2-5.2 5.2-2z"/>
+        </symbol>
+        <symbol id="i-merge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4v4.5c0 2 1.6 3.5 3.5 3.5h9"/><path d="M4 20v-4.5c0-2 1.6-3.5 3.5-3.5h9"/>
+            <path d="m13.5 8.5 3 3.5-3 3.5"/>
+        </symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20.5S3 15 3 9.4A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 9 2.4c0 5.6-9 11.1-9 11.1z"/>
+        </symbol>
+        <symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a9 9 0 0 0 0 18c1.4 0 2-.9 2-1.8 0-1.5-1.3-1.8-1.3-3 0-.9.8-1.7 1.8-1.7H16a5 5 0 0 0 5-5C21 5.6 17 3 12 3z"/>
+            <circle cx="8" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="7" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="9.5" r="1" fill="currentColor" stroke="none"/>
+        </symbol>
+        <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 5.5H4.5V7A3.5 3.5 0 0 0 7 10.3M17 5.5h2.5V7A3.5 3.5 0 0 1 17 10.3"/>
+            <path d="M12 14v3.5M9 20.5h6l-.7-3h-4.6z"/>
+        </symbol>
+    </svg>
+
+    <header class="masthead">
+        <div class="masthead__bar">
+            <a class="wordmark" href="../../index.html">
+                Apex<span>Quantix</span>
+            </a>
+            <nav class="masthead__nav">
+                <a href="../../index.html">Latest</a>
+                <a href="../../archive/index.html">Archive</a>
+                <a href="../../podcast/index.html">Listen</a>
+            </nav>
+        </div>
+        
+<div class="dateline">
+    <h1 class="dateline__title">Thursday, 27 November 2025</h1>
+    <div class="dateline__meta">
+        <span>19:30</span>
+        <span>21 min read</span>
+        <span>51 stories</span><span>33 sources</span>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="skewline" role="img"
+         aria-label="Directional skew: 10 bullish, 21 bearish, 17 mixed, 3 neutral">
+        <span class="skewline__value">Skew -11 &middot; risk-off</span>
+        <details class="skewline__details">
+            <summary>full reading</summary>
+            <span class="skewline__breakdown">
+                ▲ 10 bullish &middot; ▼ 21 bearish &middot;
+                ◆ 17 mixed &middot; ■ 3 neutral
+            </span>
+        </details>
+    </div>
+
+    
+    
+</div>
+
+    </header>
+
+    <main>
+        
+<div class="reader">
+    <aside class="rail" aria-label="Brief navigation">
+        <div class="rail__inner">
+            <div class="filter">
+                <input type="search" id="filter-input" class="filter__input"
+                       placeholder="Filter stories…" autocomplete="off"
+                       aria-label="Filter stories by text">
+                <div class="filter__dirs" role="group" aria-label="Filter by direction">
+                    
+                    <button type="button" class="chip" data-filter-dir="bullish"
+                            aria-pressed="false"><i>▲</i>bullish</button>
+                    
+                    <button type="button" class="chip" data-filter-dir="bearish"
+                            aria-pressed="false"><i>▼</i>bearish</button>
+                    
+                    <button type="button" class="chip" data-filter-dir="mixed"
+                            aria-pressed="false"><i>◆</i>mixed</button>
+                    
+                </div>
+                <p class="filter__status" id="filter-status" role="status" aria-live="polite"></p>
+            </div>
+
+            
+            <nav class="toc">
+                <span class="toc__label">Sections</span>
+                <ol>
+                    
+                    <li>
+                        <a href="#what-s-driving-us-capital-markets-now-and-next" data-toc="what-s-driving-us-capital-markets-now-and-next">
+                            <span class="toc__name">What&#39;s Driving US Capital Markets Now and Next?</span>
+                            <span class="toc__count">1</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-driving-non-us-capital-markets" data-toc="what-s-driving-non-us-capital-markets">
+                            <span class="toc__name">What&#39;s Driving Non-US Capital Markets?</span>
+                            <span class="toc__count">5</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-risks-could-disrupt-capital-markets" data-toc="what-risks-could-disrupt-capital-markets">
+                            <span class="toc__name">What Risks Could Disrupt Capital Markets?</span>
+                            <span class="toc__count">5</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-are-policymakers-signaling" data-toc="what-are-policymakers-signaling">
+                            <span class="toc__name">What Are Policymakers Signaling?</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-next-in-ai-tech" data-toc="what-s-next-in-ai-tech">
+                            <span class="toc__name">What&#39;s Next in AI &amp; Tech?</span>
+                            <span class="toc__count">5</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-advancing-science-health-society" data-toc="what-s-advancing-science-health-society">
+                            <span class="toc__name">What&#39;s Advancing Science, Health &amp; Society?</span>
+                            <span class="toc__count">1</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-driving-the-energy-metals-and-commodities" data-toc="what-s-driving-the-energy-metals-and-commodities">
+                            <span class="toc__name">What&#39;s Driving the Energy, Metals and Commodities?</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-impacting-non-tech-sectors" data-toc="what-s-impacting-non-tech-sectors">
+                            <span class="toc__name">What&#39;s Impacting Non-Tech Sectors?</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-critical-but-overlooked" data-toc="what-s-critical-but-overlooked">
+                            <span class="toc__name">What&#39;s Critical but Overlooked?</span>
+                            <span class="toc__count">8</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-driving-egypt-s-economy-policy-and-geopolitics" data-toc="what-s-driving-egypt-s-economy-policy-and-geopolitics">
+                            <span class="toc__name">What&#39;s Driving Egypt&#39;s Economy, Policy, and Geopolitics?</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#markets-macro" data-toc="markets-macro">
+                            <span class="toc__name">Markets &amp; Macro</span>
+                            <span class="toc__count">4</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#global-politics-geopolitics" data-toc="global-politics-geopolitics">
+                            <span class="toc__name">Global Politics &amp; Geopolitics</span>
+                            <span class="toc__count">5</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#emerging-markets" data-toc="emerging-markets">
+                            <span class="toc__name">Emerging Markets</span>
+                            <span class="toc__count">1</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#ai-digital-infrastructure" data-toc="ai-digital-infrastructure">
+                            <span class="toc__name">AI &amp; Digital Infrastructure</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#energy-commodities-metals" data-toc="energy-commodities-metals">
+                            <span class="toc__name">Energy, Commodities &amp; Metals</span>
+                            <span class="toc__count">1</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#corporate-m-a-deals" data-toc="corporate-m-a-deals">
+                            <span class="toc__name">Corporate, M&amp;A &amp; Deals</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#social-legal-governance" data-toc="social-legal-governance">
+                            <span class="toc__name">Social, Legal &amp; Governance</span>
+                            <span class="toc__count">1</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#entertainment-sports" data-toc="entertainment-sports">
+                            <span class="toc__name">Entertainment &amp; Sports</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                </ol>
+            </nav>
+            
+        </div>
+    </aside>
+
+    <article class="brief">
+        <section class="overview" id="overview" aria-label="Editor's overview">
+<div class="ov-panel" data-panel="dominant-theme"><span class="ov-panel__label">Dominant Theme</span><p class="ov-panel__text">Global politics are hardening into zero-sum blocs—the US accelerates disengagement from allies and pursues Russia-favorable peace, reinforcing an isolationist, regulatory-averse domestic policy.</p></div>
+<div class="ov-panel" data-panel="key-risks"><span class="ov-panel__label">Key Risks</span><p class="ov-panel__text">Taiwan Strait tensions (defense spending up 5% GDP) strain semiconductor supply chains; Ukraine &#x27;peace&#x27; risks NATO cohesion; US legal certainty collapses after GA election case dismissal; UK faces a £26B fiscal squeeze.</p></div>
+<div class="ov-panel" data-panel="strategic-shifts"><span class="ov-panel__label">Strategic Shifts</span><p class="ov-panel__text">The AI Capex Cycle accelerates, characterized by job displacement (HP layoffs 6K) and escalating regulatory risks; US regulation shifts sharply right (EPA methane, lax M&amp;A); global talent competition intensifies (Singapore tops ranking).</p></div>
+<div class="ov-panel" data-panel="opportunities"><span class="ov-panel__label">Opportunities</span><p class="ov-panel__text">Long US equities and tech sectors on continued Fed rate-cut expectations; Overweight Pharma (Novo Nordisk) despite Medicare discounts; Long Egyptian energy, renewables, and infrastructure on $5B Algeria trade boost and $8B Eni investment.</p></div>
+</section>
+<div class="part-divider" id="part-i"><span class="part-divider__num">I</span><h2 class="part-divider__title">Executive Briefing</h2><span class="part-divider__meta">High-conviction signal &middot; 33 stories</span></div>
+<section class="section" id="what-s-driving-us-capital-markets-now-and-next">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chart"></use></svg>What&#x27;s Driving US Capital Markets Now and Next?<span class="section__count">1</span></h2>
+<article class="story" id="story-1" data-direction="bullish" data-category="What&#x27;s Driving US Capital Markets Now and Next?"><h3 class="story__title"><span class="story__num">01</span>US Jobless Claims Drop to 216K, Reinforcing Fed Cut Bets</h3>
+<p class="story__context">Applications for unemployment benefits fell by 6,000 to 216,000 for the week ending November 22 (lower than the 230,000 forecast), affirming the economic perspective of a &#x27;low-hire, low-fire&#x27; labor market. This trend appears alongside softer cost pressures noted in the Federal Reserve&#x27;s Beige Book.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Reinforces market expectations for Federal Reserve rate cuts at the December 9-10 meeting, bullish for US Treasuries, interest-rate sensitive sectors, and broader US equities.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.marketwatch.com/bulletins/redirect/go?g=1a21ffff-212c-4dcd-b70b-28d33291dd46&amp;mod=mw_rss_bulletins" target="_blank" rel="noopener noreferrer">MarketWatch Bulletins</a></li>
+<li><a href="https://www.wsj.com/economy/central-banking/federal-reserve-beige-book-2025-dcf6b740" target="_blank" rel="noopener noreferrer">WSJ (Economy)</a></li>
+<li><a href="https://fortune.com/2025/11/26/low-hire-low-fire-economy-jobless-claims-layoffs/" target="_blank" rel="noopener noreferrer">Fortune</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-driving-non-us-capital-markets">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-globe"></use></svg>What&#x27;s Driving Non-US Capital Markets?<span class="section__count">5</span></h2>
+<article class="story" id="story-2" data-direction="bearish" data-category="What&#x27;s Driving Non-US Capital Markets?"><h3 class="story__title"><span class="story__num">02</span>UK Chancellor Unleashes £26B Tax Hikes to Fund Welfare and Energy Cuts</h3>
+<p class="story__context">Chancellor Rachel Reeves plans £26 billion in tax increases, including freezing income tax/NI thresholds until 2030/31, impacting 1.7 million workers and pushing 24% of taxpayers into higher rates. This funds £11.3 billion in new spending, like lifting 450,000 children from poverty and reducing household energy bills by £150.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Fiscal tightening pressures UK gilts, sterling, equities, and household consumer spending amid OBR forecasts of weaker medium-term GDP growth (1.5% in 2025).</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2025/11/26/uk-government-borrowing-costs-fall-as-obr-forecasts-released-early.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><a href="https://www.wsj.com/world/europe/u-k-government-with-increased-headroom-to-meet-fiscal-rules-obr-says-660c6e7c" target="_blank" rel="noopener noreferrer">WSJ (World)</a></li>
+<li><a href="https://invezz.com/news/2025/11/26/uk-budget-2025-reeves-unveils-26b-in-tax-increases-to-fund-11-3b-in-new-spending/" target="_blank" rel="noopener noreferrer">Invezz</a></li>
+<li><a href="https://www.theguardian.com/uk-news/2025/nov/26/rachel-reeves-targets-uks-wealthiest-in-26bn-tax-raising-budget" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+</ul>
+</article>
+<article class="story" id="story-3" data-direction="bullish" data-category="What&#x27;s Driving Non-US Capital Markets?"><h3 class="story__title"><span class="story__num">03</span>Asia-Pacific Markets Rally on Fed Cut Hopes; India Hits Records</h3>
+<p class="story__context">Asia-Pacific markets surged, tracking Wall Street, as implied odds for a December Fed rate cut surpassed 84%. India’s Nifty 50 hit a record 26,284.2 and Japan&#x27;s Nikkei 225 jumped 1.94%, buoyed by reports signaling Kevin Hassett as the frontrunner for the next Fed Chair, favoring looser policy.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Elevates near-term bullish momentum for Asia-Pacific equities and tech sectors, amplifying yen weakness and increasing sensitivity across EM assets to US Fed transitions.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2025/11/26/asia-pacific-markets-live-nikkei-225-hang-seng-csi300-.html" target="_blank" rel="noopener noreferrer">CNBC Top News 11/26</a></li>
+<li><a href="https://www.cnbc.com/2025/11/27/asia-pacific-markets-today-thursday-nikkei-225-hang-seng-index-csi-300-kospi.html" target="_blank" rel="noopener noreferrer">CNBC Top News 11/27</a></li>
+</ul>
+</article>
+<article class="story" id="story-4" data-direction="mixed" data-category="What&#x27;s Driving Non-US Capital Markets?"><h3 class="story__title"><span class="story__num">04</span>BOJ Rate Hike Looming as JGB Yields Rise; BOK Holds Steady at 2.50%</h3>
+<p class="story__context">Japanese government bond yields rose on market expectations of a Bank of Japan rate increase in December, countered slightly by BOJ board member Asahi Noguchi urging cautious, gradual hikes. Separately, the Bank of Korea held rates at 2.50% for the fourth meeting, citing FX risks despite higher growth forecasts.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Elevates expectations for gradual BOJ tightening, pressuring JGB curve steepening and yen carry trades while supporting KRW/USD strength in Asian forex markets.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/finance/investing/jgb-yields-higher-on-hopes-for-boj-rate-increase-ca194204?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+<li><a href="https://www.wsj.com/articles/boj-rate-hikes-must-proceed-with-caution-board-member-says-db8b63d8" target="_blank" rel="noopener noreferrer">WSJ (Economy)</a></li>
+</ul>
+</article>
+<article class="story" id="story-5" data-direction="mixed" data-category="What&#x27;s Driving Non-US Capital Markets?"><h3 class="story__title"><span class="story__num">05</span>Australia’s CPI Accelerates to 3.8% on Housing Surge, Exceeding Expectations</h3>
+<p class="story__context">Australia&#x27;s CPI increased 3.8% year-on-year in October, exceeding the 3.6% forecast, fueled primarily by a 5.9% rise in housing costs, including electricity (up 37.1%) and rents. This marks the fastest inflation pace since April, despite the RBA holding rates steady at 3.6%.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Hotter inflation data bolsters the RBA’s pause on rate cuts, creating headwinds for Australian housing and equities while supporting higher government bond yields.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2025/11/26/australia-inflation-cpi-in-october-estimates-beat.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><a href="https://invezz.com/news/2025/11/26/australia-inflation-hits-seven-month-high-as-housing-costs-surge/" target="_blank" rel="noopener noreferrer">Invezz</a></li>
+</ul>
+</article>
+<article class="story" id="story-6" data-direction="bearish" data-category="What&#x27;s Driving Non-US Capital Markets?"><h3 class="story__title"><span class="story__num">06</span>Carney Dismisses US Tariff Urgency Amid Stalled Trade Talks</h3>
+<p class="story__context">After US-Canada talks stalled when Trump took offence at a Canadian anti-tariff ad, PM Mark Carney called the dispute a &#x27;detail&#x27; and said no &#x27;burning issue&#x27; exists. This follows the US imposing 25% to 50% levies on Canadian metals and autos, impacting 75% of Canada&#x27;s exports to the US.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Prolongs headwinds for Canadian metals, autos, and energy exporters, risks widening North American trade spreads, and exposes US import dependencies.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/c17x025jj21o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.nytimes.com/2025/11/26/world/canada/trump-carney-canada-tariffs-trade.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-risks-could-disrupt-capital-markets">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-alert"></use></svg>What Risks Could Disrupt Capital Markets?<span class="section__count">5</span></h2>
+<article class="story" id="story-7" data-direction="mixed" data-category="What Risks Could Disrupt Capital Markets?"><h3 class="story__title"><span class="story__num">07</span>Trump Envoy Advises Russia on Peace Plan; European Leaders Demand Security Guarantees</h3>
+<p class="story__context">Leaked transcripts revealed Trump envoy Steve Witkoff advised Russian officials on approaching Trump as a peacemaker, pushing a Russia-derived 28-point plan that was subsequently revised to 19 points in US-Ukraine talks. EC President Von der Leyen concurrently warned Russia lacks genuine peace intent, demanding strong security guarantees for Ukraine.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Accelerates pressure toward a Russia-favorable Ukraine settlement, risking NATO cohesion, limiting European defense expansion, and heightening energy/commodity market volatility.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/world/leaked-u-s-russia-call-sets-off-global-game-of-clue-who-did-itand-why-809e8883" target="_blank" rel="noopener noreferrer">WSJ (World)</a></li>
+<li><a href="https://www.nytimes.com/2025/11/26/us/politics/witkoff-leaked-transcript-deference-russia.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li><a href="https://www.bbc.com/news/articles/c208wjpv4r9o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.theguardian.com/world/2025/nov/26/von-der-leyen-warns-against-carving-up-of-sovereign-european-nation-amid-crunch-ukraine-talks" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+</ul>
+</article>
+<article class="story" id="story-8" data-direction="bearish" data-category="What Risks Could Disrupt Capital Markets?"><h3 class="story__title"><span class="story__num">08</span>Taiwan Escalates Defense Budget by $40B to 5% of GDP Amid US Pressure on Japan</h3>
+<p class="story__context">Facing intensified Beijing threats, including 3,075 PLA air incursions in 2024, Taiwan announced a $40 billion supplementary defense budget, pushing spending to 5% of GDP by 2030 to acquire US arms, AI, and missiles. Post-Xi call, Trump told Japan to &#x27;lower the volume&#x27; on Taiwan tensions, leading to Tokyo&#x27;s unease.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Escalates regional tensions and US defense spending, strains US-Japan diplomatic ties, and raises volatility/insurance premiums for semiconductor supply chains (TSMC).</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/world/2025/nov/26/taiwan-extra-40bn-defence-spending-china-threat" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.cnbc.com/2025/11/26/taiwan-president-lai-china-japan-xi-trump-defense.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><a href="https://www.wsj.com/politics/national-security/trump-after-call-with-chinas-xi-told-japan-to-lower-the-volume-on-taiwan-3af795d6" target="_blank" rel="noopener noreferrer">WSJ (World)</a></li>
+</ul>
+</article>
+<article class="story" id="story-9" data-direction="mixed" data-category="What Risks Could Disrupt Capital Markets?"><h3 class="story__title"><span class="story__num">09</span>Georgia Judge Dismisses All 2020 Election Interference Charges Against Trump</h3>
+<p class="story__context">Fulton County Superior Judge Scott McAfee dismissed the August 2023 RICO indictment against President Trump and 14 co-defendants, after prosecutor Pete Skandalakis moved for dismissal citing issues of venue and impossibility of trial during Trump&#x27;s presidency following Fani Willis&#x27;s disqualification. </p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Eliminates the final criminal legal overhang on Trump’s administration, bullish for U.S. equities and policy-sensitive sectors as political risk diminishes and governance stability improves.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.npr.org/2025/11/26/nx-s1-5611431/georgia-trump-election-case-dismissed" target="_blank" rel="noopener noreferrer">NPR News</a></li>
+<li><a href="https://www.cnbc.com/2025/11/26/trump-georgia-election-case-dismissed-2020.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+</ul>
+</article>
+<article class="story" id="story-10" data-direction="mixed" data-category="What Risks Could Disrupt Capital Markets?"><h3 class="story__title"><span class="story__num">10</span>Germany Drafts Secret War Plan with Russia, Escalating European Tail Risk</h3>
+<p class="story__context">Amid an evolving kinetic conflict environment between Moscow and the West, a classified German blueprint details a secret plan for systemic war with Russia. The document outlines response and resource mobilization, reflecting geopolitical shifts that signal a broader conflict as a growing material possibility for NATO members.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Heightens tail risks for European energy markets and defense spending, bullish for NATO-aligned defense contractors while bearish for regional commercial debt stability metrics.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/world/europe/germany-russia-war-nato-secret-plan-8ce43a8d" target="_blank" rel="noopener noreferrer">WSJ (World)</a></li>
+</ul>
+</article>
+<article class="story" id="story-11" data-direction="bearish" data-category="What Risks Could Disrupt Capital Markets?"><h3 class="story__title"><span class="story__num">11</span>Israeli-Hamas Tension Rises as Hostage Body Returned Amid West Bank Raids</h3>
+<p class="story__context">Hamas and PIJ returned the body of 48-year-old deceased Israeli hostage Dror Or via the Red Cross, leaving two others in Gaza as the US-brokered ceasefire nears expiration. Simultaneously, hundreds of Israeli soldiers launched a multi-day counter-terrorism raid in the West Bank town of Tubas.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Persistent West Bank military escalations raise substantial risks of renewed regional violence, bolstering Israeli defense spending while straining humanitarian aid supply chains.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/c17x0xjqj21o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.theguardian.com/world/2025/nov/26/hundreds-israeli-soldiers-raid-palestinian-town-tubas-west-bank" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-are-policymakers-signaling">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-bank"></use></svg>What Are Policymakers Signaling?<span class="section__count">2</span></h2>
+<article class="story" id="story-12" data-direction="bearish" data-category="What Are Policymakers Signaling?"><h3 class="story__title"><span class="story__num">12</span>Medicare Negotiates 71% Discounts on Ozempic/Wegovy, Projected to Save $12B</h3>
+<p class="story__context">CMS announced lower negotiated prices effective January 1, 2027, for 15 high-cost drugs under the IRA. Discounts ranging 38% to 85% include a massive 71% cut for Novo Nordisk’s Ozempic, Wegovy, and Rybelsus, lowering the monthly cost to $274 (from ~ $1,000) and saving Medicare $12 billion.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens pricing pressures on US revenues for European pharma giants like Novo Nordisk, likely spurring their investment toward US manufacturing and global price hedging.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.npr.org/sections/shots-health-news/2025/11/26/nx-s1-5621944/medicare-drug-prices-ozempic-and-wegovy" target="_blank" rel="noopener noreferrer">NPR News</a></li>
+<li><a href="https://www.cnbc.com/2025/11/26/why-medicare-price-cuts-matter-for-novo-nordisk-european-pharma.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+</ul>
+</article>
+<article class="story" id="story-13" data-direction="mixed" data-category="What Are Policymakers Signaling?"><h3 class="story__title"><span class="story__num">13</span>EPA Solidifies Delay of Biden Methane Rules and Proposes Extending Coal Plant Life</h3>
+<p class="story__context">The Trump EPA cemented an 18-month compliance delay of Biden-era methane emission requirements for oil and gas firms. The agency is also proposing rules to extend the operating life of up to 11 existing coal plants and their waste-disposal practices, fulfilling deregulation promises.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Reduces regulatory costs for US oil, gas, and coal producers (XOM, CVX), creating tailwinds for fossil fuel output and headwinds for clean energy transition infrastructure.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.nytimes.com/2025/11/26/climate/epa-delays-methane-oil-gas.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+<li><a href="https://thehill.com/newsletters/energy-environment/5624469-trump-proposes-to-extend-life-of-some-coal-plants/" target="_blank" rel="noopener noreferrer">The Hill</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-next-in-ai-tech">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chip"></use></svg>What&#x27;s Next in AI &amp; Tech?<span class="section__count">5</span></h2>
+<article class="story" id="story-14" data-direction="mixed" data-category="What&#x27;s Next in AI &amp; Tech?"><h3 class="story__title"><span class="story__num">14</span>HP to Cut 4,000-6,000 Jobs by 2028 to Deploy AI and Save $1 Billion</h3>
+<p class="story__context">HP Inc. announced it will lay off 4,000 to 6,000 employees by fiscal 2028—mainly in product development and customer support—to ramp up AI integration and achieve $1 billion in annualized gross run rate savings. CEO Enrique Lores affirmed a focus on generating structural cost savings through AI deployments.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Accelerates enterprise AI adoption in the hardware sector, bullish for AI productivity tools while pressuring technology employment costs and customer support service quality.</span></p>
+<ul class="story__sources">
+<li><a href="https://arstechnica.com/information-technology/2025/11/hp-plans-to-save-millions-by-laying-off-thousands-ramping-up-ai-use/" target="_blank" rel="noopener noreferrer">Ars Technica</a></li>
+<li><a href="https://www.corriere.it/economia/lavoro/25_novembre_26/hp-annuncia-6-mila-licenziamenti-entro-il-2028-puntera-sull-ai-a-rischio-l-assistenza-clienti-8bb66e0a-c276-471e-ac2b-df41bfe54xlk.shtml" target="_blank" rel="noopener noreferrer">Corriere della Sera (Italian)</a></li>
+</ul>
+</article>
+<article class="story" id="story-15" data-direction="mixed" data-category="What&#x27;s Next in AI &amp; Tech?"><h3 class="story__title"><span class="story__num">15</span>Congress Calls Tech CEOs on Chinese AI Cyberattack; Super PACs Form to Regulate AI</h3>
+<p class="story__context">House Homeland Security subpoenaed CEOs from Anthropic, Google Cloud, and Quantum Xchange for a Dec. 17 hearing on a Chinese state-actor cyber-espionage campaign using Anthropic&#x27;s Claude Code. Simultaneously, former Congressmen launched Super PACs aiming to raise $50 million to counter industry influence and back candidates committed to AI safeguards.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Heightens US policy focus on AI-driven cyber threats, likely pressuring Big Tech cyber safeguards and boosting demand for defense technology and AI liability insurance.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2025/11/26/anthropic-google-cloud-quantum-xchange-house-homeland-hearing" target="_blank" rel="noopener noreferrer">Axios</a></li>
+<li><a href="https://www.nytimes.com/2025/11/25/us/politics/ai-super-pac-anthropic.html" target="_blank" rel="noopener noreferrer">NYT Technology</a></li>
+<li><a href="https://thehill.com/policy/technology/5624317-ai-safeguards-super-pacs/" target="_blank" rel="noopener noreferrer">The Hill</a></li>
+</ul>
+</article>
+<article class="story" id="story-16" data-direction="mixed" data-category="What&#x27;s Next in AI &amp; Tech?"><h3 class="story__title"><span class="story__num">16</span>Apple iPhone Shipments Projected to Beat Samsung for First Time in 14 Years</h3>
+<p class="story__context">Counterpoint Research projects Apple will ship 243 million iPhones in 2025, capturing 19.4% global market share and surpassing Samsung’s projected 235 million shipments (18.7% share) for the first time since 2011. This follows bumper holiday sales for the iPhone 17 series amid a replacement cycle inflection.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Reinforces Apple’s leadership in the premium smartphone market, providing bullish support for AAPL stock and core Asian hardware component suppliers while pressuring Samsung.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2025/11/26/apple-iphone-shipments-to-beat-samsung-for-the-first-time-in-14-years.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+</ul>
+</article>
+<article class="story" id="story-17" data-direction="bullish" data-category="What&#x27;s Next in AI &amp; Tech?"><h3 class="story__title"><span class="story__num">17</span>Uber Launches First Driverless Robotaxis in Middle East (Abu Dhabi)</h3>
+<p class="story__context">Uber, partnering with Nasdaq-listed WeRide, rolled out fully driverless robotaxi services in Abu Dhabi, marking the Middle East’s first commercial deployment on Yas Island. The service, starting with UberX and Comfort rides, follows supervised operations and is set for expansion to 15 more Middle East and European cities.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Advances commercial AV deployment outside the US/China, bullish for ride-hailing and AV tech sectors (UBER, WRDE) and infrastructure investment in the UAE and Gulf region.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2025/11/26/uber-robotaxi-uae-driverless.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><a href="https://techcrunch.com/2025/11/25/uber-and-werides-robotaxi-service-in-abu-dhabi-is-officially-driverless/" target="_blank" rel="noopener noreferrer">TechCrunch</a></li>
+</ul>
+</article>
+<article class="story" id="story-18" data-direction="mixed" data-category="What&#x27;s Next in AI &amp; Tech?"><h3 class="story__title"><span class="story__num">18</span>EU and Australia Advance Under-16 Social Media Bans to Pressure Big Tech</h3>
+<p class="story__context">Two 15-year-old Australians filed a High Court challenge against a national ban on social media for under-16s, citing free speech. Concurrently, EU MEPs passed a non-binding resolution (483-92) advocating for an EU-wide under-16 ban absent parental consent, due to mental health concerns and addictive algorithms.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Heightens regulatory pressures on Meta, TikTok, and Google/YouTube, constraining user growth and ad revenues while boosting demand for age-verification technology firms.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/c9d9l7w1g8yo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.theguardian.com/technology/2025/nov/26/social-media-ban-under-16s-european-parliament-resolution" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-advancing-science-health-society">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-flask"></use></svg>What&#x27;s Advancing Science, Health &amp; Society?<span class="section__count">1</span></h2>
+<article class="story" id="story-19" data-direction="mixed" data-category="What&#x27;s Advancing Science, Health &amp; Society?"><h3 class="story__title"><span class="story__num">19</span>Singapore Overtakes Switzerland in Global Talent Index; US Falls to 9th</h3>
+<p class="story__context">Singapore topped the 2025 Global Talent Competitiveness Index, surpassing Switzerland due to strong education and AI readiness metrics, while the US slipped from 3rd in 2023 to 9th—its weakest since 2013. European business school applications rose 11% as US programs dipped 1% amid AI disruption.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Strengthens Singapore’s competitive edge in attracting AI talent and skilled workers, creating labor supply headwinds for US tech sectors and innovation competitiveness.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2025/11/26/singapore-tops-list-in-the-2025-global-talent-competitiveness-index-.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-driving-the-energy-metals-and-commodities">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-bolt"></use></svg>What&#x27;s Driving the Energy, Metals and Commodities?<span class="section__count">2</span></h2>
+<article class="story" id="story-20" data-direction="mixed" data-category="What&#x27;s Driving the Energy, Metals and Commodities?"><h3 class="story__title"><span class="story__num">20</span>Oil Hits One-Month Low ($56) on US Inventory Build and Ukraine Peace Hopes</h3>
+<p class="story__context">WTI crude fell to a one-month low of $56 per barrel (from nearly $61 earlier in the week) due to a large US crude inventory build from higher net imports. Prices were further pressured by expectations that Russia-Ukraine cease-fire talks could unlock additional Russian supply onto the global market.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Increased supply risks heighten downside pressure on crude prices, bearish for oil producers (XOM, CVX) and supportive for inflation-sensitive sectors and airlines.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/business/energy-oil/u-s-crude-oil-supplies-rise-on-higher-net-imports-e98b2188?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+<li><a href="https://www.investing.com/news/commodities-news/oil-prices-dip-on-large-us-stock-build-ukraine-peace-push-4380788" target="_blank" rel="noopener noreferrer">Investing.com Commodities</a></li>
+</ul>
+</article>
+<article class="story" id="story-21" data-direction="neutral" data-category="What&#x27;s Driving the Energy, Metals and Commodities?"><h3 class="story__title"><span class="story__num">21</span>Todd Boehly Forms UAE Consortium to Target Lukoil’s International Assets</h3>
+<p class="story__context">Billionaire Todd Boehly assembled a consortium with a United Arab Emirates-based investment group specifically to make a play for the international assets of Russia&#x27;s Lukoil. This represents a significant, early-stage M&amp;A effort involving key actors in global investment and sanctioned Russian assets.</p>
+<p class="story__implication"><span class="dir" data-direction="neutral" title="neutral" aria-label="neutral">■</span><span>Spurs M&amp;A activity in the energy sector, signalling UAE capital facilitating access to sanctioned Russian assets, impacting international oil holdings and compliance standards.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/business/deals/todd-boehly-makes-a-play-for-international-assets-of-russias-lukoil-1baa02c6?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-impacting-non-tech-sectors">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chip"></use></svg>What&#x27;s Impacting Non-Tech Sectors?<span class="section__count">2</span></h2>
+<article class="story" id="story-22" data-direction="bearish" data-category="What&#x27;s Impacting Non-Tech Sectors?"><h3 class="story__title"><span class="story__num">22</span>Bolder Corporate Dealmaking Surges Under Trump 2.0 Amid Lax Antitrust</h3>
+<p class="story__context">Corporate M&amp;A activity is surging and becoming &#x27;bigger and bolder&#x27; under the Trump 2.0 administration. Analysts note the shift toward laxer enforcement, with fewer regulatory challenges emboldening companies to pursue mergers that combine direct competitors across multiple sectors.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>This policy pivot fosters increased M&amp;A activity, sector consolidation, enhanced deal flow, and heightened concentration risk across US capital markets and industrial sectors.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/politics/policy/antitrust-mergers-companies-risk-e2bfdc4b?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+</ul>
+</article>
+<article class="story" id="story-23" data-direction="bearish" data-category="What&#x27;s Impacting Non-Tech Sectors?"><h3 class="story__title"><span class="story__num">23</span>US Retailers Plan Lowest Holiday Hiring Since 2008 Amid Tariffs and Automation</h3>
+<p class="story__context">US businesses are exercising caution due to tariffs, inflation, reliance on automation, and the recent government shutdown. Total seasonal hiring is projected at 265,000–365,000, the lowest level since the post-2008 recession and down sharply from 442,000 last year, according to the NRF and Challenger, Gray &amp; Christmas.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Bearish for the US consumer discretionary and retail sectors, signaling labor market cooling, reduced consumer confidence, and a potential drag on Q4 GDP growth indicators.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/ce3kqw82j07o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-critical-but-overlooked">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-eye"></use></svg>What&#x27;s Critical but Overlooked?<span class="section__count">8</span></h2>
+<article class="story" id="story-24" data-direction="mixed" data-category="What&#x27;s Critical but Overlooked?"><h3 class="story__title"><span class="story__num">24</span>Trump Halts Afghan Immigration After Asylum Seeker Shoots Two National Guardsmen in DC</h3>
+<p class="story__context">Afghan national Rahmanullah Lakanwal, 29, granted asylum in 2025, shot two West Virginia National Guardsmen near Farragut Square who were part of Trump’s 2,200-troop deployment. Both Guardsmen are in critical condition, and in response, Trump halted all Afghan immigration and may expand the DC deployment to over 2,700 troops.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Accelerates targeted immigration restrictions, heightening tensions; bullish for defense/security contractors and bearish for US labor-intensive sectors reliant on immigration flows.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2025/11/26/dc-shooting-white-house-national-guard" target="_blank" rel="noopener noreferrer">Axios</a></li>
+<li><a href="https://www.independent.co.uk/news/world/americas/crime/national-guard-shooting-dc-suspect-b2873284.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+</ul>
+</article>
+<article class="story" id="story-25" data-direction="bearish" data-category="What&#x27;s Critical but Overlooked?"><h3 class="story__title"><span class="story__num">25</span>Trump Blocks South Africa from 2026 G20 Summit; Halts All Subsidies</h3>
+<p class="story__context">President Trump announced on social media that South Africa would not be invited to the 2026 G20 summit in Miami, Florida, and that the US would immediately halt all payments and subsidies. This diplomatic break follows the US boycotting South Africa&#x27;s G20 summit over alleged persecution of white Afrikaners.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Strains US-South Africa relations and emerging markets aid flows, bearish for South African assets and FDI while enhancing US leverage over G20 diplomatic alignments.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.nytimes.com/2025/11/26/world/africa/trump-south-africa-g20.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+</ul>
+</article>
+<article class="story" id="story-26" data-direction="bearish" data-category="What&#x27;s Critical but Overlooked?"><h3 class="story__title"><span class="story__num">26</span>Trump Authorizes CIA Covert Ops in Venezuela, Reserves Option for Land Strikes</h3>
+<p class="story__context">President Trump authorized CIA covert operations and military options against Venezuela’s Maduro regime, citing the need to combat narcoterrorism and the migration of gangs like Tren de Aragua. The administration also deployed warships to destroy drug boats, contrasting with plans for talks with Maduro, deepening MAGA opposition fractures.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Potential US regime-change push heightens Latin American stability risk, increasing volatility in Venezuelan oil-backed bonds and regional energy infrastructure.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2025/11/26/trump-venezuela-maduro-america-first" target="_blank" rel="noopener noreferrer">Axios</a></li>
+</ul>
+</article>
+<article class="story" id="story-27" data-direction="bullish" data-category="What&#x27;s Critical but Overlooked?"><h3 class="story__title"><span class="story__num">27</span>Trump DHS Ramps Up Arctic Icebreakers to Counter China&#x27;s Expansion</h3>
+<p class="story__context">Amid an unprecedented number of Chinese military and research vessels operating near US Arctic waters, the Trump administration prioritized building domestic icebreakers. This includes the commissioning of the USGC Cutter Storis, the first new polar icebreaker in over 25 years, to secure access to Arctic minerals and maritime sovereignty.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Bolsters U.S. maritime sovereignty and access to Arctic minerals, creating tailwinds for the domestic shipbuilding sector and heightening geopolitical competition over rare earth commodities.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2025/11/26/trump-dhs-arctic-report-us-coast-guard-minerals-china" target="_blank" rel="noopener noreferrer">Axios</a></li>
+</ul>
+</article>
+<article class="story" id="story-28" data-direction="bullish" data-category="What&#x27;s Critical but Overlooked?"><h3 class="story__title"><span class="story__num">28</span>Supreme Court Poised to Rule on Texas GOP-Favored Congressional Map Before Dec. 8 Deadline</h3>
+<p class="story__context">Texas filed its final Supreme Court response arguing that reverting to the 2021 map would disrupt elections ahead of the Dec. 8 candidate filing deadline. This follows Justice Alito temporarily reinstating the state’s new congressional map—which Trump urged to create five new GOP seats—after a district court tossed it last week.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>A favorable ruling would likely secure GOP gains in future House races, setting precedents for redistricting and tilting US congressional balance toward Republican policy priorities.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2025/11/26/texas-supreme-court-2026-maps-gerrymandering" target="_blank" rel="noopener noreferrer">Axios</a></li>
+</ul>
+</article>
+<article class="story" id="story-29" data-direction="bearish" data-category="What&#x27;s Critical but Overlooked?"><h3 class="story__title"><span class="story__num">29</span>Trump DHS Terminates TPS for 340,000 Haitians; Press Secretary’s Relative Detained by ICE</h3>
+<p class="story__context">The Trump administration ended Temporary Protected Status (TPS) for 340,000 Haitian migrants effective February 3, citing conditions no longer warranting protection. Separately, ICE arrested Bruna Ferreira, a DACA recipient and the sister-in-law of White House Press Secretary Karoline Leavitt, on November 12 in Massachusetts.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Intensifies deportation pressures on DACA and TPS populations, risking labor shortages in US agriculture/construction sectors and spurring legal challenges to enforcement measures.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/us-news/2025/nov/26/trump-temporary-protected-status-haiti" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.independent.co.uk/news/world/americas/us-politics/karoline-leavitt-bruna-ferreira-ice-daca-b2873352.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+</ul>
+</article>
+<article class="story" id="story-30" data-direction="bearish" data-category="What&#x27;s Critical but Overlooked?"><h3 class="story__title"><span class="story__num">30</span>Record &#x27;Once in 300 Years&#x27; Floods Kill Dozens in Southern Thailand, Ravage Southeast Asia</h3>
+<p class="story__context">Relentless monsoon rains delivered a record 335mm rainfall to Hat Yai, Thailand, in the heaviest deluge in 300 years. Deadly floods killed at least 33 in Thailand and 91 in Vietnam, affecting 2.7 million people across 10 Thai provinces and prompting military intervention amid widespread damage.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens humanitarian pressures and disrupts agriculture, tourism, and transport sectors across Southeast Asia, spurring regional insurance payouts and reconstruction activity.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/ckg97wx144jo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.washingtonpost.com/world/2025/11/26/thailand-flood-rain-southeast-asia/" target="_blank" rel="noopener noreferrer">Washington Post World</a></li>
+</ul>
+</article>
+<article class="story" id="story-31" data-direction="bearish" data-category="What&#x27;s Critical but Overlooked?"><h3 class="story__title"><span class="story__num">31</span>Democrats Threaten House Majority Post-Greene Resignation; Tennessee Seat in Peril</h3>
+<p class="story__context">Republicans hold a slim 219-213 House majority, requiring near-unanimity for bills. An Emerson poll shows Democrat Aftyn Behn trailing Republican Matt Van Epps by only 2% (46% to 48%) in a deep-red Trump +22 Tennessee district election. Rep. Marjorie Taylor Greene&#x27;s impending January 5 resignation will drop the GOP to 218 seats.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens risks to GOP passage of spending bills and fiscal measures before the January 31 deadline, amplifying Democratic leverage over appropriation legislation.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.independent.co.uk/news/world/americas/us-politics/poll-tennessee-special-election-congress-b2872963.html" target="_blank" rel="noopener noreferrer">The Independent (World)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-driving-egypt-s-economy-policy-and-geopolitics">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-pyramid"></use></svg>What&#x27;s Driving Egypt&#x27;s Economy, Policy, and Geopolitics?<span class="section__count">2</span></h2>
+<article class="story" id="story-32" data-direction="bullish" data-category="What&#x27;s Driving Egypt&#x27;s Economy, Policy, and Geopolitics?"><h3 class="story__title"><span class="story__num">32</span>Egypt and Algeria Sign Agreements Targeting $5B Trade Boost; Eni Commits $8B</h3>
+<p class="story__context">Egypt and Algeria signed memoranda across energy, housing, and industry during their Joint Higher Committee meeting, aiming to boost bilateral trade from $1 billion to $5 billion. Separately, Eni announced $8 billion in new investments for Egypt, representing 40% of Egypt’s total gas production, with the launch of a direct Algiers-Alexandria shipping route.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Enhances North African emerging market integration, providing tailwinds for Egyptian renewables, petrochemicals, infrastructure, and boosting FDI inflows for project financing.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.egyptindependent.com/egypt-algeria-agree-to-launch-direct-shipping-route-to-boost-trade-minister/" target="_blank" rel="noopener noreferrer">Egypt Independent</a></li>
+<li><a href="https://www.dailynewsegypt.com/2025/11/26/egypt-algeria-sign-wide-ranging-cooperation-agreements/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=egypt-algeria-sign-wide-ranging-cooperation-agreements" target="_blank" rel="noopener noreferrer">Daily News Egypt</a></li>
+<li><a href="https://egyptianstreets.com/2025/11/26/eni-plans-usd-8-billion-investment-in-egypts-energy-sector/" target="_blank" rel="noopener noreferrer">Egyptian Streets</a></li>
+</ul>
+</article>
+<article class="story" id="story-33" data-direction="mixed" data-category="What&#x27;s Driving Egypt&#x27;s Economy, Policy, and Geopolitics?"><h3 class="story__title"><span class="story__num">33</span>Egypt FM Rejects Non-Littoral State Interference in Red Sea Security</h3>
+<p class="story__context">Foreign Minister Badr Abdelatty, on his fourth visit to Lebanon, affirmed Cairo’s commitment to internal sovereignty and urged Resolution 1701 implementation, while rejecting non-littoral state interference in Red Sea security. Instability caused by Israeli violations and Gulf escalations cost Egypt approximately $9 billion last year.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Supports de-escalation along the Israel-Lebanon border and aims to secure Red Sea shipping lanes, reducing volatility risks to Suez Canal traffic and related global trade volumes.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.egyptindependent.com/egypt-rejects-any-attempts-to-interfere-in-red-sea-security/" target="_blank" rel="noopener noreferrer">Egypt Independent</a></li>
+<li><a href="https://www.dailynewsegypt.com/2025/11/26/cairo-affirms-commitment-to-lebanese-sovereignty-urges-halt-to-cross-border-violations/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=cairo-affirms-commitment-to-lebanese-sovereignty-urges-halt-to-cross-border-violations" target="_blank" rel="noopener noreferrer">Daily News Egypt</a></li>
+</ul>
+</article>
+</section>
+<div class="part-divider" id="part-ii"><span class="part-divider__num">II</span><h2 class="part-divider__title">Thematic Digest</h2><span class="part-divider__meta">Wider context &middot; 18 stories</span></div>
+<section class="section" id="markets-macro">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chart"></use></svg>Markets &amp; Macro<span class="section__count">4</span></h2>
+<article class="story" id="story-34" data-direction="mixed" data-category="Markets &amp; Macro"><h3 class="story__title"><span class="story__num">34</span>US Stocks Rally 4th Day on Fed Cut Hopes and Hassett Frontrunner Buzz</h3>
+<p class="story__context">US stocks (S&amp;P 500 +0.7%, Nasdaq +0.8%) rose for a fourth consecutive day ahead of Thanksgiving, recouping prior losses. Momentum was driven by 85% odds of a December Fed quarter-point rate cut and the reported frontrunner status of dovish Kevin Hassett for the next Fed Chair position.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Fed rate-cut bets fuel bullish US equities and tech sectors (NVDA, MSFT), supporting global risk assets and placing pressure on US Treasury yields to decline further.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.marketwatch.com/story/stocks-stage-powerful-comeback-ahead-of-thanksgiving-it-wasnt-enough-to-erase-novembers-losses-32106e03?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">MarketWatch Top Stories</a></li>
+<li><a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-26-2025?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+</ul>
+</article>
+<article class="story" id="story-35" data-direction="bearish" data-category="Markets &amp; Macro"><h3 class="story__title"><span class="story__num">35</span>China Industrial Profits Drop 5.5% in October, Signaling Deepening Deflationary Pressure</h3>
+<p class="story__context">China&#x27;s industrial profits fell 5.5% year-over-year in October (worst decline since June), reversing double-digit growth seen in Q3, according to the National Bureau of Statistics. Profits for the first 10 months rose only 1.9%, down from 3.2% in September, with mining profits falling 27.8%.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Sustained weak profits and tepid demand create headwinds for Chinese industrial equities, global commodities demand, and emerging market currency valuations against the USD.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2025/11/27/china-industrial-profits-drop-in-october-worst-level-in-five-months-trade-uncertainty.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+</ul>
+</article>
+<article class="story" id="story-36" data-direction="bearish" data-category="Markets &amp; Macro"><h3 class="story__title"><span class="story__num">36</span>Bank of Mexico Cuts 2025 Growth Forecast to 0.3% After Q3 Contraction</h3>
+<p class="story__context">Following a weaker-than-expected third-quarter contraction, the Bank of Mexico lowered its estimate for 2025 economic growth to 0.3%, down from a previous estimate of 0.6%. The downgrade indicates substantial slowing in national economic activity.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>The forecast downgrade creates headwinds for Mexican equities (MXN) and the peso, pressuring Banxico to maintain restrictive monetary policy despite slowing economic momentum.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/articles/bank-of-mexico-cuts-2025-growth-estimate-after-third-quarter-contraction-d540fb6b" target="_blank" rel="noopener noreferrer">WSJ (Economy)</a></li>
+</ul>
+</article>
+<article class="story" id="story-37" data-direction="bullish" data-category="Markets &amp; Macro"><h3 class="story__title"><span class="story__num">37</span>US Economy Averages 47 Months of Sub-4.5% Unemployment with Rising Incomes</h3>
+<p class="story__context">The US unemployment rate has remained below 4.5% for 47 consecutive months. Real median household income is reported at $86,030 annualized in August 2025, with a 16% YTD rise in stocks and 401(k) balances up 9% to record highs, strengthening consumer balance sheets.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>These trends bolster the soft landing narrative, providing tailwinds for US equities, consumer spending, and supporting fixed income stability amidst 6.23% mortgage rates.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2025/11/26/unemployment-rate-jobs-10-year-mortgage" target="_blank" rel="noopener noreferrer">Axios</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="global-politics-geopolitics">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-globe"></use></svg>Global Politics &amp; Geopolitics<span class="section__count">5</span></h2>
+<article class="story" id="story-38" data-direction="bearish" data-category="Global Politics &amp; Geopolitics"><h3 class="story__title"><span class="story__num">38</span>Brazil Supreme Court Orders Bolsonaro to Serve 27-Year Coup Plot Prison Sentence</h3>
+<p class="story__context">Brazil&#x27;s Supreme Court Justice Alexandre de Moraes ruled that former President Jair Bolsonaro, 70, must begin serving his 27-year and three-month sentence in a Brasilia federal police jail. The ruling found him guilty of leading a conspiracy to retain power, citing him as a flight risk regarding the Jan. 8, 2023 riots.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Bars Bolsonaro from contesting office until 2060, bolstering the Lula government&#x27;s stability but risking heightened political polarization, increasing risk premiums on Brazilian assets.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/cr4dl19npv5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+</ul>
+</article>
+<article class="story" id="story-39" data-direction="bearish" data-category="Global Politics &amp; Geopolitics"><h3 class="story__title"><span class="story__num">39</span>Georgia Pro-EU Protests Defy Crackdown One Year After EU Accession Halt</h3>
+<p class="story__context">For one year, hundreds of protesters have turned out nightly in Tbilisi, defying violent police crackdowns and new laws that threaten up to one year in prison for repeat offenders. This movement protests PM Irakli Kobakhidze’s decision to halt Georgia&#x27;s EU accession moves, amid accusations of Russian political influence.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>The persistent internal instability and EU accession failure heighten Caucasus geopolitical tensions, bolstering Russian regional leverage and straining Black Sea stability metrics.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/c208w378gg7o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+</ul>
+</article>
+<article class="story" id="story-40" data-direction="bearish" data-category="Global Politics &amp; Geopolitics"><h3 class="story__title"><span class="story__num">40</span>Philippines Targets Pogo Figures Amid Marcos Family Budget Corruption Allegations</h3>
+<p class="story__context">Philippine authorities cancelled passports for Harry Roque and Cassandra Li Ong amid a crackdown on Pogos (Philippine Offshore Gaming Operators) linked to trafficking. This follows accusations from a fugitive ex-lawmaker that the Marcos family and son Sandro inserted 150 billion pesos ($2.6 billion) into the national budget through corruption.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens political risk and uncertainty premiums for Philippine sovereign bonds and the peso, disrupting stability in a major Asian emerging market nation.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.scmp.com/week-asia/politics/article/3334270/philippines-targets-more-pogo-figures-can-marcos-regain-public-trust?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+</ul>
+</article>
+<article class="story" id="story-41" data-direction="bullish" data-category="Global Politics &amp; Geopolitics"><h3 class="story__title"><span class="story__num">41</span>Pope Leo XIV Launches First Foreign Trip to Turkey and Lebanon for Interfaith Dialogue</h3>
+<p class="story__context">The U.S.-born Pope Leo XIV embarks on a six-day trip, starting in Turkey (99% Muslim), for unity events like the 1,700th anniversary of the Council of Nicaea, meeting President Erdogan and Patriarch Bartholomew. He then proceeds to Lebanon for interfaith gatherings and a port explosion memorial.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Strengthens Vatican diplomatic influence in Middle Eastern geopolitics, providing modest support for stability and interfaith dynamics near critical energy transit routes.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.washingtonpost.com/world/2025/11/26/pope-leo-xiv-middle-east-trip/" target="_blank" rel="noopener noreferrer">Washington Post World</a></li>
+<li><a href="https://www.egyptindependent.com/pope-leo-takes-message-of-peace-to-middle-east-on-first-foreign-visit-heres-what-to-know/" target="_blank" rel="noopener noreferrer">Egypt Independent</a></li>
+</ul>
+</article>
+<article class="story" id="story-42" data-direction="bearish" data-category="Global Politics &amp; Geopolitics"><h3 class="story__title"><span class="story__num">42</span>Nigeria Declares National Security Emergency After Wave of Mass Kidnappings</h3>
+<p class="story__context">Following a surge of abductions, including over 300 children and staff from a Catholic school in Niger State, President Bola Tinubu declared a nationwide security emergency. He confirmed the release of 24 abducted schoolgirls but noted 265 remain missing, ordering the recruitment of 50,000 new police officers.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Escalates security risks in Nigeria, deterring foreign direct investment and amplifying humanitarian pressures across key West African emerging markets.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/cgmnv3yd28zo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.scmp.com/news/world/africa/article/3334291/nigeria-declares-national-emergency-after-mass-kidnappings?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="emerging-markets">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-compass"></use></svg>Emerging Markets<span class="section__count">1</span></h2>
+<article class="story" id="story-43" data-direction="bearish" data-category="Emerging Markets"><h3 class="story__title"><span class="story__num">43</span>Jakarta Overtakes Tokyo as World&#x27;s Most Populous City with 42 Million Residents</h3>
+<p class="story__context">Using newly standardized geospatial criteria, the UN World Urbanisation Prospects 2025 report names Jakarta as the world’s most populous city with 42 million people, surpassing Dhaka (37 million) and Tokyo (33 million). Global megacities have expanded from 8 in 1975 to 33 in 2025, reflecting rapid global urbanization.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Accelerates focus on Asian urban infrastructure demands and climate change vulnerabilities, pressuring emerging market construction, real estate, and climate resilience sectors.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/world/2025/nov/27/jakarta-overtakes-tokyo-most-populous-city-world" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.nytimes.com/2025/11/26/world/asia/worlds-largest-city-un-jakarta-indonesia.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="ai-digital-infrastructure">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chip"></use></svg>AI &amp; Digital Infrastructure<span class="section__count">2</span></h2>
+<article class="story" id="story-44" data-direction="bearish" data-category="AI &amp; Digital Infrastructure"><h3 class="story__title"><span class="story__num">44</span>OpenAI Denies Liability in Teen Suicide Lawsuit, Citing User Violation of TOS</h3>
+<p class="story__context">OpenAI denied liability in an August 2025 lawsuit alleging ChatGPT acted as a &#x27;suicide coach&#x27; for a 16-year-old. The company claims the teen bypassed safeguards and violated terms of service, despite the chatbot directing him to help resources over 100 times during nine months of interactions.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Escalates legal and regulatory risks for AI firms on mental health safeguards, likely spurring stricter liability precedents and costly mandates for AI design safety compliance.</span></p>
+<ul class="story__sources">
+<li><a href="https://arstechnica.com/tech-policy/2025/11/openai-says-dead-teen-violated-tos-when-he-used-chatgpt-to-plan-suicide/" target="_blank" rel="noopener noreferrer">Ars Technica</a></li>
+<li><a href="https://techcrunch.com/2025/11/26/openai-claims-teen-circumvented-safety-features-before-suicide-that-chatgpt-helped-plan/" target="_blank" rel="noopener noreferrer">TechCrunch</a></li>
+</ul>
+</article>
+<article class="story" id="story-45" data-direction="bullish" data-category="AI &amp; Digital Infrastructure"><h3 class="story__title"><span class="story__num">45</span>HKChat Attracts 90K Users in Debut Week; Alibaba Signals Major AI Capex Increase</h3>
+<p class="story__context">HKUST-developed HKChat, Hong Kong’s first local AI chatbot (supporting Cantonese/Mandarin/English) achieved 90,000 users and topped the Apple App Store in its debut week. Separately, Alibaba Cloud CEO Eddie Wu signaled boosted AI infrastructure investment to match US firms&#x27; 33.5% to 40% growth rates.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Bullish for Chinese AI infrastructure spending and related semiconductor firms, while strengthening Hong Kong’s position as an emerging technology and AI development hub.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.scmp.com/tech/tech-trends/article/3334267/hong-kongs-hkchat-raises-ai-expectations-90000-users-join-app-debut-week?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="energy-commodities-metals">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-bolt"></use></svg>Energy, Commodities &amp; Metals<span class="section__count">1</span></h2>
+<article class="story" id="story-46" data-direction="mixed" data-category="Energy, Commodities &amp; Metals"><h3 class="story__title"><span class="story__num">46</span>Gold Prices Climb to One-Week Highs on Renewed Federal Reserve Rate Cut Hopes</h3>
+<p class="story__context">Spot gold traded around $4,163 per ounce, reaching one-week highs, with Comex gold settling 0.61% higher at $4,165.20. The rally was driven by weak US data and dovish comments from policymakers, fueling bets for a 25 basis point Fed rate cut at the December meeting.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Bullish for precious metals and miners as rate cut expectations boost demand for non-yielding assets, simultaneously applying downward pressure on mid-to-long duration bond yields.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/finance/commodities-futures/gold-edges-higher-amid-hopes-for-lower-rates-9bc999b6?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+<li><a href="https://www.investing.com/news/commodities-news/gold-prices-rise-as-weak-us-data-fuels-dec-rate-cut-hopes-4378759" target="_blank" rel="noopener noreferrer">Investing.com Commodities</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="corporate-m-a-deals">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-merge"></use></svg>Corporate, M&amp;A &amp; Deals<span class="section__count">2</span></h2>
+<article class="story" id="story-47" data-direction="neutral" data-category="Corporate, M&amp;A &amp; Deals"><h3 class="story__title"><span class="story__num">47</span>EU Champions Ikea, Synthesia, Relx Recognized for Reinvention Amid AI and Climate Shifts</h3>
+<p class="story__context">The FT crowned seven European firms as 2025 Reinvention Champions for adapting business models due to climate change and AI disruption. Winners included Ikea (28% online sales) and Synthesia (AI avatars, $180 million raised), reflecting successful pivots toward data analytics, medtech, and low-carbon infrastructure sectors.</p>
+<p class="story__implication"><span class="dir" data-direction="neutral" title="neutral" aria-label="neutral">■</span><span>Spotlights resilient European firms and is likely to attract capital to MedTech (Convatec), SaaS (Synthesia), and specialized low-carbon infrastructure sectors across the continent.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.ft.com/content/774a17f9-4c75-4f0d-8870-ccb169005ba6" target="_blank" rel="noopener noreferrer">FT (Companies)</a></li>
+</ul>
+</article>
+<article class="story" id="story-48" data-direction="bearish" data-category="Corporate, M&amp;A &amp; Deals"><h3 class="story__title"><span class="story__num">48</span>Li Auto Swings to Quarterly Loss; Nio Shares Slide 7% on Weak Q4 Guidance</h3>
+<p class="story__context">Chinese EV makers face intensifying competition and slowing demand. Li Auto reported its first quarterly net loss in three years, while Nio shares dropped 7.13% in Hong Kong after issuing weaker-than-expected Q4 guidance, despite reporting stronger margins.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Increases downside risks for Chinese EV sector stocks (LI, NIO) and highlights severe competitive pressures curbing growth across the regional automotive market.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/business/autos/li-auto-swings-to-loss-on-sharply-lower-sales-5c681ab1?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+<li><a href="https://invezz.com/news/2025/11/26/nio-shares-slide-as-soft-q4-guidance-overshadows-margin-gains/" target="_blank" rel="noopener noreferrer">Invezz</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="social-legal-governance">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-scales"></use></svg>Social, Legal &amp; Governance<span class="section__count">1</span></h2>
+<article class="story" id="story-49" data-direction="bullish" data-category="Social, Legal &amp; Governance"><h3 class="story__title"><span class="story__num">49</span>Monthly Asthma Injections Allow Over 50% of Severe Patients to Stop Daily Steroids</h3>
+<p class="story__context">The Wayfinder trial found that monthly injections of tezepelumab enabled over half of nearly 300 adults with severe uncontrolled asthma across 11 countries to fully stop daily oral steroids—which carry severe side effects—within one year; two-thirds avoided asthma attacks.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Bullish for AstraZeneca and the respiratory biologics sector, indicating significant market growth potential for steroid-sparing therapies and reducing healthcare system complication costs.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/society/2025/nov/26/severe-asthma-controlled-monthly-injection-tezepelumab-trial-finds" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="entertainment-sports">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chip"></use></svg>Entertainment &amp; Sports<span class="section__count">2</span></h2>
+<article class="story" id="story-50" data-direction="mixed" data-category="Entertainment &amp; Sports"><h3 class="story__title"><span class="story__num">50</span>Stranger Things Final Season Premieres to Netflix Crash, $1B Franchise Eyes $2B</h3>
+<p class="story__context">Netflix’s most-watched franchise, Stranger Things ($1B generated), premiered Volume 1 of its fifth season, causing a 3-5 minute crash despite a 30% bandwidth increase. The final season could add $200 million, potentially reaching $2 billion for the IP, though critics are mixed on the aging cast and formulaic plot.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Blockbuster premiere engagement is bullish for NFLX stock and streaming via subscriber pull, signaling high content ROI for proved franchises despite potential saturation risks.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.marketwatch.com/story/stranger-things-has-made-at-least-1-billion-for-netflix-already-now-season-5-could-deliver-another-200-million-b8827337?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">MarketWatch Top Stories</a></li>
+<li><a href="https://variety.com/2025/tv/news/netflix-crashes-stranger-things-5-1236593464/" target="_blank" rel="noopener noreferrer">Variety</a></li>
+</ul>
+</article>
+<article class="story" id="story-51" data-direction="neutral" data-category="Entertainment &amp; Sports"><h3 class="story__title"><span class="story__num">51</span>Knives Out Sequel, Hamnet, and Others Open to Boost Holiday Box Office</h3>
+<p class="story__context">Rian Johnson’s &#x27;Wake Up Dead Man: A Knives Out Mystery,&#x27; Chloé Zhao’s &#x27;Hamnet,&#x27; and Kleber Mendonça Filho&#x27;s &#x27;The Secret Agent&#x27; are opening in theaters nationwide starting November 26. These films, following premieres at festivals like Cannes, aim to draw holiday crowds.</p>
+<p class="story__implication"><span class="dir" data-direction="neutral" title="neutral" aria-label="neutral">■</span><span>Elevates entertainment sector box office potential during the holiday season and positions films like Hamnet for Oscar contention, impacting studio stocks and post-theatrical revenue.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.nytimes.com/2025/11/26/movies/wake-up-dead-man-a-knives-out-mystery-review.html" target="_blank" rel="noopener noreferrer">NYT Movies</a></li>
+</ul>
+</article>
+</section>
+        <p class="empty" id="empty-state" hidden>No stories match that filter.</p>
+    </article>
+</div>
+
+    </main>
+
+    <footer class="footer">
+        <span>The ApexQuantix Briefing &mdash; daily macro intelligence</span>
+        <span class="footer__keys">
+            <kbd>j</kbd><kbd>k</kbd> stories &middot; <kbd>/</kbd> filter
+        </span>
+    </footer>
+
+    <script src="../../static/brief.js" defer></script>
+</body>
+</html>

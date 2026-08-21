@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="paper">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; script-src 'self'; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'">
+    <title>Monday, 23 February 2026 &mdash; The ApexQuantix Briefing</title>
+    
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2317140F'/%3E%3Cpath d='M6 22V10M12 22V6M18 22v-8M24 22V13' stroke='%238A2B1F' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../static/style.css">
+    
+    <link rel="alternate" type="application/rss+xml" title="The ApexQuantix Briefing"
+          href="https://maelstroem0.github.io/insightforge-briefs/feed.xml">
+</head>
+<body>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="progress" id="progress" aria-hidden="true"></div>
+
+    
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <g id="ico" fill="none" stroke="currentColor" stroke-width="1.5"
+               stroke-linecap="round" stroke-linejoin="round"></g>
+        </defs>
+        <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3v18h18"/><path d="M7 15l4-5 3 3 5-7"/><path d="M19 6h-3.5M19 6v3.5"/>
+        </symbol>
+        <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.7 3.8 5.7 3.8 9S14.5 18.3 12 21c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z"/>
+        </symbol>
+        <symbol id="i-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3.5 2.5 20h19L12 3.5z"/><path d="M12 10v4.5"/><circle cx="12" cy="17.2" r=".6" fill="currentColor"/>
+        </symbol>
+        <symbol id="i-bank" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9.5 12 4l9 5.5"/><path d="M5 10v8M9.7 10v8M14.3 10v8M19 10v8"/><path d="M3 20.5h18"/>
+        </symbol>
+        <symbol id="i-chip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="7" y="7" width="10" height="10" rx="1.2"/><rect x="10.4" y="10.4" width="3.2" height="3.2"/>
+            <path d="M10 7V4M14 7V4M10 20v-3M14 20v-3M7 10H4M7 14H4M20 10h-3M20 14h-3"/>
+        </symbol>
+        <symbol id="i-flask" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.5 3v6.2L4.6 18a2 2 0 0 0 1.7 3h11.4a2 2 0 0 0 1.7-3l-4.9-8.8V3"/>
+            <path d="M8.5 3h7"/><path d="M7.2 14.5h9.6"/>
+        </symbol>
+        <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13.5 2.5 4.5 13.8h6.2L10 21.5l9.3-11.4h-6.4l.6-7.6z"/>
+        </symbol>
+        <symbol id="i-coin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="8.5"/><path d="M12 6.8v10.4"/><path d="M14.8 9.4c-.6-.8-1.7-1.2-2.9-1.2-1.7 0-2.9.8-2.9 2s1 1.7 2.9 2.1c2 .4 3.1.9 3.1 2.2s-1.3 2-3.1 2c-1.3 0-2.4-.5-3-1.3"/>
+        </symbol>
+        <symbol id="i-factory" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2.5 20.5V11l6 3.5V11l6 3.5V7l7 4v9.5z"/><path d="M5.5 11V4.5h3V11"/>
+        </symbol>
+        <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1.8 12S5.5 5.5 12 5.5 22.2 12 22.2 12 18.5 18.5 12 18.5 1.8 12 1.8 12z"/><circle cx="12" cy="12" r="3"/>
+        </symbol>
+        <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 17.5a6.5 6.5 0 1 1 6 0v2a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 19.5z"/><path d="M9.5 17.5h5"/>
+        </symbol>
+        <symbol id="i-pyramid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3 22 20H2L12 3z"/><path d="M12 3v17"/><path d="m7 11.5 5 3 5-3"/>
+        </symbol>
+        <symbol id="i-scales" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3.5v17"/><path d="M5 20.5h14"/><path d="M4 7.5h16"/>
+            <path d="M4 7.5 1.5 13.5h5L4 7.5z"/><path d="M20 7.5l-2.5 6h5l-2.5-6z"/>
+        </symbol>
+        <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5.2-5.2 2 2-5.2 5.2-2z"/>
+        </symbol>
+        <symbol id="i-merge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4v4.5c0 2 1.6 3.5 3.5 3.5h9"/><path d="M4 20v-4.5c0-2 1.6-3.5 3.5-3.5h9"/>
+            <path d="m13.5 8.5 3 3.5-3 3.5"/>
+        </symbol>
+        <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 20.5S3 15 3 9.4A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 9 2.4c0 5.6-9 11.1-9 11.1z"/>
+        </symbol>
+        <symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a9 9 0 0 0 0 18c1.4 0 2-.9 2-1.8 0-1.5-1.3-1.8-1.3-3 0-.9.8-1.7 1.8-1.7H16a5 5 0 0 0 5-5C21 5.6 17 3 12 3z"/>
+            <circle cx="8" cy="9" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="7" r="1" fill="currentColor" stroke="none"/><circle cx="16" cy="9.5" r="1" fill="currentColor" stroke="none"/>
+        </symbol>
+        <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 5.5H4.5V7A3.5 3.5 0 0 0 7 10.3M17 5.5h2.5V7A3.5 3.5 0 0 1 17 10.3"/>
+            <path d="M12 14v3.5M9 20.5h6l-.7-3h-4.6z"/>
+        </symbol>
+    </svg>
+
+    <header class="masthead">
+        <div class="masthead__bar">
+            <a class="wordmark" href="../../index.html">
+                Apex<span>Quantix</span>
+            </a>
+            <nav class="masthead__nav">
+                <a href="../../index.html">Latest</a>
+                <a href="../../archive/index.html">Archive</a>
+                <a href="../../podcast/index.html">Listen</a>
+            </nav>
+        </div>
+        
+<div class="dateline">
+    <h1 class="dateline__title">Monday, 23 February 2026</h1>
+    <div class="dateline__meta">
+        <span>07:16</span>
+        <span>24 min read</span>
+        <span>56 stories</span><span>57 sources</span>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="skewline" role="img"
+         aria-label="Directional skew: 8 bullish, 31 bearish, 13 mixed, 4 neutral">
+        <span class="skewline__value">Skew -23 &middot; risk-off</span>
+        <details class="skewline__details">
+            <summary>full reading</summary>
+            <span class="skewline__breakdown">
+                ▲ 8 bullish &middot; ▼ 31 bearish &middot;
+                ◆ 13 mixed &middot; ■ 4 neutral
+            </span>
+        </details>
+    </div>
+
+    
+    
+</div>
+
+    </header>
+
+    <main>
+        
+<div class="reader">
+    <aside class="rail" aria-label="Brief navigation">
+        <div class="rail__inner">
+            <div class="filter">
+                <input type="search" id="filter-input" class="filter__input"
+                       placeholder="Filter stories…" autocomplete="off"
+                       aria-label="Filter stories by text">
+                <div class="filter__dirs" role="group" aria-label="Filter by direction">
+                    
+                    <button type="button" class="chip" data-filter-dir="bullish"
+                            aria-pressed="false"><i>▲</i>bullish</button>
+                    
+                    <button type="button" class="chip" data-filter-dir="bearish"
+                            aria-pressed="false"><i>▼</i>bearish</button>
+                    
+                    <button type="button" class="chip" data-filter-dir="mixed"
+                            aria-pressed="false"><i>◆</i>mixed</button>
+                    
+                </div>
+                <p class="filter__status" id="filter-status" role="status" aria-live="polite"></p>
+            </div>
+
+            
+            <nav class="toc">
+                <span class="toc__label">Sections</span>
+                <ol>
+                    
+                    <li>
+                        <a href="#what-s-driving-us-capital-markets-now-and-next" data-toc="what-s-driving-us-capital-markets-now-and-next">
+                            <span class="toc__name">What&#39;s Driving US Capital Markets Now and Next?</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-driving-non-us-capital-markets" data-toc="what-s-driving-non-us-capital-markets">
+                            <span class="toc__name">What&#39;s Driving Non-US Capital Markets?</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-risks-could-disrupt-capital-markets" data-toc="what-risks-could-disrupt-capital-markets">
+                            <span class="toc__name">What Risks Could Disrupt Capital Markets?</span>
+                            <span class="toc__count">4</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-are-policymakers-signaling" data-toc="what-are-policymakers-signaling">
+                            <span class="toc__name">What Are Policymakers Signaling?</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-next-in-ai-tech" data-toc="what-s-next-in-ai-tech">
+                            <span class="toc__name">What&#39;s Next in AI &amp; Tech?</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-driving-energy-metals-and-commodities" data-toc="what-s-driving-energy-metals-and-commodities">
+                            <span class="toc__name">What&#39;s Driving Energy, Metals and Commodities?</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-evolving-in-digital-finance-and-crypto" data-toc="what-s-evolving-in-digital-finance-and-crypto">
+                            <span class="toc__name">What&#39;s Evolving in Digital Finance and Crypto?</span>
+                            <span class="toc__count">1</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-impacting-non-tech-sectors" data-toc="what-s-impacting-non-tech-sectors">
+                            <span class="toc__name">What&#39;s Impacting Non-Tech Sectors?</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-critical-but-overlooked" data-toc="what-s-critical-but-overlooked">
+                            <span class="toc__name">What&#39;s Critical but Overlooked?</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-new-perspectives-can-challenge-our-thinking" data-toc="what-new-perspectives-can-challenge-our-thinking">
+                            <span class="toc__name">What New Perspectives Can Challenge Our Thinking?</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#what-s-driving-egypt-s-economy-policy-and-geopolitics" data-toc="what-s-driving-egypt-s-economy-policy-and-geopolitics">
+                            <span class="toc__name">What&#39;s Driving Egypt&#39;s Economy, Policy, and Geopolitics?</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#markets-macro" data-toc="markets-macro">
+                            <span class="toc__name">Markets &amp; Macro</span>
+                            <span class="toc__count">1</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#global-politics-geopolitics" data-toc="global-politics-geopolitics">
+                            <span class="toc__name">Global Politics &amp; Geopolitics</span>
+                            <span class="toc__count">4</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#us-policy-regulation" data-toc="us-policy-regulation">
+                            <span class="toc__name">US Policy &amp; Regulation</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#emerging-markets" data-toc="emerging-markets">
+                            <span class="toc__name">Emerging Markets</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#corporate-m-a-deals" data-toc="corporate-m-a-deals">
+                            <span class="toc__name">Corporate, M&amp;A &amp; Deals</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#social-legal-governance" data-toc="social-legal-governance">
+                            <span class="toc__name">Social, Legal &amp; Governance</span>
+                            <span class="toc__count">4</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#humanitarian-crises-natural-disasters" data-toc="humanitarian-crises-natural-disasters">
+                            <span class="toc__name">Humanitarian Crises &amp; Natural Disasters</span>
+                            <span class="toc__count">2</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#art-design-culture-travel" data-toc="art-design-culture-travel">
+                            <span class="toc__name">Art, Design, Culture &amp; Travel</span>
+                            <span class="toc__count">3</span>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#entertainment-sports" data-toc="entertainment-sports">
+                            <span class="toc__name">Entertainment &amp; Sports</span>
+                            <span class="toc__count">5</span>
+                        </a>
+                    </li>
+                    
+                </ol>
+            </nav>
+            
+        </div>
+    </aside>
+
+    <article class="brief">
+        <section class="overview" id="overview" aria-label="Editor's overview">
+<div class="ov-panel" data-panel="dominant-theme"><span class="ov-panel__label">Dominant Theme</span><p class="ov-panel__text">Trump&#x27;s global tariff escalation risks new trade wars, driving defensive asset shifts amid heightened geopolitical tensions from Iran and Ukraine to China and Mexico.</p></div>
+<div class="ov-panel" data-panel="key-risks"><span class="ov-panel__label">Key Risks</span><p class="ov-panel__text">Global trade war contagion on Trump&#x27;s 15% tariffs; Mideast oil supply disruption from Iran&#x27;s 60% uranium enrichment; European energy insecurity from Russia&#x27;s Ukraine strikes; AI data center development stalled by populist backlash.</p></div>
+<div class="ov-panel" data-panel="strategic-shifts"><span class="ov-panel__label">Strategic Shifts</span><p class="ov-panel__text">Accelerating deglobalization and supply chain re-shoring; US-China tech rivalry extending to AI; Capital reallocation from growth to AI-immune sectors; European political fragmentation on Russia.</p></div>
+<div class="ov-panel" data-panel="opportunities"><span class="ov-panel__label">Opportunities</span><p class="ov-panel__text">Long energy/defense stocks; short EM FX sensitive to China/trade; overweight gold and USD as safe havens; increase European defense sector exposure; long Japanese rare-earth firms; short US housing/P&amp;C insurance in California.</p></div>
+</section>
+<div class="part-divider" id="part-i"><span class="part-divider__num">I</span><h2 class="part-divider__title">Executive Briefing</h2><span class="part-divider__meta">High-conviction signal &middot; 28 stories</span></div>
+<section class="section" id="what-s-driving-us-capital-markets-now-and-next">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chart"></use></svg>What&#x27;s Driving US Capital Markets Now and Next?<span class="section__count">3</span></h2>
+<article class="story" id="story-1" data-direction="bearish" data-category="What&#x27;s Driving US Capital Markets Now and Next?"><h3 class="story__title"><span class="story__num">01</span>VantageScore Outperforms FICO in Mortgage Risk Prediction, WSJ Opines</h3>
+<p class="story__context">A WSJ opinion piece asserts VantageScore predicts mortgage defaults better than FICO, emphasizing its superior accuracy in forecasting risk. VantageScore was designed to improve mortgage default prediction and prevent the next financial crisis through enhanced lending risk assessment.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>VantageScore adoption could challenge FICO&#x27;s dominance, tighten US mortgage underwriting, reduce systemic risk in housing finance, and influence securitization markets.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/opinion/vantagescore-predicts-risk-better-than-fico-28b6079e" target="_blank" rel="noopener noreferrer">WSJ (Opinion)</a></li>
+<li><a href="https://www.wsj.com/opinion/vantagescore-predicts-risk-better-than-fico-28b6079e?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+</ul>
+</article>
+<article class="story" id="story-2" data-direction="bullish" data-category="What&#x27;s Driving US Capital Markets Now and Next?"><h3 class="story__title"><span class="story__num">02</span>Wall Street Bets on AI-Immune &#x27;HALO&#x27; Stocks as Nvidia Eyes Consumer PC Return</h3>
+<p class="story__context">With intense investor focus on AI, Wall Street is favoring &#x27;HALO&#x27; companies like Deere and McDonald&#x27;s, deemed immune to AI disruption. Nvidia aims to re-establish itself as the &#x27;brain&#x27; of consumer PCs, while Samsung shares surged on Nvidia supplier speculation, and Anthropic faces Pentagon scrutiny.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Capital rotation toward AI-resilient sectors like consumer staples and industrials; bullish for semiconductor suppliers involved in next-gen consumer computing platforms.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/opinion/ignore-the-ai-hysteria-b64eac84" target="_blank" rel="noopener noreferrer">WSJ (Opinion)</a></li>
+<li><a href="https://www.wsj.com/business/entrepreneurship/the-fundraising-tactic-ai-startups-are-using-to-juice-valuations-91f9ac1f?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+<li><a href="https://www.wsj.com/finance/stocks/wall-streets-latest-bet-is-on-halo-companies-with-ai-immunity-170ca071?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+<li><a href="https://www.wsj.com/tech/ai/anthropics-pentagon-problems-751b229a?mod=rss_Technology" target="_blank" rel="noopener noreferrer">WSJ (Technology)</a></li>
+<li><a href="https://www.investing.com/news/stock-market-news/samsung-shares-hit-record-high-on-nvidia-supplier-speculation-4517694" target="_blank" rel="noopener noreferrer">Investing.com Stocks</a></li>
+</ul>
+</article>
+<article class="story" id="story-3" data-direction="bearish" data-category="What&#x27;s Driving US Capital Markets Now and Next?"><h3 class="story__title"><span class="story__num">03</span>Trump Administration Acquires Stakes in Private Companies, Destabilizing Markets</h3>
+<p class="story__context">Opinion pieces highlight the Trump administration&#x27;s shift from free-market principles to government intervention, acquiring stakes in private companies and engaging in handshake deals with CEOs. This pattern destabilizes markets and challenges traditional Republican capitalist principles.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Introduces policy uncertainty for US equity markets and private sector investments, potentially disrupting traditional capital allocation in corporate America.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/opinion/government-is-a-risky-shareholder-b8db6ea9" target="_blank" rel="noopener noreferrer">WSJ (Opinion)</a></li>
+<li><a href="https://www.wsj.com/opinion/government-is-a-risky-shareholder-b8db6ea9?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+<li><a href="https://www.nytimes.com/2026/02/22/business/economy/trump-republicans-economy-capitalism.html" target="_blank" rel="noopener noreferrer">NYT Economy</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-driving-non-us-capital-markets">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-globe"></use></svg>What&#x27;s Driving Non-US Capital Markets?<span class="section__count">3</span></h2>
+<article class="story" id="story-4" data-direction="bearish" data-category="What&#x27;s Driving Non-US Capital Markets?"><h3 class="story__title"><span class="story__num">04</span>Merz Re-elected CDU Leader as German Economic Turnaround Promises Lag One Year On</h3>
+<p class="story__context">Friedrich Merz&#x27;s CDU won elections on a &#x27;Wirtschaftswende&#x27; promise, but one year later, a moderate speech at the party congress focused on coalition stability, avoiding bold reforms. Germany faces a 1% growth forecast, €180 billion in new debt, ongoing layoffs, and rising insolvencies.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Bearish for DAX industrials and German mid-caps, heightening fiscal strain risks and widening Bund spreads amid absent structural reforms.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.handelsblatt.com/politik/konjunktur/kanzler-wirtschaftswende-versprechen-nach-einem-jahr-kaum-erfuellt/100200764.html" target="_blank" rel="noopener noreferrer">Handelsblatt</a></li>
+<li><a href="https://www.faz.net/aktuell/politik/inland/cdu-nach-dem-parteitag-fast-schon-wieder-merkel-partei-110842067.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (FAZ)</a></li>
+</ul>
+</article>
+<article class="story" id="story-5" data-direction="mixed" data-category="What&#x27;s Driving Non-US Capital Markets?"><h3 class="story__title"><span class="story__num">05</span>US Tariff Chaos Weakens Dollar and Rattles Asian Markets as CAC 40 Outperforms DAX</h3>
+<p class="story__context">US political uncertainty from new tariff announcements led to a 0.5% drop in the dollar against the yen and 0.77 Swiss francs, while the euro rose 0.3% to 1.18 USD. Deutsche Telekom gained as a defensive stock, and the CAC 40 surpassed the DAX after lagging for over a year.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Supports rotation into defensive European telecoms and French equities, creating relative headwinds for DAX components amid broader risk-off sentiment.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.handelsblatt.com/finanzen/maerkte/marktberichte/nikkei-yen-hang-seng-us-zollchaos-sorgt-an-asiens-boersen-fuer-unsicherheit/100202410.html" target="_blank" rel="noopener noreferrer">Handelsblatt</a></li>
+</ul>
+</article>
+<article class="story" id="story-6" data-direction="bullish" data-category="What&#x27;s Driving Non-US Capital Markets?"><h3 class="story__title"><span class="story__num">06</span>Australian Small-Caps Release FY26 H1 Earnings: Perenti Steady, Regis Surges</h3>
+<p class="story__context">Australian listed companies commenced their FY26 first-half earnings reports. Perenti, a top-2 global mining services contractor, reported steady revenue, two-thirds from underground mines, matching expectations. Regis Healthcare shares surged on strong first-half earnings.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Reinforces stability in Australian mining services and provides tailwinds for healthcare stocks, supporting ASX small-cap resource and health sectors.</span></p>
+<ul class="story__sources">
+<li><a href="https://seekingalpha.com/article/4873353-mayne-pharma-group-limited-maynf-q2-2026-earnings-call-transcript?source=feed_all_articles" target="_blank" rel="noopener noreferrer">Seeking Alpha</a></li>
+<li><a href="https://www.investing.com/news/stock-market-news/regis-healthcare-shares-surge-on-strong-firsthalf-earnings-4517699" target="_blank" rel="noopener noreferrer">Investing.com Stocks</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-risks-could-disrupt-capital-markets">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-alert"></use></svg>What Risks Could Disrupt Capital Markets?<span class="section__count">4</span></h2>
+<article class="story" id="story-7" data-direction="bearish" data-category="What Risks Could Disrupt Capital Markets?"><h3 class="story__title"><span class="story__num">07</span>Mexican Forces Kill CJNG Leader &#x27;El Mencho,&#x27; Sparking Violence Across 8 States, Tourism Chaos</h3>
+<p class="story__context">Mexican forces, with US intelligence, killed cartel leader &#x27;El Mencho&#x27; and six accomplices, seizing weapons. Cartel retaliation caused burning vehicles, roadblocks, gunfire across eight states, prompting flight cancellations and US shelter-in-place alerts in tourist areas like Guadalajara and Puerto Vallarta.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Creates CJNG power vacuum disrupting short-term US fentanyl/meth supply while escalating violence in tourist hubs. This strains US-Mexico trade and nearshoring, but closer bilateral cooperation averts US intervention risks.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2026/02/23/mexico-cartel-leader-el-mencho-drug-lord-killed" target="_blank" rel="noopener noreferrer">Axios</a></li>
+<li><a href="https://www.npr.org/2026/02/22/nx-s1-5722897/mexican-army-kills-leader-of-jalisco-new-generation-cartel-official-says" target="_blank" rel="noopener noreferrer">NPR News</a></li>
+<li><a href="https://www.wsj.com/world/americas/gunmen-wreak-chaos-in-mexican-coastal-retreat-after-cartel-killing-882c0cc2" target="_blank" rel="noopener noreferrer">WSJ (World)</a></li>
+<li><a href="https://www.nytimes.com/2026/02/22/world/americas/jalisco-new-generation-cartel-leader-killed.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li><a href="https://fortune.com/2026/02/22/us-state-department-shelter-in-place-alert-mexico-el-mencho-drug-cartel/" target="_blank" rel="noopener noreferrer">Fortune</a></li>
+<li><a href="https://thehill.com/policy/international/5750142-state-dept-shelter-mexico-cartel-leader-killing/" target="_blank" rel="noopener noreferrer">The Hill</a></li>
+<li class="is-extra" hidden><a href="https://www.scmp.com/news/world/americas/article/3344279/mexican-army-kills-leader-jalisco-new-generation-cartel-official-says?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+<li class="is-extra" hidden><a href="https://www.theguardian.com/world/2026/feb/23/who-was-el-mencho-drug-cartel-boss-killed-mexico" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li class="is-extra" hidden><a href="https://www.washingtonpost.com/world/2026/02/22/mexico-cartel-leader-killed-oseguera/" target="_blank" rel="noopener noreferrer">Washington Post World</a></li>
+<li class="is-extra" hidden><a href="https://www.independent.co.uk/news/mexico-united-states-jalisco-people-mexico-city-b2925452.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+<li class="is-extra" hidden><a href="https://www.france24.com/en/americas/20260222-mexican-army-kills-drug-kingpin-el-mencho-during-operation-to-capture-him" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li class="is-extra" hidden><a href="https://www.faz.net/aktuell/gesellschaft/kriminalitaet/mexikanischer-drogenboss-el-mencho-bei-militaeroperation-getoetet-200563648.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (FAZ)</a></li>
+<li class="is-extra" hidden><a href="https://www.bbc.com/news/articles/c1jkw18e19jo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><button type="button" class="src-more" data-count="7">+7 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-8" data-direction="mixed" data-category="What Risks Could Disrupt Capital Markets?"><h3 class="story__title"><span class="story__num">08</span>US-Iran Nuclear Talks at Standstill Amid Carrier Deployments and Strike Threats</h3>
+<p class="story__context">Trump offers Iran a &#x27;final diplomatic chance&#x27; in Geneva talks before potential strikes targeting Supreme Leader Khamenei, involving envoys Witkoff/Kushner. The US deployed USS Gerald R. Ford and USS Abraham Lincoln to pressure Iran into zero uranium enrichment, as Iran holds 300kg at 60% purity and offers dilution for sanctions relief.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Surging US-Iran nuclear standoff, military buildup, and Iran&#x27;s isolation spike risks of oil disruptions, Strait of Hormuz tensions, and Middle East escalation, bullish for energy commodities and US defense.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2026/02/22/iran-us-talks-friday-nuclear-deal" target="_blank" rel="noopener noreferrer">Axios</a></li>
+<li><a href="https://www.investing.com/news/commodities-news/iran-and-us-diverge-in-views-on-sanctions-relief-senior-iranian-official-to-reuters-4517560" target="_blank" rel="noopener noreferrer">Investing.com Commodities</a></li>
+<li><a href="https://www.al-monitor.com/originals/2026/02/oman-confirms-us-iran-talks-geneva-thursday" target="_blank" rel="noopener noreferrer">Al-Monitor (Egypt)</a></li>
+<li><a href="https://www.wsj.com/politics/national-security/under-trump-pressure-iran-finds-its-friends-are-of-little-help-1cd57bb2" target="_blank" rel="noopener noreferrer">WSJ (World)</a></li>
+<li><a href="https://www.nytimes.com/2026/02/22/us/politics/trump-iran-strike-attack.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li><a href="https://www.guardian.com/world/2026/feb/22/washington-and-tehran-to-hold-more-nuclear-talks-as-protests-reignite-in-iran" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li class="is-extra" hidden><a href="https://www.independent.co.uk/news/world/middle-east/iran-us-nuclear-talks-geneva-trump-b2925377.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+<li class="is-extra" hidden><a href="https://www.france24.com/en/middle-east/20260222-iran-us-talks-expected-thursday-despite-fears-of-strikes" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li class="is-extra" hidden><a href="https://www.faz.net/aktuell/politik/usa-unter-trump/liveblog-usa-unter-trump-gespraeche-ueber-iranisches-atomprogramm-sollen-fortgesetzt-werden-faz-19444916.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (FAZ)</a></li>
+<li class="is-extra" hidden><a href="https://fortune.com/2026/02/22/us-iran-nuclear-talks-next-round-geneva-trump-military-buildup-mideast/" target="_blank" rel="noopener noreferrer">Fortune</a></li>
+<li class="is-extra" hidden><a href="https://www.scmp.com/news/world/united-states-canada/article/3344245/envoy-says-trump-curious-why-iran-has-not-capitulated-under-us-pressure?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+<li><button type="button" class="src-more" data-count="5">+5 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-9" data-direction="bearish" data-category="What Risks Could Disrupt Capital Markets?"><h3 class="story__title"><span class="story__num">09</span>Russia Fires 50 Missiles and 297 Drones at Ukraine as Hungary Threatens to Block EU Sanctions</h3>
+<p class="story__context">Russia launched 50 missiles and 297 drones at Ukrainian energy, rail, and residential targets, killing one in Kyiv and wounding 25 in Lviv. Over 500,000 are without power in -22C temperatures. Hungary and Slovakia threaten to block EU sanctions and cut electricity over Black Sea pipeline disruptions.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Intensified Russian strikes on energy infrastructure and sabotage, coupled with EU nation-state threats, raise European energy security risks and strain EU unity on Russia policy.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/clyz8d79djeo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.theguardian.com/world/2026/feb/22/russia-missiles-ukraine-hungary-block-eu-sanctions" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.france24.com/en/russian-launches-missile-barrage-on-ukraine-s-energy-facilities" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li><a href="http://www.taz.de/Kurz-vor-dem-vierten-Kriegsjahrestag/!6156535/" target="_blank" rel="noopener noreferrer">Die Tageszeitung (taz)</a></li>
+<li><a href="https://www.nytimes.com/2026/02/22/opinion/ukraine-russia-war-four-years.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li><a href="https://www.nytimes.com/2026/02/22/world/europe/russia-sabotage-europe.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+<li class="is-extra" hidden><a href="https://www.scmp.com/news/world/russia-central-asia/article/3344281/police-officer-killed-24-people-wounded-bomb-explosions-ukraines-lviv?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+<li class="is-extra" hidden><a href="https://www.faz.net/aktuell/politik/ukraine/ukraine-liveticker-selenskyj-zynischer-und-grausamer-terroranschlag-in-lemberg-faz-110683325.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (FAZ)</a></li>
+<li><button type="button" class="src-more" data-count="2">+2 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-10" data-direction="bearish" data-category="What Risks Could Disrupt Capital Markets?"><h3 class="story__title"><span class="story__num">10</span>Pakistan Launches Airstrikes in Eastern Afghanistan Targeting TTP Camps</h3>
+<p class="story__context">Following recent suicide bombings, Pakistan&#x27;s military conducted airstrikes on seven Pakistani Taliban (TTP) and affiliate camps in Afghanistan&#x27;s Nangarhar and Paktika provinces, killing an estimated 80 militants. Afghanistan reported civilian casualties and vowed a &#x27;calculated&#x27; response.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens risks of border escalation disrupting cross-border trade and the fragile Doha truce, with potential spillover of militant violence affecting regional stability and South Asian emerging markets.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/cdxgln3gnd6o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.npr.org/2026/02/22/nx-s1-5722854/pakistan-border-strikes-afghanistan-70-killed" target="_blank" rel="noopener noreferrer">NPR News</a></li>
+<li><a href="https://www.independent.co.uk/asia/south-asia/pakistan-afghan-border-militants-terrorists-b2925464.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+<li><a href="https://www.france24.com/en/pakistan-launches-border-strikes-on-afghanistan" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li><a href="https://www.scmp.com/news/asia/south-asia/article/3344268/pakistan-targets-militants-afghanistan-testing-doha-truce?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+<li><a href="https://www.al-monitor.com/originals/2026/02/afghanistans-ruling-taliban-say-pakistan-strikes-kill-injure-dozens" target="_blank" rel="noopener noreferrer">Al-Monitor (Egypt)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-are-policymakers-signaling">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-bank"></use></svg>What Are Policymakers Signaling?<span class="section__count">3</span></h2>
+<article class="story" id="story-11" data-direction="mixed" data-category="What Are Policymakers Signaling?"><h3 class="story__title"><span class="story__num">11</span>Supreme Court Strikes Down Trump&#x27;s &#x27;Liberation Day&#x27; Tariffs; He Counters with New 15% Global Levies</h3>
+<p class="story__context">The Supreme Court ruled Trump&#x27;s April 2025 &#x27;Liberation Day&#x27; tariffs illegal under IEEPA/emergency powers. Trump responded via Truth Social with new 15% tariffs on all imports under Section 122 of the 1974 Trade Act, leaving 50% steel/aluminum tariffs unaffected. EU affirmed &#x27;a deal is a deal&#x27; but urged a pause in deal approval.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Massively escalates global trade uncertainty, risks derailing US deals, enabling huge importer refunds, disrupting supply chains/manufacturing/carry trades, and boosting safe-haven assets amid volatile equities.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.marketwatch.com/bulletins/redirect/go?g=440a9e1d-e7da-4b56-99a1-6b0668f02a93&amp;mod=mw_rss_bulletins" target="_blank" rel="noopener noreferrer">MarketWatch Bulletins</a></li>
+<li><a href="https://www.wsj.com/economy/trade/tariffs-are-a-wild-card-for-the-economy-again-898a0a30" target="_blank" rel="noopener noreferrer">WSJ (Economy)</a></li>
+<li><a href="https://www.nytimes.com/2026/02/22/business/trump-administration-tariffs-supreme-court-loss.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li><a href="https://www.nytimes.com/2026/02/22/world/asia/trump-xi-jinping-meeting-china.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+<li><a href="https://seekingalpha.com/article/4873322-nike-tariff-ruling-isnt-enough-to-change-my-stance?source=feed_all_articles" target="_blank" rel="noopener noreferrer">Seeking Alpha</a></li>
+<li><a href="https://www.investing.com/news/economy-news/china-considering-trump-tariff-ruling-commerce-ministry-says-4517702" target="_blank" rel="noopener noreferrer">Investing.com Economy</a></li>
+<li class="is-extra" hidden><a href="https://thehill.com/policy/international/5749854-europe-us-trade-relationship/" target="_blank" rel="noopener noreferrer">The Hill</a></li>
+<li class="is-extra" hidden><a href="https://www.financeasia.com/article/trump-issues-15-global-tariffs-after-supreme-court-setback/507280" target="_blank" rel="noopener noreferrer">Finance Asia</a></li>
+<li class="is-extra" hidden><a href="https://www.independent.co.uk/asia/india/india-cancels-trade-mission-us-trump-tariffs-b2925200.html" target="_blank" rel="noopener noreferrer">The Independent (World)</a></li>
+<li class="is-extra" hidden><a href="https://www.cnbc.com/2026/02/22/trump-tariffs-india-trade-deal.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li class="is-extra" hidden><a href="https://www.scmp.com/week-asia/economics/article/3344300/asias-us-trade-deals-doubt-after-trumps-supreme-court-tariff-defeat?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+<li class="is-extra" hidden><a href="http://www.taz.de/Supreme-Court-kippt-Zoelle/!6152802/" target="_blank" rel="noopener noreferrer">Die Tageszeitung (taz)</a></li>
+<li class="is-extra" hidden><a href="https://www.handelsblatt.com/politik/konjunktur/interview-clemens-fuest-die-unsicherheit-fuer-den-internationalen-handel-erhoeht-sich-wieder/100202367.html" target="_blank" rel="noopener noreferrer">Handelsblatt</a></li>
+<li class="is-extra" hidden><a href="https://www.faz.net/aktuell/wirtschaft/trumps-zollchaos-geht-weiter-110842331.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (FAZ)</a></li>
+<li class="is-extra" hidden><a href="https://www.corriere.it/economia/aziende/26_febbraio_22/schwartz-ricorso-contro-dazi-intervista-1ffc7c4a-3b12-4d94-a4d4-b3e75192bxlk.shtml" target="_blank" rel="noopener noreferrer">Corriere della Sera (Italian)</a></li>
+<li class="is-extra" hidden><a href="https://www.theguardian.com/us-news/2026/feb/22/uk-in-talks-with-us-over-best-possible-deal-for-british-firms-amid-higher-tariffs-threat-trump" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li class="is-extra" hidden><a href="https://www.france24.com/en/asia-pacific/20260223-china-us-cancel-trump-era-tariffs-supreme-court" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li class="is-extra" hidden><a href="https://fortune.com/2026/02/22/us-trade-deals-partners-trump-tariffs-section-122-supreme-court/" target="_blank" rel="noopener noreferrer">Fortune</a></li>
+<li class="is-extra" hidden><a href="https://www.marketwatch.com/story/u-s-stock-futures-flat-as-investors-await-clarity-on-trumps-latest-tariff-plans-ae774ba0?mod=mw_rss_topstories" target="_blank" rel="noopener noreferrer">MarketWatch Top Stories</a></li>
+<li class="is-extra" hidden><a href="https://www.wsj.com/finance/commodities-futures/gold-and-silver-rise-amid-renewed-trade-tensions-ea8b0b2d?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+<li class="is-extra" hidden><a href="https://www.investing.com/news/commodities-news/gold-prices-extend-gains-on-fresh-trump-tariff-jitters-4517679" target="_blank" rel="noopener noreferrer">Investing.com Commodities</a></li>
+<li class="is-extra" hidden><a href="https://www.investing.com/news/stock-market-news/asia-stocks-skittish-on-trump-tariff-jitters-hong-kong-s-korea-advance-4517701" target="_blank" rel="noopener noreferrer">Investing.com Stocks</a></li>
+<li class="is-extra" hidden><a href="https://www.wsj.com/opinion/tariff-ruling-leaves-plenty-of-hypocrisy-to-go-around-beb99fa9" target="_blank" rel="noopener noreferrer">WSJ (Opinion)</a></li>
+<li class="is-extra" hidden><a href="https://www.wsj.com/opinion/tariff-ruling-leaves-plenty-of-hypocrisy-to-go-around-beb99fa9?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+<li class="is-extra" hidden><a href="https://www.nytimes.com/2026/02/21/opinion/scotus-trump-tariffs-epstein.html" target="_blank" rel="noopener noreferrer">NYT Sunday Review</a></li>
+<li class="is-extra" hidden><a href="https://terryschwadron.medium.com/the-roiled-tariff-seas-21fd5798cb42?source=rss------foreign_policy-5" target="_blank" rel="noopener noreferrer">Medium Foreign Policy</a></li>
+<li><button type="button" class="src-more" data-count="20">+20 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-12" data-direction="bearish" data-category="What Are Policymakers Signaling?"><h3 class="story__title"><span class="story__num">12</span>US Ambassador Huckabee&#x27;s Biblical Claims on Israeli Land Draw Arab and Muslim Condemnation</h3>
+<p class="story__context">US Ambassador to Israel Mike Huckabee told Tucker Carlson that Israel has a biblical right to the land &#x27;from the Nile to the Euphrates,&#x27; stating &#x27;It would be fine if they took it all.&#x27; His remarks, which referred to Area C (60% of the West Bank) as &#x27;Israel,&#x27; drew condemnation from Egypt, Jordan, Saudi Arabia, UAE, Turkey, and others.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens Middle East diplomatic tensions, straining US-Arab relations and risking complications for Gaza ceasefire and West Bank settlement negotiations.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/cn5gk15rr70o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.theguardian.com/us-news/2026/feb/22/mike-huckabee-israel-comments-condemned-arab-muslim-countries" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="http://www.taz.de/US-Botschafter-in-Israel/!6156525/" target="_blank" rel="noopener noreferrer">Die Tageszeitung (taz)</a></li>
+<li><a href="https://www.nytimes.com/2026/02/22/world/middleeast/huckabee-israel-tucker-carlson.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+<li><a href="https://thehill.com/policy/international/5750323-huckabee-middle-east-controversy/" target="_blank" rel="noopener noreferrer">The Hill</a></li>
+<li><a href="https://www.egyptindependent.com/arab-league-rejects-us-ambassador-statements-on-israels-biblical-right-to-land/" target="_blank" rel="noopener noreferrer">Egypt Independent</a></li>
+<li class="is-extra" hidden><a href="https://www.al-monitor.com/originals/2026/02/us-envoys-remarks-israel-and-middle-east-land-draw-condemnation-region" target="_blank" rel="noopener noreferrer">Al-Monitor (Egypt)</a></li>
+<li><button type="button" class="src-more" data-count="1">+1 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-13" data-direction="bearish" data-category="What Are Policymakers Signaling?"><h3 class="story__title"><span class="story__num">13</span>DNC Secret Report Finds Gaza Stance Cost Harris Votes in 2024 Election</h3>
+<p class="story__context">A top DNC report concluded Kamala Harris lost significant support among young people and progressives in 2024 due to the Biden-Harris administration&#x27;s handling of the Gaza war, deeming it a &#x27;net-negative.&#x27; IMEU Policy Project activists highlighted this loss during a closed-door meeting with DNC aides.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Persistent Democratic divisions over Israel-Gaza policy heighten political uncertainty ahead of midterms, elevating US policy risk premiums and volatility in related geopolitical carry trades.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2026/02/22/dnc-2024-autopsy-harris-gaza" target="_blank" rel="noopener noreferrer">Axios</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-next-in-ai-tech">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chip"></use></svg>What&#x27;s Next in AI &amp; Tech?<span class="section__count">2</span></h2>
+<article class="story" id="story-14" data-direction="bullish" data-category="What&#x27;s Next in AI &amp; Tech?"><h3 class="story__title"><span class="story__num">14</span>White House Launches &#x27;Tech Corps&#x27; via Peace Corps to Bolster US AI Abroad Against China</h3>
+<p class="story__context">The White House announced the &#x27;Tech Corps&#x27; initiative within the Peace Corps to expand US global AI influence and counter China. Volunteers with tech skills will provide &#x27;last-mile&#x27; support for American AI solutions in developing countries, addressing grassroots problems in agriculture, education, health, and economic development.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Enhances US AI firms&#x27; expansion into developing markets while challenging Chinese AI models like Qwen3 and Deepseek, bullish for American tech dominance in emerging economies.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2026/02/23/us-launch-peace-corps-tech-corps-india-export-ai-stack-sovereignty-counter-china.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+</ul>
+</article>
+<article class="story" id="story-15" data-direction="bearish" data-category="What&#x27;s Next in AI &amp; Tech?"><h3 class="story__title"><span class="story__num">15</span>2028 Democratic Contenders Retreat on AI Data Center Incentives Amid Voter Backlash</h3>
+<p class="story__context">Potential 2028 Democratic presidential hopefuls, including Governors Pritzker, Shapiro, and Moore, are pulling back from incentives for power-hungry AI data centers. This follows voter complaints about high energy bills and fears of AI-driven job losses, leading to pauses on tax breaks and proposals for moratoriums.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Rising populist AI anxiety among Democrats creates regulatory and political headwinds for data center expansion, pressuring utilities, tech infrastructure stocks, and AI capex in battleground states.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2026/02/22/democrats-2028-retreat-ai-data-centers" target="_blank" rel="noopener noreferrer">Axios</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-driving-energy-metals-and-commodities">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-bolt"></use></svg>What&#x27;s Driving Energy, Metals and Commodities?<span class="section__count">2</span></h2>
+<article class="story" id="story-16" data-direction="mixed" data-category="What&#x27;s Driving Energy, Metals and Commodities?"><h3 class="story__title"><span class="story__num">16</span>Japan Mines Pacific Ocean Mud for Rare Earths to Counter China&#x27;s Chokehold</h3>
+<p class="story__context">To mitigate China&#x27;s dominance in rare earth supplies, Japan is initiating measures to extract these critical elements from Pacific Ocean mud. This strategic move aims to address key supply vulnerabilities for various high-tech industries, including EVs and semiconductors.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Bullish for non-Chinese rare earth supply chains and Japanese resource firms, bearish for Chinese exporters. Provides relief for EV battery, semiconductor, and defense sectors dependent on stable rare earth access.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.ft.com/content/a811c4dc-bb93-42aa-983a-4c0363073e37" target="_blank" rel="noopener noreferrer">Financial Times (World)</a></li>
+<li><a href="https://www.ft.com/content/1d0b0747-dac2-4a2a-9238-fa0d79e5ca74" target="_blank" rel="noopener noreferrer">FT (Companies)</a></li>
+<li><a href="https://www.scmp.com/news/world/article/3344290/trumps-trip-china-scheduled-archeologists-unearth-temple-5-weekend-reads-you-missed?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+</ul>
+</article>
+<article class="story" id="story-17" data-direction="bearish" data-category="What&#x27;s Driving Energy, Metals and Commodities?"><h3 class="story__title"><span class="story__num">17</span>Oil Prices Fall on Prospects of Limited US Strike on Iran and Tariff Uncertainty</h3>
+<p class="story__context">Oil prices declined in early Asian trade amidst speculation that any US military intervention in Iran would be limited, ongoing US-Iran nuclear talks, and global economic growth concerns triggered by Trump&#x27;s new tariffs. Trump is reportedly weighing a limited strike to compel nuclear deal compliance.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Eases near-term geopolitical risk premium in crude oil, bearish for energy futures and oil majors. Tariff uncertainty pressures global growth-sensitive commodities.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/finance/commodities-futures/oil-falls-amid-prospect-that-u-s.-strike-on-iran-might-be-limited-10835b8a?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+<li><a href="https://www.investing.com/news/commodities-news/oil-slides-as-us-tariff-hike-raise-jitters-over-global-economy-4517638" target="_blank" rel="noopener noreferrer">Investing.com Commodities</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-evolving-in-digital-finance-and-crypto">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-coin"></use></svg>What&#x27;s Evolving in Digital Finance and Crypto?<span class="section__count">1</span></h2>
+<article class="story" id="story-18" data-direction="mixed" data-category="What&#x27;s Evolving in Digital Finance and Crypto?"><h3 class="story__title"><span class="story__num">18</span>Bitcoin Falls Below $65,000 After Trump Announces 15% Global Tariffs</h3>
+<p class="story__context">Bitcoin plunged over 5% to below $65,000, last trading at $64,816.8, extending its YTD decline to 26% and dropping over 47% from its October high of $125,000. This followed Trump&#x27;s announcement of new 15% global tariffs, increasing market uncertainty, alongside whale selling and US-Iran tensions. Ether also dropped nearly 6% to $1,865.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Heightens risk aversion in crypto and digital assets while boosting safe-haven demand for gold. Expect further downside towards $50,000 amid low liquidity and macro shocks.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.cnbc.com/2026/02/23/bitcoin-falls-trump-tariffs.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><a href="https://www.investing.com/news/cryptocurrency-news/bitcoin-price-today-tumbles-below-65k-amid-whale-selling-us-tariff-jitters-4517703" target="_blank" rel="noopener noreferrer">Investing.com Crypto</a></li>
+<li><a href="https://invezz.com/news/2026/02/23/bitcoin-drops-below-65000-amid-tariffs-and-macro-risks/" target="_blank" rel="noopener noreferrer">Invezz</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-impacting-non-tech-sectors">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chip"></use></svg>What&#x27;s Impacting Non-Tech Sectors?<span class="section__count">3</span></h2>
+<article class="story" id="story-19" data-direction="bearish" data-category="What&#x27;s Impacting Non-Tech Sectors?"><h3 class="story__title"><span class="story__num">19</span>UK Pledges £4bn Overhaul of SEND Support for English Schools</h3>
+<p class="story__context">Education Secretary Bridget Phillipson announced a £4 billion investment over three years for England&#x27;s Special Educational Needs and Disabilities (SEND) system. This includes £1.6 billion for inclusive mainstream settings and £1.8 billion for SEND specialists, aiming to curb spending and reserve EHCPs for severe cases amid soaring costs and council deficits.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Likely curbs explosive growth in welfare spending and local authority deficits, stabilizing UK public finances and freeing resources for other services.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/education/2026/feb/22/bridget-phillipson-overhaul-send-support-schools-england" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.independent.co.uk/news/uk/politics/schools-send-reforms-education-phillipson-b2925290.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+</ul>
+</article>
+<article class="story" id="story-20" data-direction="bullish" data-category="What&#x27;s Impacting Non-Tech Sectors?"><h3 class="story__title"><span class="story__num">20</span>&#x27;Godfather of Data Centers&#x27; Builds Loudoun County into Major Data-Center Hub</h3>
+<p class="story__context">Virginia’s Loudoun County has become a significant data-center market, driven by its executive director for economic development, a former radio DJ. His aggressive offers are attracting major tech players to the area, boosting local infrastructure.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Supports expansion of data center capacity in the US, likely increasing demand for related real estate and power infrastructure, benefiting local economies.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/finance/the-godfather-of-data-centers-making-offers-big-tech-cant-refuse-6c52d301?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+</ul>
+</article>
+<article class="story" id="story-21" data-direction="bearish" data-category="What&#x27;s Impacting Non-Tech Sectors?"><h3 class="story__title"><span class="story__num">21</span>California Homeowner Faces $44,000 Insurance Bill Highlighting Market Dysfunction</h3>
+<p class="story__context">A California homeowner received a $44,000 home insurance bill, exemplifying the dysfunction in the state&#x27;s property and casualty insurance market. California is struggling to attract insurers back, a situation that could serve as a model or warning for other disaster-prone states.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Likely creates headwinds for US property and casualty insurers and real estate values in high-risk coastal states, raising premiums and potentially affecting affordability.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/finance/a-44-000-bill-shows-the-dysfunction-in-californias-home-insurance-market-bbe89a42?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-critical-but-overlooked">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-eye"></use></svg>What&#x27;s Critical but Overlooked?<span class="section__count">3</span></h2>
+<article class="story" id="story-22" data-direction="mixed" data-category="What&#x27;s Critical but Overlooked?"><h3 class="story__title"><span class="story__num">22</span>China and Russia Build Nuclear Arsenals as US Restrains Itself</h3>
+<p class="story__context">A WSJ opinion piece references a Chinese nuclear test, highlighting Beijing and Moscow&#x27;s nuclear arsenal expansion while the US maintains restraint. This points to an imbalance in nuclear postures among major global powers, raising strategic concerns.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Heightens global geopolitical tensions, bullish for defense sector stocks and risk-off assets like gold and Treasuries, as strategic stability wanes.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/opinion/more-about-that-chinese-nuclear-test-5e46daef" target="_blank" rel="noopener noreferrer">WSJ (World)</a></li>
+</ul>
+</article>
+<article class="story" id="story-23" data-direction="bearish" data-category="What&#x27;s Critical but Overlooked?"><h3 class="story__title"><span class="story__num">23</span>US Ambassador Huckabee&#x27;s Biblical Claims on Israeli Land Draw Arab and Muslim Condemnation</h3>
+<p class="story__context">US Ambassador to Israel Mike Huckabee told Tucker Carlson that Israel has a biblical right to the land &#x27;from the Nile to the Euphrates,&#x27; stating &#x27;It would be fine if they took it all.&#x27; His remarks, which referred to Area C (60% of the West Bank) as &#x27;Israel,&#x27; drew condemnation from Egypt, Jordan, Saudi Arabia, UAE, Turkey, and others.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens Middle East diplomatic tensions, straining US-Arab relations and risking complications for Gaza ceasefire and West Bank settlement negotiations.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/cn5gk15rr70o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.guardian.com/us-news/2026/feb/22/mike-huckabee-israel-comments-condemned-arab-muslim-countries" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="http://www.taz.de/US-Botschafter-in-Israel/!6156525/" target="_blank" rel="noopener noreferrer">Die Tageszeitung (taz)</a></li>
+<li><a href="https://www.nytimes.com/2026/02/22/world/middleeast/huckabee-israel-tucker-carlson.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+<li><a href="https://thehill.com/policy/international/5750323-huckabee-middle-east-controversy/" target="_blank" rel="noopener noreferrer">The Hill</a></li>
+<li><a href="https://www.egyptindependent.com/arab-league-rejects-us-ambassador-statements-on-israels-biblical-right-to-land/" target="_blank" rel="noopener noreferrer">Egypt Independent</a></li>
+<li class="is-extra" hidden><a href="https://www.al-monitor.com/originals/2026/02/us-envoys-remarks-israel-and-middle-east-land-draw-condemnation-region" target="_blank" rel="noopener noreferrer">Al-Monitor (Egypt)</a></li>
+<li><button type="button" class="src-more" data-count="1">+1 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-24" data-direction="bearish" data-category="What&#x27;s Critical but Overlooked?"><h3 class="story__title"><span class="story__num">24</span>Venezuelan Partial Amnesty Law Enacted Post-US Capture of Maduro; Reforms Eyed to Lure Investors</h3>
+<p class="story__context">Following the US capture of Nicolás Maduro last month, acting President Delcy Rodríguez proposed a limited amnesty law for political detainees since 1999. While hundreds were released, exclusions for military and certain offenses sparked a hunger strike by over 200 prisoners. The US expects Venezuela&#x27;s leaders to enact reforms to attract investors.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Partial amnesty and protests risk prolonged instability in the OPEC oil producer, pressuring emerging markets and oil output. However, reforms could open investment flows into Venezuelan oil assets and bonds.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/world/americas/venezuela-maduro-oil-trump-565b9afd" target="_blank" rel="noopener noreferrer">WSJ (World)</a></li>
+<li><a href="https://www.independent.co.uk/news/venezuelan-caracas-nicolas-maduro-red-cross-national-assembly-b2925396.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+<li><a href="https://www.france24.com/en/americas/20260222-200-venezuelan-political-prisoners-hunger-strike-amnesty-law-exclusions" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li><a href="https://www.egyptindependent.com/venezuela-passed-a-law-to-free-hundreds-of-political-prisoners-after-us-pressure-heres-why-some-welcome-it-cautiously/" target="_blank" rel="noopener noreferrer">Egypt Independent</a></li>
+<li><a href="https://www.bbc.com/news/articles/c93w9g2dvn5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-new-perspectives-can-challenge-our-thinking">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-bulb"></use></svg>What New Perspectives Can Challenge Our Thinking?<span class="section__count">2</span></h2>
+<article class="story" id="story-25" data-direction="bearish" data-category="What New Perspectives Can Challenge Our Thinking?"><h3 class="story__title"><span class="story__num">25</span>WSJ Opinion Blames Obama-Biden Years for Allies&#x27; Distrust of US, Counters Emanuel&#x27;s Trump Critique</h3>
+<p class="story__context">A Wall Street Journal opinion piece contends that the Obama and Biden administrations fostered distrust among US allies, refuting Rahm Emanuel&#x27;s critique that Trump solely caused this. It argues this continuity reflects a deeper, long-term challenge to US reliability.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>This counter-narrative highlights continuity in perceived US unreliability across administrations, potentially straining transatlantic alliance cohesion and NATO funding commitments, altering defense strategies.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/opinion/the-obama-and-biden-years-made-allies-distrust-the-u-s-a45a2236" target="_blank" rel="noopener noreferrer">WSJ (World)</a></li>
+</ul>
+</article>
+<article class="story" id="story-26" data-direction="neutral" data-category="What New Perspectives Can Challenge Our Thinking?"><h3 class="story__title"><span class="story__num">26</span>&#x27;Volga Blues&#x27; Review Claims Stalin Back in Fashion in Russia, Lenin Derided as Too European</h3>
+<p class="story__context">A Wall Street Journal review of &#x27;Volga Blues&#x27; reveals a shift in Russian public sentiment, with Stalin now revered for his role in defeating enemies and expanding national power. In contrast, Lenin is increasingly seen as &#x27;too European,&#x27; reflecting rising nationalist narratives.</p>
+<p class="story__implication"><span class="dir" data-direction="neutral" title="neutral" aria-label="neutral">■</span><span>Highlights rising nationalist historical narratives in Russia, with potential implications for energy sector dynamics and European geopolitical balances, reinforcing a more insular Russian identity.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/arts-culture/books/volga-blues-review-russian-hearts-and-minds-d417efd8" target="_blank" rel="noopener noreferrer">WSJ (Arts &amp; Culture)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="what-s-driving-egypt-s-economy-policy-and-geopolitics">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-pyramid"></use></svg>What&#x27;s Driving Egypt&#x27;s Economy, Policy, and Geopolitics?<span class="section__count">2</span></h2>
+<article class="story" id="story-27" data-direction="bullish" data-category="What&#x27;s Driving Egypt&#x27;s Economy, Policy, and Geopolitics?"><h3 class="story__title"><span class="story__num">27</span>Egypt Hits Record $52.6B Foreign Reserves as Banking Assets Surge $20.3B</h3>
+<p class="story__context">Egypt&#x27;s net foreign reserves reached a record $52.6 billion in January 2026, covering 6.9 months of imports, driven by improved remittances, tourism, and foreign investment. Banking net foreign assets surged by $20.3 billion in 2025 to $25.5 billion. President Sisi is advancing AI/digital literacy and mineral exploration, while the World Bank deepens ties.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Bolsters Egypt&#x27;s macroeconomic stability and external buffers, bullish for Egyptian sovereign bonds, emerging markets carry trades, and FDI into mining and infrastructure sectors.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.egyptindependent.com/sisi-holds-meeting-with-cbe-governor-as-egypts-foreign-reserves-hit-record-52-6-billion/" target="_blank" rel="noopener noreferrer">Egypt Independent</a></li>
+<li><a href="https://www.dailynewsegypt.com/2026/02/22/egypt-world-bank-discuss-cooperation-to-advance-national-development-agenda/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=egypt-world-bank-discuss-cooperation-to-advance-national-development-agenda" target="_blank" rel="noopener noreferrer">Daily News Egypt</a></li>
+<li><a href="https://egyptian-gazette.com/egypt/rashwan-turki-al-sheikh-hold-talks-in-cairo-to-boost-bilateral-coordination/" target="_blank" rel="noopener noreferrer">Egyptian Gazette</a></li>
+</ul>
+</article>
+<article class="story" id="story-28" data-direction="bearish" data-category="What&#x27;s Driving Egypt&#x27;s Economy, Policy, and Geopolitics?"><h3 class="story__title"><span class="story__num">28</span>US Ambassador Huckabee&#x27;s &#x27;Nile to Euphrates&#x27; Comments Draw Regional Condemnation, Strain US-Arab Ties</h3>
+<p class="story__context">US Ambassador to Israel Mike Huckabee suggested in a Tucker Carlson interview that Israel has a biblical right to land from the Nile to the Euphrates, claiming &#x27;It would be fine if they took it all&#x27; and &#x27;Area C is Israel.&#x27; This sparked strong condemnation from Egypt, Jordan, Saudi Arabia, UAE, Turkey, and other Muslim-majority nations.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens Middle East diplomatic tensions, straining US-Arab relations and risking complications for Gaza ceasefire initiatives and West Bank settlement negotiations, increasing regional instability.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/cn5gk15rr70o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.theguardian.com/us-news/2026/feb/22/mike-huckabee-israel-comments-condemned-arab-muslim-countries" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="http://www.taz.de/US-Botschafter-in-Israel/!6156525/" target="_blank" rel="noopener noreferrer">Die Tageszeitung (taz)</a></li>
+<li><a href="https://www.nytimes.com/2026/02/22/world/middleeast/huckabee-israel-tucker-carlson.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+<li><a href="https://thehill.com/policy/international/5750323-huckabee-middle-east-controversy/" target="_blank" rel="noopener noreferrer">The Hill</a></li>
+<li><a href="https://www.egyptindependent.com/arab-league-rejects-us-ambassador-statements-on-israels-biblical-right-to-land/" target="_blank" rel="noopener noreferrer">Egypt Independent</a></li>
+<li class="is-extra" hidden><a href="https://www.al-monitor.com/originals/2026/02/us-envoys-remarks-israel-and-middle-east-land-draw-condemnation-region" target="_blank" rel="noopener noreferrer">Al-Monitor (Egypt)</a></li>
+<li><button type="button" class="src-more" data-count="1">+1 more</button></li>
+</ul>
+</article>
+</section>
+<div class="part-divider" id="part-ii"><span class="part-divider__num">II</span><h2 class="part-divider__title">Thematic Digest</h2><span class="part-divider__meta">Wider context &middot; 28 stories</span></div>
+<section class="section" id="markets-macro">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chart"></use></svg>Markets &amp; Macro<span class="section__count">1</span></h2>
+<article class="story" id="story-29" data-direction="bearish" data-category="Markets &amp; Macro"><h3 class="story__title"><span class="story__num">29</span>Singapore Dollar Strengthens Slightly as Traders Digest U.S. Tariff Developments</h3>
+<p class="story__context">The Singapore dollar showed a slight strengthening against its U.S. counterpart. This movement occurred as traders processed the latest developments regarding U.S. tariffs, indicating market reactions in currency trading to the policy changes.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Indicates mild risk-on positioning in Asian currencies amid U.S. policy uncertainty. Potential effects on USD carry trades and emerging market FX flows exist.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/finance/currencies/asian-currencies-strengthen-amid-risk-on-sentiment-c9902264?mod=rss_markets_main" target="_blank" rel="noopener noreferrer">WSJ (Markets)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="global-politics-geopolitics">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-globe"></use></svg>Global Politics &amp; Geopolitics<span class="section__count">4</span></h2>
+<article class="story" id="story-30" data-direction="mixed" data-category="Global Politics &amp; Geopolitics"><h3 class="story__title"><span class="story__num">30</span>Secret Service Kills 21-Year-Old Austin Tucker Martin After Armed Breach of Mar-a-Lago Perimeter</h3>
+<p class="story__context">Austin Tucker Martin, 21, drove through Mar-a-Lago&#x27;s north gate carrying a shotgun and gas can, then raised the weapon when confronted by Secret Service. Agents fatally shot him while Trump was in the White House. This follows two prior attempts on Trump&#x27;s life in 2024.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Escalates concerns over political violence targeting US leadership, reinforcing elevated security risks for political figures. Boosts demand for political event insurance and US political risk premiums.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/cp32l9w9pgyo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="http://www.taz.de/Moeglicher-Attentatsversuch-auf-Trump/!6156714/" target="_blank" rel="noopener noreferrer">Die Tageszeitung (taz)</a></li>
+<li><a href="https://www.handelsblatt.com/politik/international/secret-service-sicherheitskraefte-erschiessen-eindringling-bei-trumpanwesen/100202371.html" target="_blank" rel="noopener noreferrer">Handelsblatt</a></li>
+<li><a href="https://www.faz.net/aktuell/politik/usa-unter-trump/bewaffneter-angreifer-an-donald-trumps-residenz-getoetet-accg-200563102.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (FAZ)</a></li>
+<li><a href="https://www.axios.com/2026/02/22/mar-a-lago-secret-service-shooting" target="_blank" rel="noopener noreferrer">Axios</a></li>
+<li><a href="https://www.theguardian.com/us-news/2026/feb/22/mar-a-lago-armed-man-shot-killed" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li class="is-extra" hidden><a href="https://www.npr.org/2026/02/22/g-s1-111099/mar-a-lago-armed-man-shot" target="_blank" rel="noopener noreferrer">NPR News</a></li>
+<li class="is-extra" hidden><a href="https://www.independent.co.uk/news/world/americas/crime/austin-martin-mar-a-lago-suspect-b2925443.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+<li class="is-extra" hidden><a href="https://www.france24.com/en/mar-a-lago-incident-reflects-tense-us-political-environment-analyst-says" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li class="is-extra" hidden><a href="https://www.wsj.com/politics/national-security/man-killed-by-officers-at-trumps-mar-a-lago-home-d4eece58" target="_blank" rel="noopener noreferrer">WSJ (Politics)</a></li>
+<li class="is-extra" hidden><a href="https://www.nytimes.com/2026/02/22/us/politics/mar-a-lago-shooting-secret-service.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li class="is-extra" hidden><a href="https://www.scmp.com/news/world/united-states-canada/article/3344275/us-secret-service-kills-armed-man-entering-trumps-mar-lago?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+<li><button type="button" class="src-more" data-count="6">+6 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-31" data-direction="bearish" data-category="Global Politics &amp; Geopolitics"><h3 class="story__title"><span class="story__num">31</span>France Summons US Ambassador Over Comments on Far-Right Activist&#x27;s Killing</h3>
+<p class="story__context">France summoned US Ambassador Charles Kushner after the US State Department labeled &#x27;violent radical leftism&#x27; a public safety threat following the killing of far-right activist Quentin Deranque. Foreign Minister Barrot rejected US use of the tragedy for political ends, citing additional US sanctions on EU officials.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightened Franco-US diplomatic frictions, alongside US sanctions on EU officials, risk straining transatlantic ties and EU-US cooperation on political violence and judicial independence.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/world/2026/feb/22/france-summons-us-ambassador-charles-kushner-comments-quentin-deranque" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.independent.co.uk/news/world/europe/charles-kushner-trump-france-summoned-quentin-deranque-b2925255.html" target="_blank" rel="noopener noreferrer">The Independent (World)</a></li>
+<li><a href="https://www.france24.com/en/tv-shows/spotlight/20260222-quentin-s-death-sparks-tensions-across-france" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li><a href="http://www.taz.de/Streit-um-Tod-eines-Ultrarechten/!6156715/" target="_blank" rel="noopener noreferrer">Die Tageszeitung (taz)</a></li>
+<li><a href="https://www.faz.net/aktuell/politik/ausland/lyon-schwierige-debatte-um-getoeteten-rechtsextremisten-110842118.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (FAZ)</a></li>
+<li><a href="https://www.wsj.com/world/europe/a-far-right-activists-killing-deepens-divisions-in-france-64cba921" target="_blank" rel="noopener noreferrer">WSJ (World)</a></li>
+<li class="is-extra" hidden><a href="https://www.scmp.com/news/world/europe/article/3344278/france-will-summon-us-envoy-charles-kushner-over-comments-activists-death?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+<li class="is-extra" hidden><a href="https://www.lemonde.fr/politique/article/2026/02/22/municipales-a-paris-emmanuel-gregoire-organise-son-propre-debat-avec-les-habitants_6667847_823448.html" target="_blank" rel="noopener noreferrer">Le Monde (French)</a></li>
+<li><button type="button" class="src-more" data-count="2">+2 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-32" data-direction="mixed" data-category="Global Politics &amp; Geopolitics"><h3 class="story__title"><span class="story__num">32</span>Zelensky Tells BBC Putin Has Started WW3 and Must Be Stopped</h3>
+<p class="story__context">Ukrainian President Zelensky, in a BBC interview, accused Russian President Putin of initiating World War 3 and declared he &#x27;must be stopped.&#x27; Zelensky responded to Western demands for Ukrainian elections as a war-ending condition, challenging them to hold legitimate polls if desired.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Intensifies calls for escalated Western support to Ukraine, bullish for NATO defense stocks and European arms manufacturers amid prolonged conflict.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/cvgj9p15y87o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+</ul>
+</article>
+<article class="story" id="story-33" data-direction="mixed" data-category="Global Politics &amp; Geopolitics"><h3 class="story__title"><span class="story__num">33</span>China Launches First Type 095 Nuclear Submarine as Taiwan Reviews $40B Defence Budget</h3>
+<p class="story__context">Satellite images confirm China&#x27;s first Type 095 nuclear-powered attack submarine, featuring advanced propulsion, is being fitted out at Bohai Shipyard. Taiwan&#x27;s parliament prioritizes a NT$1.25 trillion ($40 billion) defense budget review, complicated by Trump&#x27;s remarks on Xi, as PLA monitors Australian frigate transit in the Strait.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Heightens Indo-Pacific arms race, bullish for defense sectors and US/Taiwanese military spending, with risks to regional shipping lanes and supply chains.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.scmp.com/news/china/military/article/3344256/chinas-type-095-nuclear-submarine-spotted-first-time-new-satellite-images?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="us-policy-regulation">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-scales"></use></svg>US Policy &amp; Regulation<span class="section__count">3</span></h2>
+<article class="story" id="story-34" data-direction="bearish" data-category="US Policy &amp; Regulation"><h3 class="story__title"><span class="story__num">34</span>DHS Reverses TSA PreCheck Suspension Amid Shutdown Funding Lapse and Blizzard Flight Chaos</h3>
+<p class="story__context">Amid a partial government shutdown over DHS funding, the department announced then reversed the suspension of TSA PreCheck and Global Entry to refocus personnel. This comes as a Northeast blizzard canceled over 2,900 flights, exacerbating travel chaos and operational strain.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightened operational uncertainty pressures US airlines and travel operators, risking sector earnings amid peak demand. Shutdowns cost over $6 billion previously, indicating significant economic disruption.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.axios.com/2026/02/22/tsa-precheck-air-travel-storm-shutdown" target="_blank" rel="noopener noreferrer">Axios</a></li>
+<li><a href="https://www.theguardian.com/us-news/2026/feb/22/homeland-security-suspends-tsa-precheck-global-entry-airport-security-programs" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.independent.co.uk/news/world/americas/tsa-precheck-operational-shutdown-b2925337.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+<li><a href="https://www.cnbc.com/2026/02/22/tsa-airlines-weather-shutdown-blizzard-dhs.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><a href="https://www.wsj.com/politics/policy/homeland-security-to-suspend-tsa-precheck-during-shutdown-d831a4a5" target="_blank" rel="noopener noreferrer">WSJ (Lifestyle)</a></li>
+<li><a href="https://www.nytimes.com/2026/02/22/us/tsa-precheck-global-entry-homeland-security-shutdown.html" target="_blank" rel="noopener noreferrer">NYT Travel</a></li>
+<li class="is-extra" hidden><a href="https://www.investing.com/news/economy-news/us-homeland-security-tsa-precheck-still-operational-reversesearlier-announcement-4517595" target="_blank" rel="noopener noreferrer">Investing.com Economy</a></li>
+<li class="is-extra" hidden><a href="https://thehill.com/homenews/5749786-tsa-says-precheck-still-operational-after-previous-announcement-of-suspension-during-funding-fight/" target="_blank" rel="noopener noreferrer">The Hill</a></li>
+<li><button type="button" class="src-more" data-count="2">+2 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-35" data-direction="bearish" data-category="US Policy &amp; Regulation"><h3 class="story__title"><span class="story__num">35</span>WSJ Opinion Labels Government Tariff Refund a Bait and Switch for Importers</h3>
+<p class="story__context">A Wall Street Journal opinion piece argues that a new government tariff refund scheme is a &#x27;bait and switch.&#x27; It claims that importers may not receive any reimbursement unless they are the importer of record, and possibly not even then.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Raises risks for importers&#x27; reliance on government refund promises, potentially increasing trade costs and compliance burdens in US markets, impacting profit margins.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/opinion/a-government-tariff-refund-bait-and-switch-a73a29a9" target="_blank" rel="noopener noreferrer">WSJ (Opinion)</a></li>
+</ul>
+</article>
+<article class="story" id="story-36" data-direction="bearish" data-category="US Policy &amp; Regulation"><h3 class="story__title"><span class="story__num">36</span>WSJ Opinion Calls California&#x27;s Proposed Wealth Levy a &#x27;Taking&#x27; Not a Tax</h3>
+<p class="story__context">A Wall Street Journal opinion piece criticizes California&#x27;s proposed wealth levy, arguing it constitutes a &#x27;taking&#x27; rather than a legitimate tax. The author equates the levy to property seizure, asserting it crosses legal boundaries of taxation.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens political and legal risks for California municipal bonds and high-net-worth migration, potentially widening yield spreads on CA debt versus national treasuries.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/opinion/when-is-a-tax-not-a-tax-6ea56691" target="_blank" rel="noopener noreferrer">WSJ (Opinion)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="emerging-markets">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-compass"></use></svg>Emerging Markets<span class="section__count">3</span></h2>
+<article class="story" id="story-37" data-direction="neutral" data-category="Emerging Markets"><h3 class="story__title"><span class="story__num">37</span>Sudan Slams Uganda for Hosting RSF Paramilitary Boss</h3>
+<p class="story__context">Uganda hosted a meeting between its president and Degalo, the RSF paramilitary boss. Sudan&#x27;s government denounced this as &#x27;an unprecedented move&#x27; and &#x27;an affront to humanity&#x27; and the Sudanese people, escalating regional diplomatic tensions.</p>
+<p class="story__implication"><span class="dir" data-direction="neutral" title="neutral" aria-label="neutral">■</span><span>Heightens regional tensions in the Horn of Africa, potentially complicating humanitarian aid flows and stability near key Red Sea trade routes, impacting regional security.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/c20lwznegk4o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+</ul>
+</article>
+<article class="story" id="story-38" data-direction="mixed" data-category="Emerging Markets"><h3 class="story__title"><span class="story__num">38</span>Budget Fast Fashion Takes Small-Town India by Storm</h3>
+<p class="story__context">Budget fast fashion is rapidly gaining traction in small-town India. Industry figures note that the key challenge is to achieve a &#x27;consumption uplift&#x27; to expand the overall apparel market, currently valued at $70-$100 billion, rather than just shifting wallet share.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Bullish for organized Indian retail and consumer discretionary sectors, with potential headwinds for unorganized players absent broader consumption growth.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/c15xvy7k2q5o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+</ul>
+</article>
+<article class="story" id="story-39" data-direction="bearish" data-category="Emerging Markets"><h3 class="story__title"><span class="story__num">39</span>Cuban Regime Faces Slow Collapse Amid Trump Opportunity Debate</h3>
+<p class="story__context">A Wall Street Journal opinion piece asserts the Cuban regime is experiencing a slow collapse, posing the question of whether President Trump will seize this opportunity to free the island or be tempted into a deal with the current leadership.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Shifts in potential US policy under Trump toward Cuba may pressure Latin American emerging market stability and influence regional geopolitical balances, impacting investment decisions.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/opinion/the-cuban-regimes-slow-collapse-fa88b52a" target="_blank" rel="noopener noreferrer">WSJ (World)</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="corporate-m-a-deals">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-merge"></use></svg>Corporate, M&amp;A &amp; Deals<span class="section__count">3</span></h2>
+<article class="story" id="story-40" data-direction="bearish" data-category="Corporate, M&amp;A &amp; Deals"><h3 class="story__title"><span class="story__num">40</span>Trump Demands Netflix Fire Susan Rice or Face Consequences Amid Warner Merger Probe</h3>
+<p class="story__context">President Trump publicly demanded Netflix fire board member Susan Rice, calling her &#x27;racist, Trump Deranged&#x27; and &#x27;no talent.&#x27; This follows Rice&#x27;s warning that corporations cozying up to Trump would face accountability. The DOJ is currently reviewing Netflix&#x27;s $72 billion Warner Bros. Discovery acquisition.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Heightens political and regulatory risks for Netflix&#x27;s Warner merger and broader media consolidation deals in the entertainment sector, creating uncertainty for investors.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.independent.co.uk/news/world/americas/us-politics/trump-michelle-obama-racist-post-b2925295.html" target="_blank" rel="noopener noreferrer">The Independent (World)</a></li>
+<li><a href="https://www.cnbc.com/2026/02/22/trump-demands-netflix-fire-susan-rice-as-doj-probes-warner-deal.html" target="_blank" rel="noopener noreferrer">CNBC Top News</a></li>
+<li><a href="https://fortune.com/2026/02/22/trump-threat-netflix-consequences-susan-rice-board-seat/" target="_blank" rel="noopener noreferrer">Fortune</a></li>
+<li><a href="https://www.theverge.com/policy/882881/trump-netflix-consequences-fire-susan-rice" target="_blank" rel="noopener noreferrer">The Verge (Policy Section)</a></li>
+<li><a href="https://techcrunch.com/2026/02/22/trump-says-netflix-will-face-consequences-if-it-doesnt-fire-board-member-susan-rice/" target="_blank" rel="noopener noreferrer">TechCrunch</a></li>
+</ul>
+</article>
+<article class="story" id="story-41" data-direction="bearish" data-category="Corporate, M&amp;A &amp; Deals"><h3 class="story__title"><span class="story__num">41</span>Investor Ed Garden Builds Stake in Fortune Brands, Seeking New CEO</h3>
+<p class="story__context">Activist investor Ed Garden is building a stake in Fortune Brands, known for Moen faucets and Master Lock. Garden believes the company has significant growth potential over the next decade and is actively seeking a new CEO to drive this expansion.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Activist pressure on Fortune Brands could drive management changes, potentially catalyzing a re-rating of its stock and influencing investor focus in the home products sector.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/business/deals/investor-ed-garden-builds-stake-in-fortune-brands-seeking-new-ceo-162cf5a4?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+</ul>
+</article>
+<article class="story" id="story-42" data-direction="bearish" data-category="Corporate, M&amp;A &amp; Deals"><h3 class="story__title"><span class="story__num">42</span>Big Tech Giants Ramp Up Lobbying to Block Social Media Bans</h3>
+<p class="story__context">Tech giants, including Meta and Alphabet, are significantly increasing their lobbying efforts to combat proposed social media bans. They are investing heavily in billboard ads, engaging with on-the-fence politicians, and expanding their lobbyist teams in a concerted effort to prevent new regulations.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Elevates regulatory uncertainty for social media platforms, creating potential headwinds for valuations of Meta and Alphabet stocks and increasing compliance costs across the sector.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.nytimes.com/2026/02/21/business/dealbook/big-tech-lobbying-social-media-bans.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="social-legal-governance">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-scales"></use></svg>Social, Legal &amp; Governance<span class="section__count">4</span></h2>
+<article class="story" id="story-43" data-direction="bearish" data-category="Social, Legal &amp; Governance"><h3 class="story__title"><span class="story__num">43</span>UK Police Arrest Former Prince Andrew on Suspicion of Misconduct Over Epstein Ties</h3>
+<p class="story__context">Former Prince Andrew Mountbatten-Windsor was arrested on his 66th birthday and questioned for 11 hours on suspicion of misconduct in public office. The arrest follows the release of Epstein files revealing Andrew&#x27;s ties and sharing sensitive information while a UK trade envoy. Police searched his former Royal Lodge home.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Intensified investigations into royal and political figures heighten risks to UK monarchy stability and national security perceptions, potentially disrupting investor confidence in UK governance-linked assets.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/uk-news/2026/feb/22/inquiry-into-former-prince-andrew-epstein-links-not-ruled-out-as-police-searches-continue" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.washingtonpost.com/world/2026/02/22/epstein-uk-europe-us-trump-accountability-andrew/" target="_blank" rel="noopener noreferrer">Washington Post World</a></li>
+<li><a href="https://www.independent.co.uk/news/uk/crime/andrew-mountbatten-windsor-arrest-sarah-ferguson-prince-william-latest-news-b2925473.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+<li><a href="https://www.nytimes.com/2026/02/22/style/bafta-2026-awards-red-carpet-looks.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li><a href="https://www.nytimes.com/2026/02/21/world/europe/andrew-epstein-queen-elizabeth-charles.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+<li><a href="https://www.scmp.com/news/world/europe/article/3344277/uk-protection-officers-instructed-guard-2010-epstein-dinner-party-reports-say?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+<li class="is-extra" hidden><a href="https://www.egyptindependent.com/why-was-andrew-mountbatten-windsor-arrested-heres-what-to-know-about-misconduct-in-public-office/" target="_blank" rel="noopener noreferrer">Egypt Independent</a></li>
+<li><button type="button" class="src-more" data-count="1">+1 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-44" data-direction="bearish" data-category="Social, Legal &amp; Governance"><h3 class="story__title"><span class="story__num">44</span>D.C. Police Close Probe into Labor Secretary Chavez-DeRemer&#x27;s Husband Over Alleged Sexual Assault</h3>
+<p class="story__context">D.C. Police have closed their investigation into an alleged sexual assault involving Labor Secretary Lori Chavez-DeRemer&#x27;s husband at the Labor Department. This resolves a sensitive matter concerning a top U.S. government official&#x27;s family member.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Closure minimizes political friction and reputational risks for Labor Secretary leadership and nomination, with no broader effects on labor markets or policy.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/politics/policy/dc-police-close-probe-of-labor-secretarys-husband-fbc46435?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business/Politics)</a></li>
+</ul>
+</article>
+<article class="story" id="story-45" data-direction="bearish" data-category="Social, Legal &amp; Governance"><h3 class="story__title"><span class="story__num">45</span>Online Sleuths Spark Boycott of Lifetouch Over Apollo Ownership Tied to Epstein Files</h3>
+<p class="story__context">Online sleuths have initiated a boycott campaign against Lifetouch, the school photography company. The boycott targets Lifetouch due to its ownership by Apollo, following renewed scrutiny triggered by the release of the Epstein files.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Exposes Apollo portfolio companies to reputational risks from social media-driven boycotts with potential consumer backlash in niche service sectors.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/business/the-school-photography-company-caught-in-the-epstein-files-frenzy-bce77a88?mod=pls_whats_news_us_business_f" target="_blank" rel="noopener noreferrer">WSJ (Business)</a></li>
+</ul>
+</article>
+<article class="story" id="story-46" data-direction="neutral" data-category="Social, Legal &amp; Governance"><h3 class="story__title"><span class="story__num">46</span>Hunter College to Review Professor’s ‘Abhorrent’ Remarks on Students</h3>
+<p class="story__context">Hunter College announced an investigation into a professor’s &#x27;abhorrent&#x27; hot mic comments, where he called students &#x27;too dumb to know they’re in a bad school.&#x27; This occurred after a student objected to a middle school closure, leading to accusations of racism.</p>
+<p class="story__implication"><span class="dir" data-direction="neutral" title="neutral" aria-label="neutral">■</span><span>This incident raises questions about faculty conduct and free speech policies at CUNY institutions, with potential impacts on campus diversity initiatives and public perception.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.nytimes.com/2026/02/22/nyregion/hunter-college-professor-remarks-students.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="humanitarian-crises-natural-disasters">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-heart"></use></svg>Humanitarian Crises &amp; Natural Disasters<span class="section__count">2</span></h2>
+<article class="story" id="story-47" data-direction="bearish" data-category="Humanitarian Crises &amp; Natural Disasters"><h3 class="story__title"><span class="story__num">47</span>Northeast US Slammed by Intensifying Nor&#x27;easter; NYC Mayor Mamdani Imposes Travel Ban</h3>
+<p class="story__context">A late-winter nor&#x27;easter brought blizzard conditions across the US Northeast, with two feet of snow, 70 mph wind gusts, and 22,000 power outages. NYC Mayor Mamdani ordered a citywide travel ban from 9 pm Sunday to noon Monday, compounding over 8,500 flight cancellations.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Severely disrupts air, rail, road transport, aviation, and logistics in key Northeast economic hubs, creating headwinds for airlines, retail, and regional operations.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.france24.com/en/americas/20260222-new-york-mayor-mamdani-orders-citywide-traffic-shutdown-ahead-of-major-snowstorm" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li><a href="https://www.nytimes.com/2026/02/22/weather/storm-nyc-preparations-mamdani.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li><a href="https://www.nytimes.com/2026/02/21/travel/flight-cancellations-blizzard.html" target="_blank" rel="noopener noreferrer">NYT Travel</a></li>
+<li><a href="https://fortune.com/2026/02/22/delta-air-lines-halt-flights-laguardia-jfk-boston-logan-airports-blizzard/" target="_blank" rel="noopener noreferrer">Fortune</a></li>
+<li><a href="https://www.investing.com/news/commodities-news/new-york-other-states-under-state-of-emergency-as-snow-falls-amid-blizzard-warning-4517620" target="_blank" rel="noopener noreferrer">Investing.com Commodities</a></li>
+<li><a href="https://thehill.com/homenews/state-watch/5750249-winter-storm-mid-atlantic-northeast/" target="_blank" rel="noopener noreferrer">The Hill</a></li>
+<li class="is-extra" hidden><a href="https://www.scmp.com/news/world/united-states-canada/article/3344280/new-york-mayor-mamdani-orders-citywide-travel-ban-ahead-major-us-storm?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+<li class="is-extra" hidden><a href="https://www.theguardian.com/us-news/2026/feb/22/us-north-east-storm-blizzard-warnings" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li class="is-extra" hidden><a href="https://www.npr.org/2026/02/22/nx-s1-5722878/northeast-blizzard-snowstorm-new-york-jersey" target="_blank" rel="noopener noreferrer">NPR News</a></li>
+<li class="is-extra" hidden><a href="https://www.independent.co.uk/news/world/americas/nyc-travel-ban-blizzard-b2925369.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+<li class="is-extra" hidden><a href="https://www.independent.co.uk/news/world/americas/east-coast-blizzard-warning-snowstorm-winter-nyc-b2925282.html" target="_blank" rel="noopener noreferrer">The Independent (World)</a></li>
+<li><button type="button" class="src-more" data-count="5">+5 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-48" data-direction="bearish" data-category="Humanitarian Crises &amp; Natural Disasters"><h3 class="story__title"><span class="story__num">48</span>At Least 15 Skiers Dead on Tahoe Slopes This Season After Record Avalanche</h3>
+<p class="story__context">The deadliest avalanche in modern California history struck the Lake Tahoe/Sierra Nevada area Tuesday, killing nine skiers, with three more deaths reported since. This brings the total fatalities on Tahoe-area slopes this season to at least 15, highlighting severe safety concerns.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Elevates safety risks for US winter sports tourism, pressuring local recreation economies, ski resort operations, and insurance in California&#x27;s Tahoe and Sierra Nevada regions.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.nytimes.com/2026/02/22/us/tahoe-ski-deaths.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li><a href="https://www.nytimes.com/2026/02/21/us/lake-tahoe-avalanche-victims-bodies-recovery.html" target="_blank" rel="noopener noreferrer">NYT Travel</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="art-design-culture-travel">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-palette"></use></svg>Art, Design, Culture &amp; Travel<span class="section__count">3</span></h2>
+<article class="story" id="story-49" data-direction="mixed" data-category="Art, Design, Culture &amp; Travel"><h3 class="story__title"><span class="story__num">49</span>St. Francis of Assisi&#x27;s Bones Go on Public Display For First Time in Italy</h3>
+<p class="story__context">The relics of St. Francis of Assisi are on public display in Assisi&#x27;s Lower Basilica for the first time, commemorating the 800th anniversary of his death. Nearly 400,000 pilgrims have registered, with 400 volunteers guiding visitors through the town until March 22.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Boosts tourism and souvenir sales in Assisi amid pilgrim surges from recent canonizations, but strains local infrastructure and services in the popular Umbrian pilgrimage destination.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/news/articles/cz7glr9dpy8o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC World News</a></li>
+<li><a href="https://www.independent.co.uk/news/world/europe/st-francis-of-assisi-bones-b2925183.html" target="_blank" rel="noopener noreferrer">The Independent (World)</a></li>
+<li><a href="https://www.france24.com/en/st-francis-relics-on-public-display-for-first-time-in-italy" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li><a href="http://www.taz.de/Katholische-Kirche-zeigt-Reliquien/!6156683/" target="_blank" rel="noopener noreferrer">Die Tageszeitung (taz)</a></li>
+<li><a href="https://www.nytimes.com/2026/02/22/world/europe/italy-saint-francis-remains-assisi.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+<li><a href="https://www.corriere.it/politica/26_febbraio_21/i-400-mila-per-francesco-il-messaggio-di-speranza-di-quel-corpo-cosi-piccolo-f967654d-9b02-4a04-b2ff-15c4b6e27xlk.shtml" target="_blank" rel="noopener noreferrer">Corriere della Sera (Italian)</a></li>
+</ul>
+</article>
+<article class="story" id="story-50" data-direction="bearish" data-category="Art, Design, Culture &amp; Travel"><h3 class="story__title"><span class="story__num">50</span>Berlinale Crowns Çatak&#x27;s Turkish Repression Drama with Golden Bear Amid Gaza Firestorm</h3>
+<p class="story__context">The 76th Berlinale awarded the Golden Bear to Ilker Çatak&#x27;s &#x27;Gelbe Briefe,&#x27; a drama depicting Turkish political repression. The festival was marred by debates over Gaza and freedom of speech, with Palestinian director Abdallah Alkhatib accusing Germany of &#x27;genocide&#x27; complicity, leading to Environment Minister Carsten Schneider&#x27;s walkout.</p>
+<p class="story__implication"><span class="dir" data-direction="bearish" title="bearish" aria-label="bearish">▼</span><span>Escalates polarization in European cultural forums over Israel-Palestine issues, risking strains on public arts funding and cross-border film collaborations, especially with German institutions.</span></p>
+<ul class="story__sources">
+<li><a href="http://www.taz.de/Politik-auf-der-76-Berlinale/!6156626/" target="_blank" rel="noopener noreferrer">Die Tageszeitung (taz)</a></li>
+<li><a href="https://www.lemonde.fr/culture/article/2026/02/22/la-berlinale-se-clot-sur-une-ceremonie-tres-politique-et-recompense-des-films-engages_6667839_3246.html" target="_blank" rel="noopener noreferrer">Le Monde (French)</a></li>
+</ul>
+</article>
+<article class="story" id="story-51" data-direction="bullish" data-category="Art, Design, Culture &amp; Travel"><h3 class="story__title"><span class="story__num">51</span>Paris&#x27;s Tour Montparnasse, One of City&#x27;s Uglier Landmarks, Gets Makeover After Half a Century</h3>
+<p class="story__context">The Tour Montparnasse, long considered one of Paris&#x27;s least-loved landmarks, is finally undergoing a major remodel and makeover. After standing for half a century without significant changes, the renovation aims to improve the visual appeal of the iconic but criticized skyscraper.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Supports Paris real estate and tourism sectors by improving a key urban landmark, enhancing France&#x27;s cultural appeal and potentially boosting visitor numbers.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.nytimes.com/2026/02/23/world/europe/tour-montparnasse-paris-makeover-piano.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+</ul>
+</article>
+</section>
+<section class="section" id="entertainment-sports">
+<h2 class="section__title"><svg class="section__icon" aria-hidden="true" width="17" height="17"><use href="#i-chip"></use></svg>Entertainment &amp; Sports<span class="section__count">5</span></h2>
+<article class="story" id="story-52" data-direction="bullish" data-category="Entertainment &amp; Sports"><h3 class="story__title"><span class="story__num">52</span>Italy&#x27;s Record 30 Medals Cap Milan-Cortina 2026 Winter Olympics, Flag Handover to France</h3>
+<p class="story__context">Italy successfully hosted the Milano-Cortina 2026 Winter Olympics, securing a record 30 medals to finish 4th overall. The closing ceremony in Verona, featuring Roberto Bolle and tributes to Italian culture, saw the Olympic flag handed over to France for the 2030 Games in the French Alps and Nice.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>Enhances Italian tourism, hospitality, and Alpine infrastructure investments while boosting anticipation and funding for French 2030 Olympics, driving local economic activity.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.corriere.it/sport/olimpiadi-invernali/diretta-live/26_febbraio_22/cerimonia-chiusura-olimpiadi-2026-diretta.shtml" target="_blank" rel="noopener noreferrer">Corriere della Sera (Italian)</a></li>
+<li><a href="https://www.npr.org/2026/02/22/nx-s1-5722948/2026-olympics-closing-ceremony" target="_blank" rel="noopener noreferrer">NPR News</a></li>
+<li><a href="https://www.france24.com/en/sport/20260222-milan-cortina-hands-over-flag-to-french-alps-for-2030-winter-olympics" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li><a href="https://www.bbc.com/sport/articles/cgl5z5xg303o?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC Sport</a></li>
+<li><a href="https://www.espn.com/olympics/story/_/id/48009112/italy-throws-farewell-party-passes-olympic-torch-france" target="_blank" rel="noopener noreferrer">ESPN Top News</a></li>
+<li><a href="https://www.handelsblatt.com/die-welt-in-bildern-blickfang/8906950.html" target="_blank" rel="noopener noreferrer">Handelsblatt</a></li>
+<li class="is-extra" hidden><a href="https://www.faz.net/aktuell/sport/olympische-winterspiele/liveblog-olympia-2026-winterspiele-mailand-cortina-beendet-faz-200420161.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (FAZ)</a></li>
+<li class="is-extra" hidden><a href="https://www.lemonde.fr/sport/article/2026/02/23/jo-2026-une-ceremonie-de-cloture-en-hommage-a-la-beaute-de-l-italie-dans-les-arenes-de-verone_6667857_3242.html" target="_blank" rel="noopener noreferrer">Le Monde (French)</a></li>
+<li><button type="button" class="src-more" data-count="2">+2 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-53" data-direction="mixed" data-category="Entertainment &amp; Sports"><h3 class="story__title"><span class="story__num">53</span>Jack Hughes&#x27; OT Goal Clinches Team USA&#x27;s First Olympic Men&#x27;s Hockey Gold Since 1980 Miracle</h3>
+<p class="story__context">Team USA defeated Canada 2-1 in overtime at the Milan Winter Olympics, securing its first men&#x27;s hockey gold since the 1980 Miracle on Ice. Jack Hughes scored the winner in a politically charged rivalry, with FBI Director Kash Patel and President Trump celebrating a record 12 US golds.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Heightens US-Canada cultural and political rivalry, boosting national pride, soft power dynamics, and sports betting. Poses minor risks to cross-border trade and partisan media cycles.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.wsj.com/opinion/jack-hughes-for-president-0a79df18" target="_blank" rel="noopener noreferrer">WSJ (Opinion)</a></li>
+<li><a href="https://www.wsj.com/sports/olympics/usa-canada-hockey-olympic-gold-87dd4f08" target="_blank" rel="noopener noreferrer">WSJ (Sports)</a></li>
+<li><a href="https://www.nytimes.com/2026/02/22/world/canada/2026-olympics-hockey-canada-united-states.html" target="_blank" rel="noopener noreferrer">NYT World</a></li>
+<li><a href="https://www.nytimes.com/2026/02/22/us/politics/fbi-director-patel-olympics-mar-a-lago.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li><a href="https://thehill.com/homenews/administration/5750306-trump-posts-about-olympics-on-closing-day-of-games/" target="_blank" rel="noopener noreferrer">The Hill</a></li>
+<li><a href="https://www.axios.com/2026/02/22/maga-hockey-olympics-gold-medal-canada" target="_blank" rel="noopener noreferrer">Axios</a></li>
+</ul>
+</article>
+<article class="story" id="story-54" data-direction="neutral" data-category="Entertainment &amp; Sports"><h3 class="story__title"><span class="story__num">54</span>One Battle After Another Dominates BAFTAs with Six Wins Including Best Film and Director</h3>
+<p class="story__context">Paul Thomas Anderson&#x27;s &#x27;One Battle After Another&#x27; secured six BAFTA awards, including Best Film, Best Director, and Best Adapted Screenplay. &#x27;Sinners&#x27; won three, while Robert Aramayo upset favorites for Best Actor in &#x27;I Swear.&#x27; These awards boost the films&#x27; Oscar prospects.</p>
+<p class="story__implication"><span class="dir" data-direction="neutral" title="neutral" aria-label="neutral">■</span><span>Bolsters &#x27;One Battle After Another&#x27; and &#x27;Sinners&#x27; as leading Oscar contenders, likely increasing Warner Bros. studio visibility and awards-season media sector momentum.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.theguardian.com/film/2026/feb/22/one-battle-after-another-defeats-hamnet-and-sinners-at-baftas-i-swear-robert-aramayo-best-actor-jessie-buckley-leading-actress" target="_blank" rel="noopener noreferrer">The Guardian World</a></li>
+<li><a href="https://www.independent.co.uk/arts-entertainment/films/news/bafta-winners-2026-robert-aramayo-one-battle-after-another-sinners-b2925467.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+<li><a href="https://www.france24.com/en/culture/20260222-one-battle-after-another-wins-six-bafta-awards-including-best-picture-and-director" target="_blank" rel="noopener noreferrer">France 24 (English)</a></li>
+<li><a href="https://www.faz.net/aktuell/feuilleton/medien-und-film/one-battle-after-another-triumphiert-bei-bafta-verleihung-accg-200564075.html" target="_blank" rel="noopener noreferrer">Frankfurter Allgemeine Zeitung (FAZ)</a></li>
+<li><a href="https://www.nytimes.com/2026/02/22/movies/baftas-2026.html" target="_blank" rel="noopener noreferrer">NYT HomePage</a></li>
+<li><a href="https://www.scmp.com/culture/film-tv/article/3344282/one-battle-after-another-wins-6-prizes-including-best-picture-uk-baftas?utm_source=rss_feed" target="_blank" rel="noopener noreferrer">South China Morning Post (SCMP)</a></li>
+<li class="is-extra" hidden><a href="https://www.lemonde.fr/culture/article/2026/02/23/bafta-2026-une-bataille-apres-l-autre-triomphe-avec-six-prix-cimentant-son-statut-de-favori-aux-oscars_6667856_3246.html" target="_blank" rel="noopener noreferrer">Le Monde (French)</a></li>
+<li class="is-extra" hidden><a href="https://variety.com/2026/film/awards/baftas-oscars-chalamet-loss-penn-mosaku-supporting-races-1236669817/" target="_blank" rel="noopener noreferrer">Variety</a></li>
+<li class="is-extra" hidden><a href="https://www.hollywoodreporter.com/movies/movie-news/inside-the-2026-bafta-film-awards-alan-cumming-takeaways-1236512082/" target="_blank" rel="noopener noreferrer">The Hollywood Reporter</a></li>
+<li class="is-extra" hidden><a href="https://www.indiewire.com/awards/results/bafta-awards-winners-list-2026-1235180739/" target="_blank" rel="noopener noreferrer">IndieWire</a></li>
+<li><button type="button" class="src-more" data-count="4">+4 more</button></li>
+</ul>
+</article>
+<article class="story" id="story-55" data-direction="bullish" data-category="Entertainment &amp; Sports"><h3 class="story__title"><span class="story__num">55</span>England Bowl Out Sri Lanka for 95 to Win T20 World Cup Super 8s Opener by 51 Runs</h3>
+<p class="story__context">England defeated co-hosts Sri Lanka by 51 runs in their Super 8s opener, posting 146-9. Phil Salt (62) led the batting, while Jacks (3 wickets) and Archer dismissed key players. England needs one more win from two games for semi-final qualification.</p>
+<p class="story__implication"><span class="dir" data-direction="bullish" title="bullish" aria-label="bullish">▲</span><span>England&#x27;s strong start boosts prospects for T20 World Cup semi-final, while South Africa&#x27;s concurrent upset over India tightens Group 1 standings, increasing tournament viewership.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/sport/cricket/articles/c9q5xerqe5vo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC Sport</a></li>
+<li><a href="https://www.theguardian.com/sport/2026/feb/22/t20-cricket-world-cup-england-sri-lanka-match-report" target="_blank" rel="noopener noreferrer">The Guardian Sports</a></li>
+</ul>
+</article>
+<article class="story" id="story-56" data-direction="mixed" data-category="Entertainment &amp; Sports"><h3 class="story__title"><span class="story__num">56</span>Eze Torments Former Suitors Spurs with Brace as Arsenal&#x27;s 4-1 Derby Rout Restores Five-Point Title Lead</h3>
+<p class="story__context">Eberechi Eze scored a brace to reach five Premier League goals against Spurs this season, helping Arsenal to a 4-1 North London Derby win. This victory restored Arsenal&#x27;s five-point lead at the Premier League summit with 10 matches left; Spurs are 16th, four points above relegation.</p>
+<p class="story__implication"><span class="dir" data-direction="mixed" title="mixed" aria-label="mixed">◆</span><span>Arsenal&#x27;s dominant derby victory reasserts title race supremacy and boosts key players&#x27; confidence. This intensifies Tottenham&#x27;s relegation peril and commercial pressures, affecting club valuations.</span></p>
+<ul class="story__sources">
+<li><a href="https://www.bbc.com/sport/football/articles/c86yjp6037jo?at_medium=RSS&amp;at_campaign=rss" target="_blank" rel="noopener noreferrer">BBC Sport</a></li>
+<li><a href="https://www.independent.co.uk/sport/football/arsenal-tottenham-north-london-derby-premier-league-b2925366.html" target="_blank" rel="noopener noreferrer">The Independent</a></li>
+<li><a href="https://www.espn.com/soccer/story/_/id/48006586/arsenal-tottenham-premier-league-title-reaction-analysis-eze-gyokeres-goals-highlights" target="_blank" rel="noopener noreferrer">ESPN Top News</a></li>
+<li><a href="https://www.guardian.com/football/2026/feb/22/beating-tottenham-can-be-a-turning-point-for-arsenal-says-proud-arteta" target="_blank" rel="noopener noreferrer">The Guardian Sports</a></li>
+</ul>
+</article>
+</section>
+        <p class="empty" id="empty-state" hidden>No stories match that filter.</p>
+    </article>
+</div>
+
+    </main>
+
+    <footer class="footer">
+        <span>The ApexQuantix Briefing &mdash; daily macro intelligence</span>
+        <span class="footer__keys">
+            <kbd>j</kbd><kbd>k</kbd> stories &middot; <kbd>/</kbd> filter
+        </span>
+    </footer>
+
+    <script src="../../static/brief.js" defer></script>
+</body>
+</html>
