@@ -28,6 +28,12 @@
     --bg-2: #FAF7F0;
     --bg-sunk: #EDE6D8;
     --ink: #17140F;
+    /* Added 2026-08-22: --ink-1 was REFERENCED by .skewline__value and
+       .editions-nav__item but defined in NO palette, so both fell back to whatever
+       colour they inherited. Found by the token-completeness check written for the
+       terminal palette — a latent bug in paper, not a terminal regression. Mid-tone
+       between --ink and --ink-2, which is what both call sites want. */
+    --ink-1: #332D24;
     --ink-2: #574F42;
     --rule: #D9D0BE;
     --rule-2: #C3B7A0;
@@ -44,6 +50,44 @@
        its color:#fff text was invisible on the paper ground. */
     --wk: #7A1F1F;
     --wk-soft: #7a1f1f22;
+}
+
+/* -------------------------------------------------------------------------
+   TERMINAL — the dark half of the concept, shipped 2026-08-22.
+   The header has promised "two palettes: paper / terminal" since the 08-19
+   rewrite, but only paper was ever built. The 't' shortcut and the toggle were
+   consequently disabled rather than removed, and layout.html had to advertise
+   color-scheme:light so browsers would not paint dark scrollbars and form
+   controls against a cream page.
+
+   Every token in [data-theme="paper"] is redefined here — the set must stay
+   COMPLETE. A token defined only under paper resolves to nothing under terminal,
+   which is exactly how the THE WEEK badge went invisible on 2026-08-22.
+
+   Amber-on-near-black, warm rather than the usual blue-grey dark mode: it is the
+   trading-terminal reference the design is named after, and it sits beside the
+   paper palette's warm newsprint instead of fighting it.
+   ------------------------------------------------------------------------- */
+[data-theme="terminal"] {
+    --bg: #12100B;
+    --bg-2: #1A1710;
+    --bg-sunk: #0B0906;
+    --ink: #EDE4D2;
+    --ink-1: #C9BFA9;
+    --ink-2: #A2977F;
+    --rule: #2C2719;
+    --rule-2: #4A422C;
+    --accent: #E0913F;
+    --bull: #4FC08A;
+    --bear: #E4705B;
+    --mixed: #D6A93F;
+    --neutral: #8B8371;
+    /* Paper's grain reads as texture on newsprint; on a near-black ground the same
+       opacity reads as noise. Halved. */
+    --grain-o: 0.018;
+    /* Oxblood lifted off the dark ground — #7A1F1F is nearly invisible on #12100B. */
+    --wk: #C4493B;
+    --wk-soft: #c4493b2e;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -147,6 +191,31 @@ kbd {
     transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
 }
 .masthead__nav a:hover { color: var(--ink); border-bottom-color: var(--accent); }
+
+/* Palette toggle. Sits in the nav, reads as a nav item rather than a control —
+   the mark rotates on switch so the change is legible without a label. */
+.theme-toggle {
+    appearance: none;
+    background: none;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    padding: 0 0 2px;
+    margin-left: 0.15rem;
+    font: inherit;
+    font-size: 1.05em;
+    line-height: 1;
+    color: var(--ink-2);
+    cursor: pointer;
+    transition: color 0.2s var(--ease), transform 0.35s var(--ease);
+}
+.theme-toggle:hover { color: var(--ink); border-bottom-color: var(--accent); }
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+[data-theme="terminal"] .theme-toggle { transform: rotate(180deg); }
+@media (prefers-reduced-motion: reduce) { .theme-toggle { transition: none; } }
 
 /* ---------------------------------------------------------------- dateline */
 .dateline {

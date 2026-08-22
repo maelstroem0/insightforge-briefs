@@ -12,13 +12,16 @@
     function setTheme(t) {
         doc.documentElement.setAttribute('data-theme', t);
         try { localStorage.setItem('if-theme', t); } catch (e) {}
+        // Mirror theme-boot.js so the browser's own chrome follows a live toggle,
+        // not just a page load.
+        var meta = doc.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', t === 'terminal' ? '#12100B' : '#F4EFE4');
     }
-    if (toggle) {
-        toggle.addEventListener('click', function () {
-            var cur = doc.documentElement.getAttribute('data-theme');
-            setTheme(cur === 'paper' ? 'terminal' : 'paper');
-        });
+    function toggleTheme() {
+        var cur = doc.documentElement.getAttribute('data-theme');
+        setTheme(cur === 'terminal' ? 'paper' : 'terminal');
     }
+    if (toggle) { toggle.addEventListener('click', toggleTheme); }
 
     /* ------------------------------------------------- reading progress */
     var progress = doc.getElementById('progress');
@@ -154,11 +157,13 @@
         if (e.key === 'j') { e.preventDefault(); move(1); }
         else if (e.key === 'k') { e.preventDefault(); move(-1); }
         else if (e.key === '/') { e.preventDefault(); if (input) input.focus(); }
-        // Modified 2026-08-22: the 't' theme toggle is DISABLED, not removed.
-        // style.css defines colour tokens only under [data-theme="paper"] -- there
-        // is no [data-theme="terminal"] block in the working tree, in HEAD, or in
-        // the live published CSS. Setting data-theme="terminal" therefore left
-        // every --bg/--ink/--accent undefined and stripped the page's palette.
-        // Re-enable this line only once a terminal palette actually ships.
+        // Re-enabled 2026-08-22: the terminal palette now ships. It was disabled
+        // (not removed) because style.css defined tokens only under
+        // [data-theme="paper"], so setting data-theme="terminal" left every
+        // --bg/--ink/--accent undefined and stripped the page's palette. The
+        // condition that justified disabling it is gone; the condition that would
+        // justify it again is a token missing from one palette — see the complete-
+        // token-set note above [data-theme="terminal"] in style.css.
+        else if (e.key === 't') { e.preventDefault(); toggleTheme(); }
     });
 })();
