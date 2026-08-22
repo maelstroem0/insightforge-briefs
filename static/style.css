@@ -23,7 +23,23 @@
     --ease: cubic-bezier(0.2, 0.7, 0.3, 1);
 }
 
-[data-theme="paper"] {
+/* PAPER IS THE BASE, not a variant. Declared on bare :root AND on
+   [data-theme="paper"] so that ANY state which is not exactly "terminal" still
+   resolves a complete palette.
+
+   Why this matters, observed live 2026-08-22: a browser that had parsed a CACHED
+   style.css (predating the terminal block) while loading FRESH html whose boot
+   script had already set data-theme="terminal" rendered with every token empty —
+   transparent background, inherited text colour, no accent. The page was not
+   merely mis-themed, it was unstyled.
+
+   Stale CSS is only the cheapest way to reach that state. A typo in the stored
+   preference, a future third theme, or a partial deploy all land in the same place.
+   With the base on :root the worst case degrades to PAPER, which is a working page.
+
+   Keep the two selectors' token sets identical — tests/unit/test_theme_palettes.py
+   enforces it. */
+:root, [data-theme="paper"] {
     --bg: #F4EFE4;
     --bg-2: #FAF7F0;
     --bg-sunk: #EDE6D8;
