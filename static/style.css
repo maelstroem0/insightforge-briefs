@@ -37,6 +37,13 @@
     --mixed: #8A6A1F;
     --neutral: #6E6658;
     --grain-o: 0.035;
+    /* Added 2026-08-22: "The Week" oxblood. MUST live at theme level, not on
+       .weekly -- the THE WEEK badge renders in {% block masthead_extra %}, which
+       is OUTSIDE <article class="weekly">. Scoped to .weekly, var(--wk) resolved
+       to nothing there, so the badge's background fell back to transparent and
+       its color:#fff text was invisible on the paper ground. */
+    --wk: #7A1F1F;
+    --wk-soft: #7a1f1f22;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -948,7 +955,10 @@ main { position: relative; z-index: 2; }
 }
 
 /* ── THE WEEK (weekly edition) ─────────────────────────────── */
-.weekly { --wk: #7A1F1F; --wk-soft: #7a1f1f22; max-width: var(--measure); margin-inline: auto; }
+/* --wk / --wk-soft moved to the theme block above -- see the note there. Two
+   definitions would have left the masthead badge broken while the article looked
+   fine, which is exactly how this shipped unnoticed. */
+.weekly { max-width: var(--measure); margin-inline: auto; }
 
 .weekly-badge { display: flex; align-items: baseline; gap: 0.6rem; margin-top: 0.35rem; }
 .weekly-badge__name { font: 700 var(--step--1)/1 var(--f-mono); letter-spacing: 0.18em;
