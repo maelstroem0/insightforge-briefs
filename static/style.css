@@ -431,7 +431,12 @@ main { position: relative; z-index: 2; }
 .toc__count {
     font-family: var(--f-mono);
     font-size: 0.66rem;
-    color: var(--rule-2);
+    /* Modified 2026-08-22 (rendered-page audit): was var(--rule-2) — a BORDER token
+       used as a TEXT colour, giving 1.7:1 in paper and 1.9:1 in terminal on ~87
+       elements of the brief page. --neutral is the muted TEXT token and clears AA
+       (4.94:1 paper, 5.1:1 terminal) while staying visually quiet. The outlined
+       part-divider numeral keeps --rule-2: it is a stroke, not text. */
+    color: var(--neutral);
     flex-shrink: 0;
 }
 
@@ -552,7 +557,12 @@ main { position: relative; z-index: 2; }
 .section__count {
     order: 3;
     font-size: 0.68rem;
-    color: var(--rule-2);
+    /* Modified 2026-08-22 (rendered-page audit): was var(--rule-2) — a BORDER token
+       used as a TEXT colour, giving 1.7:1 in paper and 1.9:1 in terminal on ~87
+       elements of the brief page. --neutral is the muted TEXT token and clears AA
+       (4.94:1 paper, 5.1:1 terminal) while staying visually quiet. The outlined
+       part-divider numeral keeps --rule-2: it is a stroke, not text. */
+    color: var(--neutral);
 }
 
 /* ------------------------------------------------------------------ story */
@@ -580,7 +590,12 @@ main { position: relative; z-index: 2; }
     font-size: 0.62rem;
     font-weight: 400;
     letter-spacing: 0.08em;
-    color: var(--rule-2);
+    /* Modified 2026-08-22 (rendered-page audit): was var(--rule-2) — a BORDER token
+       used as a TEXT colour, giving 1.7:1 in paper and 1.9:1 in terminal on ~87
+       elements of the brief page. --neutral is the muted TEXT token and clears AA
+       (4.94:1 paper, 5.1:1 terminal) while staying visually quiet. The outlined
+       part-divider numeral keeps --rule-2: it is a stroke, not text. */
+    color: var(--neutral);
     vertical-align: 0.55em;
     margin-right: 0.7rem;
 }
