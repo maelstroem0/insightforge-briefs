@@ -269,7 +269,7 @@ kbd {
     content: "·";
     position: absolute;
     left: -0.8rem;
-    color: var(--rule-2);
+    color: var(--rule-2); /* decorative */
 }
 
 /* ------------------------------------------------------------- skew line (P5.1) */
@@ -305,7 +305,7 @@ kbd {
 .editions-nav__item { color: var(--ink-1); text-decoration: none; }
 a.editions-nav__item:hover { text-decoration: underline; }
 .editions-nav__item.is-current { color: var(--accent); font-weight: 600; }
-.editions-nav__sep { color: var(--rule-2); margin: 0 0.35em; }
+.editions-nav__sep { color: var(--rule-2); margin: 0 0.35em; } /* decorative */
 
 /* --------------------------------------------------------------- story list */
 
@@ -423,7 +423,8 @@ main { position: relative; z-index: 2; }
     left: 0;
     font-family: var(--f-mono);
     font-size: 0.62rem;
-    color: var(--rule-2);
+    /* --neutral, not --rule-2 (2026-08-22 audit): these are index numbers, not rules. */
+    color: var(--neutral);
     top: 0.55em;
 }
 .toc a:hover { color: var(--ink); }
@@ -670,7 +671,9 @@ main { position: relative; z-index: 2; }
     font-size: 0.66rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--rule-2);
+    /* --neutral, not --rule-2 (2026-08-22 audit): "dead source" is information a
+       reader needs to act on, not chrome. */
+    color: var(--neutral);
     padding: 0.2em 0.5em;
     border: 1px solid var(--rule);
     border-style: dotted;
