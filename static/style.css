@@ -579,6 +579,74 @@ main { position: relative; z-index: 2; }
 }
 .section .story:last-child { border-bottom: 0; margin-bottom: 0; }
 
+/* ------------------------------------------------------ continuing stories */
+.brief-ongoing {
+    margin: 4rem 0 1rem;
+    padding: 1.3rem 0 0;
+    border-top: 3px double var(--rule-2);
+}
+
+.brief-ongoing__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.brief-ongoing__title {
+    margin: 0;
+    font-family: var(--f-display);
+    font-size: var(--step-1);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.brief-ongoing__count {
+    flex-shrink: 0;
+    font-family: var(--f-mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--neutral);
+}
+
+.brief-ongoing__dek {
+    margin: 0.35rem 0 1rem;
+    color: var(--ink-2);
+    font-size: 0.84rem;
+    line-height: 1.45;
+}
+
+.brief-ongoing__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: 1px solid var(--rule);
+}
+
+.brief-ongoing__list li {
+    position: relative;
+    padding: 0.62rem 1.1rem 0.62rem 1rem;
+    border-top: 1px solid var(--rule);
+    color: var(--ink-2);
+    font-size: 0.84rem;
+    line-height: 1.4;
+}
+
+.brief-ongoing__list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.05rem;
+    width: 0.3rem;
+    height: 0.3rem;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
 .story__title {
     font-family: var(--f-display);
     font-size: var(--step-1);
@@ -975,6 +1043,7 @@ main { position: relative; z-index: 2; }
     .ov-panel:nth-last-child(-n+2):not(:last-child) { border-bottom: 1px solid var(--rule); }
     .masthead__nav { gap: 0.9rem; }
     .footer__keys { display: none; }
+    .brief-ongoing__list { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* ----------------------------------------------------------------- print */
