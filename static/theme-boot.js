@@ -12,8 +12,8 @@
  * Before this existed, brief.js WROTE localStorage on toggle and nothing ever read it
  * back — a saved preference silently evaporated on the next page load.
  *
- * Precedence: an explicit choice always beats the OS. Only a visitor who has never
- * toggled follows prefers-color-scheme.
+ * Precedence: an explicit saved choice always wins. A visitor who has never toggled
+ * starts in Paper, the publication's intended default, regardless of OS palette.
  */
 (function () {
     var el = document.documentElement;
@@ -22,12 +22,11 @@
         saved = localStorage.getItem('if-theme');
     } catch (e) {
         /* private mode, blocked storage, or a browser that throws on access —
-           fall through to the OS preference rather than breaking the page. */
+           fall through to the Paper default rather than breaking the page. */
     }
     var theme = (saved === 'paper' || saved === 'terminal')
         ? saved
-        : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
-            ? 'terminal' : 'paper');
+        : 'paper';
     el.setAttribute('data-theme', theme);
 
     /* Keep the browser's own chrome (scrollbars, form controls, address bar tint) in
