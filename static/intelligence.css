@@ -14,7 +14,7 @@
     --serif: Iowan Old Style, Baskerville, Georgia, serif;
 }
 * { box-sizing: border-box; }
-html { background: var(--paper); color: var(--ink); }
+html { background: var(--paper); color: var(--ink); overflow-x: clip; }
 body { margin: 0; font-family: var(--serif); font-size: 18px; line-height: 1.52; }
 a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: .16em; }
 a:focus-visible { outline: 2px solid var(--news); outline-offset: 3px; }
@@ -196,8 +196,23 @@ code { font-family: var(--mono); font-size: .86em; }
 .portal-foot { display: flex; justify-content: space-between; gap: 1rem; padding-block: 1rem; border-top: 1px solid var(--line); color: var(--muted); font-family: var(--mono); font-size: .65rem; letter-spacing: .045em; text-transform: uppercase; }
 @media (max-width: 760px) {
     body { font-size: 17px; }
-    .portal-head { grid-template-columns: 1fr auto; gap: .75rem; padding-block: .75rem; }
-    .portal-head nav { grid-column: 1 / -1; grid-row: 2; justify-content: space-between; }
+    /* Modified 2026-08-28: keep the unbroken ApexQuantix word inside 320px. */
+    .hero h1 { font-size: clamp(2.7rem, 14vw, 3rem); }
+    /* Keep the masthead inside a 320px viewport and make its primary links tappable. */
+    .portal-head { grid-template-columns: minmax(0, 1fr); gap: .2rem; padding-block: .45rem; }
+    .portal-head nav { grid-column: 1; grid-row: 2; flex-wrap: wrap; justify-content: flex-start; gap: 0 .75rem; min-width: 0; font-size: .78rem; letter-spacing: .06em; }
+    .portal-head nav a { display: inline-flex; align-items: center; min-height: 2.75rem; padding-inline: .15rem; }
+    .eyebrow, .lens__number, .lens__meta, .tags, .field-line, .source-list, .news-meta,
+    .freshness-strip, .metrics, .artifact-counts, .investor-fields, .market-tape__quotes dt,
+    .market-tape__quotes dd, .market-snapshot dt, .market-snapshot dd, .archive-entry__meta {
+        font-size: .75rem;
+    }
+    .migration-card__status, .migration-card__evidence summary, .migration-card__chronology span,
+    .continuing-theses li span, .evidence-ids { font-size: .72rem; }
+    .portal-foot { font-size: .72rem; }
+    .portal-head, .portal-head nav, .item-row, .archive-entry, .detail-item__body,
+    .research-theme > div, .migration-card, .cross-card, .lens { min-width: 0; }
+    .portal-head a, .source-list a, .news-renderer .story__sources a, dd { overflow-wrap: anywhere; }
     .lens-grid, .cross-grid, .migration-grid { grid-template-columns: 1fr; }
     .lens, .cross-card, .cross-card:nth-child(3n) { min-height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
     .lens:last-child, .cross-card:last-child { border-bottom: 0; }
