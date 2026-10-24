@@ -21,6 +21,83 @@ function time(seconds) {
 function button(text, action, cls) {
   const b = node('button', text, cls); b.type = 'button'; b.addEventListener('click', action); return b;
 }
+// Added 2026-10-24: real links retain native copy/open-in-new-tab behavior.
+function archiveLink(text, hash, cls) {
+  const a = node('a', text, cls); a.href = hash;
+  a.addEventListener('click', event => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button > 0) return;
+    event.preventDefault(); navigate(hash);
+  });
+  return a;
+}
+// Clean only the reading display; original captions remain the evidence/download.
+function cleanReadingText(text) {
+  return text.replace(/>>/g, ' ')
+    .replace(/\[(?:موسيقى|تصفيق|music|applause)\]/giu, ' ')
+    .replace(/(^|[^\p{L}\p{N}_])(?:ا{2,}|آ{2,}|أ{2,}|إ{2,}|[اآأإ]?م{3,}|uh+|um+|erm+|err{1,})(?=$|[^\p{L}\p{N}_])/giu, '$1')
+    .replace(/\s+/g, ' ').trim();
+}
+// Search across visual paragraph breaks, keeping the full matching paragraphs.
+function readingParagraphs(passage, query) {
+  const paragraphs = passage.paragraphs.map(p => ({...p, readingText: cleanReadingText(p.text)}));
+  if (!query) return paragraphs.filter(p => p.readingText);
+  let joined = '', ranges = [];
+  for (const paragraph of paragraphs) {
+    if (joined) joined += ' ';
+    const start = joined.length; joined += paragraph.readingText;
+    ranges.push({paragraph, start, end: joined.length});
+  }
+  const text = joined.toLocaleLowerCase(); const selected = new Set();
+  for (let offset = text.indexOf(query); offset >= 0; offset = text.indexOf(query, offset + 1)) {
+    for (const range of ranges) {
+      if (range.start < offset + query.length && range.end > offset && range.paragraph.readingText) selected.add(range.paragraph);
+    }
+  }
+  return paragraphs.filter(p => selected.has(p));
+}
+// Added 2026-10-24: reading layout groups captions without changing their evidence.
+let transcriptMode = 'reading';
+function readingPassages(segments) {
+  const passages = [];
+  for (const segment of segments) {
+    let passage = passages[passages.length - 1];
+    // Both public attribution and original voice boundaries remain intact.
+    const sameVoice = passage && passage.speaker_id === segment.speaker_id &&
+      passage.speaker_label === segment.speaker_label &&
+      passage.source_speaker_label === segment.source_speaker_label;
+    if (!sameVoice || segment.start - passage.end > 3) {
+      passage = {start: segment.start, end: segment.end, speaker_id: segment.speaker_id,
+        speaker_label: segment.speaker_label, source_speaker_label: segment.source_speaker_label,
+        paragraphs: []};
+      passages.push(passage);
+    }
+    passage.end = Math.max(passage.end, segment.end);
+    let paragraph = passage.paragraphs[passage.paragraphs.length - 1];
+    // These are reading breaks only. Never cut, rewrite or deduplicate a caption.
+    if (!paragraph || paragraph.text.length + segment.text.length + 1 > 800 ||
+        segment.start - paragraph.start >= 60) {
+      paragraph = {start: segment.start, end: segment.end, text: '', segments: [], flags: []};
+      passage.paragraphs.push(paragraph);
+    }
+    paragraph.segments.push(segment);
+    paragraph.text += (paragraph.text ? ' ' : '') + segment.text;
+    paragraph.end = Math.max(paragraph.end, segment.end);
+    paragraph.flags = [...new Set([...paragraph.flags, ...(segment.flags || [])])];
+  }
+  return passages;
+}
+function transcriptTargetIndex(segments, start, personId = null) {
+  // Exact source anchors take priority over the long display tail of an earlier caption.
+  const exact = s => Math.round(s.start * 1000) === Math.round(start * 1000);
+  const contains = s => s.start <= start && s.end > start;
+  for (const match of [s => exact(s) && personId && s.speaker_id === personId,
+                       exact, s => contains(s) && personId && s.speaker_id === personId, contains]) {
+    const index = segments.findIndex(match);
+    if (index >= 0) return index;
+  }
+  const following = segments.findIndex(s => s.start >= start);
+  return following >= 0 ? following : Math.max(0, segments.length - 1);
+}
 let archive, day, selected, generation = 0, peoplePage = 0, activePersonId = null;
 function setView(view) {
   const people = view === 'people';
@@ -65,13 +142,27 @@ function renderSlots() {
       !s.recording_ids.length && s.coverage_status !== 'pending_publication')));
   $('slots').replaceChildren(); $('empty').hidden = !!matches.length;
   for (const s of matches) {
-    const b = button('', () => navigate(`#slot-${s.id}`), 'slot');
+    const b = archiveLink('', `#slot-${s.id}`, 'slot');
     b.setAttribute('aria-current', String(selected === s.id));
     const meta = node('span', `${s.startTime.slice(0, 5)}–${s.endTime.slice(0, 5)} · ${s.date}`, 'slot-meta');
     const title = node('span', s.titleA, 'slot-title'); title.lang = 'ar'; title.dir = 'rtl';
     const state = node('span', coverageText(s), s.recording_ids.length ? 'status' : 'status missing');
     b.append(meta, title, state); $('slots').append(b);
   }
+}
+function sessionNavigation(slot) {
+  const nav = node('nav', undefined, 'session-navigation'); nav.setAttribute('aria-label', 'Navigate programme sessions');
+  const ordered = [...archive.slots].sort((a, b) => `${a.date} ${a.startTime}`.localeCompare(`${b.date} ${b.startTime}`) || a.id - b.id);
+  const index = ordered.findIndex(s => s.id === slot.id);
+  const adjacent = (other, label) => {
+    const a = archiveLink('', `#slot-${other.id}`, 'adjacent-session');
+    a.append(node('span', label, 'nav-direction'));
+    const title = node('span', other.titleA, 'nav-session-title'); title.lang = 'ar'; title.dir = 'auto'; a.append(title); return a;
+  };
+  if (index > 0) nav.append(adjacent(ordered[index - 1], '← Previous session'));
+  nav.append(archiveLink(`Day programme · ${slot.date}`, `#day-${slot.date}`, 'day-programme-link'));
+  if (index + 1 < ordered.length) nav.append(adjacent(ordered[index + 1], 'Next session →'));
+  return nav;
 }
 function selectSlot(slot, focus = false, jump = null, autoplay = false) {
   setView('programme');
@@ -80,7 +171,7 @@ function selectSlot(slot, focus = false, jump = null, autoplay = false) {
   const h = node('h2', slot.titleA); h.id = 'session-title'; h.lang = 'ar'; h.dir = 'rtl';
   const meta = node('p', `${slot.date} · ${slot.startTime.slice(0, 5)}–${slot.endTime.slice(0, 5)} · Africa/Cairo`, 'meta');
   const hall = node('p', slot.hallA, 'hall'); hall.dir = 'auto';
-  detail.append(h, meta, hall);
+  detail.append(sessionNavigation(slot), h, meta, hall);
   const records = slot.recording_ids.map(id => archive.recordings.find(r => r.id === id)).filter(Boolean);
   if (!records.length) {
     detail.append(node('div', slot.coverage_status === 'pending_publication' ?
@@ -99,7 +190,7 @@ function selectSlot(slot, focus = false, jump = null, autoplay = false) {
     }
     detail.append(choice, mount); choose(records.find(r => jump && jump.recording_id === r.id) || records[0]);
   }
-  if (focus) { $('session').focus({preventScroll: true}); if (innerWidth < 800) $('session').scrollIntoView({behavior: 'smooth'}); }
+  if (focus) { $('session').focus({preventScroll: true}); if (innerWidth < 800 || !jump) $('session').scrollIntoView({behavior: 'smooth'}); }
 }
 async function renderRecording(r, mount, slot, jump = null, autoplay = false) {
   const token = ++generation;
@@ -177,45 +268,96 @@ async function renderRecording(r, mount, slot, jump = null, autoplay = false) {
     const res = await fetch(`${base}data/${r.id}.json`); if (!res.ok) throw new Error('Unavailable');
     const doc = await res.json(); if (token !== generation) return;
     transcript.replaceChildren(node('h3', 'Original Arabic transcript'));
+    const mode = node('div', undefined, 'reader-modes'); mode.setAttribute('role', 'group'); mode.setAttribute('aria-label', 'Transcript display');
+    const readingButton = button('Reading view', () => { transcriptMode = 'reading'; renderText(); });
+    const timedButton = button('Timed captions', () => { transcriptMode = 'timed'; page = targetPage(); renderText(); });
+    mode.append(readingButton, timedButton);
+    const hint = node('p', 'Reading copy: clear hesitations, music/applause labels and caption arrows removed. Wording is otherwise unchanged. Timed captions and downloads retain the original text.', 'reader-hint');
+    const controls = node('div', undefined, 'transcript-controls');
+    const searchControl = node('div');
     const searchLabel = node('label', 'Find words in this recording'); searchLabel.htmlFor = 'transcript-search';
     const search = node('input'); search.id = 'transcript-search'; search.type = 'search'; search.placeholder = 'Search original Arabic text…'; search.dir = 'auto';
+    searchControl.append(searchLabel, search);
     const counts = node('p', '', 'subtle'); counts.setAttribute('aria-live', 'polite');
     const rows = node('div'); const pager = node('div', undefined, 'pager');
+    const voiceControl = node('div');
     const voiceLabel = node('label', 'Speaker'); voiceLabel.htmlFor = 'transcript-speaker';
     const voiceFilter = node('select'); voiceFilter.id = 'transcript-speaker';
     const allVoices = node('option', 'All voices'); allVoices.value = ''; voiceFilter.append(allVoices);
     for (const p of related) { const option = node('option', personName(p)); option.value = p.id; voiceFilter.append(option); }
-    transcript.append(searchLabel, search, voiceLabel, voiceFilter, counts, rows, pager);
-    let page = 0;
-    if (jump) {
-      const index = doc.segments.findIndex(s => s.start >= jump.start);
-      page = Math.max(0, Math.floor(index / 80));
+    voiceControl.append(voiceLabel, voiceFilter); controls.append(searchControl, voiceControl);
+    transcript.append(mode, hint, controls, counts, rows, pager);
+    const passages = readingPassages(doc.segments);
+    const target = jump && doc.segments[transcriptTargetIndex(doc.segments, jump.start, jump.person_id)];
+    const matchesVoice = s => !voiceFilter.value || s.speaker_id === voiceFilter.value;
+    const query = () => search.value.trim().toLocaleLowerCase();
+    const timedMatches = () => doc.segments.filter(s => s.text.toLocaleLowerCase().includes(query()) && matchesVoice(s));
+    function targetPage() {
+      const index = timedMatches().indexOf(target);
+      return Math.max(0, Math.floor(index / 80));
+    }
+    let page = targetPage();
+    function speakerHeading(passage, cls) {
+      const label = passage.speaker_label || 'Unassigned voice';
+      return passage.speaker_id ? button(label, () => openPerson(passage.speaker_id), cls + ' speaker-link') : node('span', label, cls);
     }
     function renderText() {
-      const q = search.value.trim().toLocaleLowerCase();
-      const matches = doc.segments.filter(s => s.text.toLocaleLowerCase().includes(q) &&
-        (!voiceFilter.value || s.speaker_id === voiceFilter.value));
+      readingButton.setAttribute('aria-pressed', String(transcriptMode === 'reading'));
+      timedButton.setAttribute('aria-pressed', String(transcriptMode === 'timed'));
+      rows.replaceChildren(); pager.replaceChildren(); pager.hidden = transcriptMode === 'reading';
+      rows.className = transcriptMode === 'reading' ? 'transcript-prose' : 'transcript-captions';
+      if (transcriptMode === 'reading') {
+        // Filter after grouping, so a search never joins distant speech together.
+        const visible = passages.filter(matchesVoice).map(p => ({...p,
+          paragraphs: readingParagraphs(p, query())
+        })).filter(p => p.paragraphs.length);
+        const paragraphCount = visible.reduce((total, p) => total + p.paragraphs.length, 0);
+        counts.textContent = query() || voiceFilter.value ? `${paragraphCount.toLocaleString()} matching paragraphs · Clear filters to read the full transcript.` :
+          'Full transcript · Continuous reading · Playback times are source-relative.';
+        for (const passage of visible) {
+          const article = node('article', undefined, 'reading-passage');
+          const heading = node('header', undefined, 'passage-heading');
+          const first = passage.paragraphs[0];
+          const seek = button(`Play ${time(first.start)}`, () => navigate(recordingHash(r.id, first.start), {autoplay: true}), 'passage-time');
+          seek.setAttribute('aria-label', `Play passage at ${time(first.start)}`);
+          heading.append(speakerHeading(passage, 'passage-speaker'), seek); article.append(heading);
+          const flags = [...new Set(passage.paragraphs.flatMap(p => p.flags))];
+          if (flags.length) {
+            const notes = node('details', undefined, 'passage-notes');
+            notes.append(node('summary', 'Attribution notes'), node('p', flags.join(' · ').replaceAll('_', ' ') + '. These flags apply to some captions in this passage; exact boundaries are available in Timed captions.'));
+            article.append(notes);
+          }
+          for (const paragraph of passage.paragraphs) {
+            const text = node('p', paragraph.readingText, 'reading-paragraph'); text.dir = 'auto'; text.lang = 'ar';
+            if (paragraph.segments.includes(target)) text.classList.add('selected-intervention');
+            article.append(text);
+          }
+          rows.append(article);
+        }
+        if (!visible.length) rows.append(node('p', 'No paragraphs match these filters.', 'gap'));
+        return;
+      }
+      const matches = timedMatches();
       const pages = Math.max(1, Math.ceil(matches.length / 80)); page = Math.min(page, pages - 1);
-      counts.textContent = `${matches.length.toLocaleString()} segments · Page ${page + 1} of ${pages}. Timestamps are source-relative.`;
-      rows.replaceChildren(); pager.replaceChildren();
+      counts.textContent = `${matches.length.toLocaleString()} original captions · Page ${page + 1} of ${pages}. Timestamps are source-relative.`;
       for (const s of matches.slice(page * 80, (page + 1) * 80)) {
         const row = node('article', undefined, 'segment');
         const seek = button(time(s.start), () => {
           navigate(recordingHash(r.id, s.start), {autoplay: true});
         }, 'timestamp'); seek.setAttribute('aria-label', `Play source at ${time(s.start)}`);
-        const body = node('div');
-        if (s.speaker_id) body.append(button(s.speaker_label, () => openPerson(s.speaker_id), 'speaker speaker-link'));
-        else body.append(node('span', s.speaker_label, 'speaker'));
-        if (jump && s.start <= jump.start && s.end > jump.start) row.classList.add('selected-intervention');
+        const body = node('div'); body.append(speakerHeading(s, 'speaker'));
+        if (s === target) row.classList.add('selected-intervention');
         if (s.flags.length) body.append(node('span', s.flags.join(' · ').replaceAll('_', ' '), 'flags'));
         const text = node('p', s.text); text.dir = 'auto'; text.lang = 'ar'; body.append(text); row.append(seek, body); rows.append(row);
       }
-      const previous = button('Previous segments', () => { page--; renderText(); search.focus(); }); previous.disabled = page === 0;
-      const next = button('Next segments', () => { page++; renderText(); search.focus(); }); next.disabled = page + 1 >= pages;
+      if (!matches.length) rows.append(node('p', 'No captions match these filters.', 'gap'));
+      const previous = button('Previous captions', () => { page--; renderText(); }); previous.disabled = page === 0;
+      const next = button('Next captions', () => { page++; renderText(); }); next.disabled = page + 1 >= pages;
       pager.append(previous, next);
     }
     search.addEventListener('input', () => { page = 0; renderText(); });
     voiceFilter.addEventListener('change', () => { page = 0; renderText(); }); renderText();
+
   } catch (_) {
     if (token === generation) transcript.replaceChildren(node('p', 'Transcript could not load. Use a download above or reload the page.', 'gap'));
   }
@@ -294,7 +436,7 @@ function applyRoute(route, autoplay = false) {
   }
   day = route.slot.date; $('search').value = ''; $('coverage').value = 'all';
   const dates = [...new Set(archive.slots.map(s => s.date))].sort();
-  for (const [i, b] of [...$('days').children].entries()) b.setAttribute('aria-pressed', String(dates[i] === day));
+  for (const [i, b] of [...$('days').children].entries()) b.setAttribute('aria-current', dates[i] === day ? 'date' : 'false');
   selectSlot(route.slot, true, route.jump || null, autoplay);
 }
 function navigate(hash, {replace = false, autoplay = false} = {}) {
@@ -398,11 +540,10 @@ async function init() {
     renderPeople();
     const dates = [...new Set(archive.slots.map(s => s.date))].sort();
     for (const [i, date] of dates.entries()) {
-      const b = button(`Day ${i + 1} · ${date.slice(8)} Oct`, () => {
-        navigate(`#day-${date}`);
-      }); b.setAttribute('aria-pressed', 'false'); $('days').append(b);
+      const b = archiveLink(`Day ${i + 1} · ${date.slice(8)} Oct`, `#day-${date}`, 'day-link');
+      b.setAttribute('aria-current', 'false'); $('days').append(b);
     }
-    $('search').addEventListener('input', () => { if ($('search').value) { day = null; for (const b of $('days').children) b.setAttribute('aria-pressed', 'false'); } renderSlots(); });
+    $('search').addEventListener('input', () => { if ($('search').value) { day = null; for (const b of $('days').children) b.setAttribute('aria-current', 'false'); } renderSlots(); });
     $('coverage').addEventListener('change', renderSlots);
     navigate(location.hash, {replace: true});
   } catch (_) { $('metrics').textContent = 'Archive could not load. Please reload the page.'; }
