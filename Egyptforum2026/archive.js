@@ -415,7 +415,11 @@ function resolveRoute(hash) {
       const matches = (archive.people || []).filter(p => !recording[3] || p.id === recording[3])
         .flatMap(p => p.interventions).filter(i => i.recording_id === id && Math.round(i.start * 1000) === ms);
       // Reuse only an actual public passage, preserving its type, bounds and evidence.
-      const passage = matches.length === 1 ? matches[0] : null;
+      const sourceTurns = matches.filter(i => i.type === 'source_named_turn');
+      // A broader continuity attribution may share a start with a saved short turn.
+      // Existing links retain the original source-only bounds/evidence.
+      const passage = matches.length === 1 ? matches[0] :
+        sourceTurns.length === 1 ? sourceTurns[0] : null;
       return {hash: recordingHash(id, start, passage && recording[3] ? passage.person_id : null, ms),
         view: 'recording', slot, jump: passage || {recording_id: id, start}};
     }
