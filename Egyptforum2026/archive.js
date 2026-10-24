@@ -192,6 +192,117 @@ function selectSlot(slot, focus = false, jump = null, autoplay = false) {
   }
   if (focus) { $('session').focus({preventScroll: true}); if (innerWidth < 800 || !jump) $('session').scrollIntoView({behavior: 'smooth'}); }
 }
+// Added 2026-10-24: v2 reader (design 6.8). Used only when data/<id>-v2.json exists; v1 is unchanged.
+const AR_DIGITS = '٠١٢٣٤٥٦٧٨٩';
+function arDigits(n) { return String(n).replace(/\d/g, d => AR_DIGITS[Number(d)]); }
+function v2Minutes(seconds) { return Math.max(1, Math.floor(seconds / 60 + 0.5)); }
+function v2Summary(section) {
+  const n = v2Minutes(section.end - section.start);
+  return `[${section.type_ar}، ${arDigits(n)} ${n === 1 ? 'دقيقة' : 'دقائق'}] ${section.type_en}, ${n} min`;
+}
+function v2Speaker(speaker) {
+  return speaker.person_id ? {ar: speaker.display_ar, en: speaker.display_en} :
+    {ar: speaker.role_label_ar, en: speaker.role_label_en};
+}
+// Repaired words are marked by [start, end) UTF-16 ranges; text is always set as text nodes.
+function v2Sentence(sentence, showOriginal) {
+  const span = node('span', undefined, 'v2-sentence');
+  if (showOriginal) { span.append(document.createTextNode(sentence.original_text)); return span; }
+  let at = 0;
+  for (const [a, b] of sentence.marks || []) {
+    if (a < at || b > sentence.text.length || b <= a) continue;
+    if (a > at) span.append(document.createTextNode(sentence.text.slice(at, a)));
+    span.append(node('mark', sentence.text.slice(a, b), 'repaired')); at = b;
+  }
+  if (at < sentence.text.length) span.append(document.createTextNode(sentence.text.slice(at)));
+  return span;
+}
+function v2Passage(p, byId, r) {
+  const article = node('article', undefined, 'v2-passage'); article.id = `p-${p.id}`; article.dataset.start = String(p.start);
+  const head = node('header', undefined, 'passage-heading');
+  const who = v2Speaker(p.speaker); const name = node('span', undefined, 'v2-speaker');
+  const ar = node('strong', who.ar, 'v2-speaker-ar'); ar.dir = 'rtl'; ar.lang = 'ar'; name.append(ar);
+  if (who.en) { const en = node('small', who.en, 'v2-speaker-en'); en.dir = 'ltr'; en.lang = 'en'; name.append(en); }
+  const seek = button(`Play ${time(p.start)}`, () => navigate(recordingHash(r.id, p.start), {autoplay: true}), 'passage-time');
+  seek.setAttribute('aria-label', `Play passage at ${time(p.start)}`);
+  head.append(name, seek); article.append(head);
+  if (p.replies_to && byId.get(p.replies_to)) {
+    const target = byId.get(p.replies_to), t = v2Speaker(target.speaker);
+    const reply = button(`↩ رد على ${t.ar} · reply to ${t.en || t.ar}`, () => {
+      const t2 = byId.get(p.replies_to), el = t2.element;
+      if (t2.fold && t2.fold.tag === 'details') t2.fold.open = true;
+      if (el) el.scrollIntoView({behavior: 'smooth'});
+    }, 'v2-reply'); reply.setAttribute('aria-label', `Reply to ${t.en || t.ar}`);
+    article.append(reply);
+  }
+  const body = node('p', undefined, 'reading-paragraph v2-body'); body.dir = 'rtl'; body.lang = 'ar'; body.tabIndex = 0;
+  body.setAttribute('role', 'button');
+  let original = false;
+  const draw = () => {
+    body.setAttribute('aria-pressed', String(original));
+    body.className = 'reading-paragraph v2-body' + (original ? ' showing-original' : '');
+    const parts = [];
+    for (const [i, s] of p.sentences.entries()) { if (i) parts.push(document.createTextNode(' ')); parts.push(v2Sentence(s, original)); }
+    body.replaceChildren(...parts);
+    note.textContent = original ? 'الأصل: التعليقات الأصلية · Original captions. Tap to return to the repaired text.' :
+      (p.repairs && p.repairs.length ? 'النص المصحح · Repaired text; marked words changed. Tap for original captions.' : 'Tap for original captions.');
+  };
+  const note = node('small', '', 'v2-note');
+  const toggle = () => { original = !original; draw(); };
+  body.addEventListener('click', toggle);
+  body.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { if (e.preventDefault) e.preventDefault(); toggle(); } });
+  draw(); article.append(body, note);
+  return article;
+}
+function renderV2(doc, mount, r, jump) {
+  mount.replaceChildren(node('h3', 'النص المصحح · Repaired transcript'));
+  const cov = doc.coverage || {};
+  if (typeof cov.named_share === 'number') {
+    const pct = Math.round(cov.named_share * 100);
+    mount.append(node('p', `نسبة الكلمات المنسوبة لمتحدث مسمى: ${arDigits(pct)}٪ · ${pct}% of live-speech words named (agent-checked / فحص آلي)`, 'v2-coverage'));
+  }
+  mount.append(node('p', 'النص الأصلي هو ترجمة يوتيوب التلقائية دون علامات تغيير المتحدث (>>) · Original = YouTube auto-captions, speaker-change marks (>>) omitted (agent-checked).', 'v2-coverage'));
+  mount.append(node('p', 'يُعرض النص المصحح افتراضيا، والكلمات المصححة مظللة، والتعليقات الأصلية بنقرة واحدة. · Repaired text by default; repaired words are marked; original captions are one tap away.', 'reader-hint'));
+  const links = node('p', undefined, 'v2-downloads');
+  for (const [key, label] of [['reading_txt', 'قراءة · Reading TXT'], ['timed_txt', 'نص مؤقت · Timed TXT'], ['srt', 'SRT'], ['vtt', 'VTT']])
+    if (typeof (doc.downloads || {})[key] === 'string' && doc.downloads[key].startsWith(`${base}`)) { links.append(link(label, doc.downloads[key], true), document.createTextNode(' ')); }
+  if (links.children.length) mount.append(links);
+  const byId = new Map(doc.passages.map(p => [p.id, p]));
+  const list = node('div', undefined, 'v2-transcript'); mount.append(list);
+  const sections = [...doc.sections].sort((a, b) => a.start - b.start);
+  let focus = null;
+  const target = jump ? (doc.passages.filter(p => p.start <= jump.start + 0.001).pop() || doc.passages[0]) : null;
+  for (const s of sections) {
+    const passages = doc.passages.filter(p => p.section_id === s.id);
+    let holder = list;
+    if (s.folded) {
+      holder = node('details', undefined, 'v2-folded'); holder.dataset.type = s.type;
+      const summary = node('summary', v2Summary(s)); summary.dir = 'auto'; holder.append(summary); list.append(holder);
+    } else if (passages.length) {
+      const label = node('div', `${s.type_ar} · ${s.type_en}`, 'section-label v2-section'); label.dir = 'auto'; list.append(label);
+    }
+    for (const p of passages) {
+      const el = v2Passage(p, byId, r); p.element = el; p.fold = s.folded ? holder : null; holder.append(el);
+      if (p === target) { focus = el; if (s.folded) holder.open = true; }
+    }
+  }
+  if (focus) { focus.className += ' selected-intervention'; focus.scrollIntoView({behavior: 'smooth'}); }
+  if (doc.gaps && doc.gaps.length) {
+    const gaps = node('details', undefined, 'v2-gaps');
+    gaps.append(node('summary', `قائمة الفجوات (${arDigits(doc.gaps.length)}) · Gap list: ${doc.gaps.length} live passages without a name`));
+    const ul = node('ul');
+    for (const g of doc.gaps) ul.append(node('li', `${g.time} · ${g.section} · ${g.role_label} · ${g.reason}`));
+    gaps.append(ul); mount.append(gaps);
+  }
+}
+async function fetchV2(id) {
+  // Modified 2026-10-24: "-v2" not ".v2": the publisher allows one dot per file name.
+  try {
+    const res = await fetch(`${base}data/${id}-v2.json`); if (!res.ok) return null;
+    const doc = await res.json();
+    return doc && doc.format === 'v2' && Array.isArray(doc.passages) && Array.isArray(doc.sections) ? doc : null;
+  } catch (_) { return null; }
+}
 async function renderRecording(r, mount, slot, jump = null, autoplay = false) {
   const token = ++generation;
   mount.replaceChildren();
@@ -265,6 +376,9 @@ async function renderRecording(r, mount, slot, jump = null, autoplay = false) {
   const transcript = node('section', undefined, 'transcript'); mount.append(transcript);
   transcript.append(node('p', 'Loading transcript…'));
   try {
+    // Added 2026-10-24: v2 recordings render from data/<id>-v2.json; all others use the v1 reader below.
+    const v2 = await fetchV2(r.id); if (token !== generation) return;
+    if (v2) { renderV2(v2, transcript, r, jump); return; }
     const res = await fetch(`${base}data/${r.id}.json`); if (!res.ok) throw new Error('Unavailable');
     const doc = await res.json(); if (token !== generation) return;
     transcript.replaceChildren(node('h3', 'Original Arabic transcript'));
@@ -423,6 +537,12 @@ function resolveRoute(hash) {
       return {hash: recordingHash(id, start, passage && recording[3] ? passage.person_id : null, ms),
         view: 'recording', slot, jump: passage || {recording_id: id, start}};
     }
+  }
+  // Added 2026-10-24: #t=<seconds> deep link into the current (or first) session's recording.
+  const deep = hash.match(/^#t=(\d+(?:\.\d+)?)$/);
+  if (deep) {
+    const current = archive.slots.find(s => s.id === selected) || archive.slots[0];
+    if (current && current.recording_ids[0]) return resolveRoute(recordingHash(current.recording_ids[0], Number(deep[1])));
   }
   const slotMatch = hash.match(/^#slot-(\d+)$/);
   const slot = archive.slots.find(s => slotMatch && s.id === Number(slotMatch[1])) || archive.slots[0];
